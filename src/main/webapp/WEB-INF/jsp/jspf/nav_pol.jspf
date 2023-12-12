@@ -1,0 +1,108 @@
+<%@ page pageEncoding="UTF-8" %>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Marvel:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+
+<style>
+
+
+    .bg-light {
+        background-color: #6c4892!important;
+        font-family: Jost;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .nav-item{
+        padding-right: 10px;
+    }
+    .nav-right{
+        color: white;
+    }
+
+    .show-notification{
+        color: black;
+    }
+
+    .navbar {
+        padding: 10px; /* Adjust the top and bottom padding */
+        max-height: 5rem; /* Set a minimum height */
+    }
+
+
+
+    .welcome-section {
+        display: none; /* Hide the welcome section for now, adjust as needed */
+    }
+
+    .nav-right {
+        display: flex;
+        margin-left: 72rem;
+
+    }
+
+    .user-profile {
+        margin-right: 10px; /* Adjust the right margin of the user profile image */
+    }
+
+    .dropdown-menu {
+        min-width: 150px; /* Set a minimum width for the dropdown menu */
+    }
+
+    .profile-notification a {
+        padding: 10px; /* Adjust the padding of the dropdown menu items */
+        font-size: 1rem; /* Adjust the font size of the dropdown menu items */
+    }
+
+</style>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="home">
+        <img src="files/images/fintrex-din-white1.png" width="150" height="60" class="d-inline-block align-top" alt="">
+
+    </a>
+    <div class="navbar-container container-fluid">
+
+        <ul class="nav-right">
+
+            <div class="dropdown-primary dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                    <img width="30%" src="files/images/user.png" class="img-radius" alt="My Photo">
+                    <span><%=session.getAttribute("username")%></span>
+                    <i class="feather icon-chevron-down"></i>
+                </div>
+                <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+
+                    <li>
+                        <a href="logoutPol">
+                            <i class="feather icon-log-out" id="logoutPol"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </ul>
+    </div>
+</nav>
+<script>
+    document.getElementById("logoutPol").addEventListener("click", function (e) {
+        fetch("Fintrex-Intranet/logoutPol", {
+            method: "GET"
+        });
+        setTimeout(function () {
+            location.reload();
+        }, 100);
+    });
+
+
+</script>

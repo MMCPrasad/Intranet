@@ -105,7 +105,7 @@
 
                                 const row = document.createElement('div');
                                 row.classList.add('row');
-                                row.style.padding = '20px';
+                                row.style.padding = '40px';
 
                                 const col3 = document.createElement('div');
                                 col3.classList.add('col-3');
@@ -115,8 +115,6 @@
                                 const img = document.createElement('img');
                                 img.src = 'director/path/view/' + image.path;
                                 img.alt = image.alt;
-                                img.style.maxWidth = '80%';  // Set max-width property
-                                img.style.height = 'auto';    // Maintain aspect ratio
 
                                 avatar.appendChild(img);
                                 col3.appendChild(avatar);
@@ -126,8 +124,6 @@
                                 col9.classList.add('col-9');
                                 const info = document.createElement('div');
                                 info.classList.add('u-member-grid__info');
-                                info.style.marginTop = '5rem';
-
 
                                 const h4 = document.createElement('h4');
                                 h4.textContent = image.name;
@@ -141,6 +137,8 @@
                                 const p = document.createElement('p');
                                 p.textContent = image.model;
                                 p.style.fontFamily = 'Georgia, serif';
+                                p.style.textAlign = 'justify'; // Set text-align to justify
+                                p.style.wordSpacing = '0.2em'; // Adjust the word spacing as needed
 
                                 info.appendChild(h4);
                                 info.appendChild(h6);
@@ -148,9 +146,11 @@
                                 col9.appendChild(info);
                                 row.appendChild(col9);
 
+
                                 imgList.appendChild(row);
-                                const hr = document.createElement('hr');
-                                imgList.appendChild(hr);
+                                const hr = document.createElement('hr'); // Create a horizontal line element
+                                imgList.appendChild(hr); // Append the horizontal line
+
 
                                 return;
                             }

@@ -30,7 +30,10 @@
     }
 
     .nav-item a:hover {
-        color: #79c14e
+        color: #79c14e;
+    }
+    .dropdown-item {
+        font-size: 1rem; /* You can adjust the size as needed */
     }
 
 </style>
@@ -43,10 +46,11 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand">
+    <a class="navbar-brand" href="/Intranet-Fintrex/">
         <img src="files/images/fintrex-din-white1.png" width="150" height="60" class="d-inline-block align-top" alt="">
 
     </a>
+
     <div class="welcome-section">
         <p class="welcome-text">Welcome to the Fintrex Family</p>
     </div>
@@ -76,7 +80,10 @@
                 <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="system">Systems </a>
             </li>
             <li class="nav-item">
-                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="login_policy">Department Policy </a>
+                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="system">SWC </a>
+            </li>
+            <li class="nav-item">
+                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="login_policy">Departments </a>
             </li>
 
 

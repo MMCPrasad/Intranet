@@ -324,7 +324,7 @@
 
                             $('#name').val(data.name);
                             $('#designation').val(data.designation);
-
+                            $('#model').val(data.model);
                             $('#saveBtn').data('mode', 'update'); // Set the mode to 'update'
                             $('#saveBtn').data('id', id);
                             $('#saveBtn').html('<i class="icon feather icon-save"></i>Update'); // Change button text to 'Update'

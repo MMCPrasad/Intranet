@@ -80,7 +80,7 @@
                         <nav>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="home">Home</a>
+                                    <a href="/Intranet-Fintrex/">Home</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a >Admin</a> 

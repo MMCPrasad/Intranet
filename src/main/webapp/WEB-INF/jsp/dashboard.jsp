@@ -518,17 +518,17 @@
 
 
 
-        <div class="row"style="padding-top: 2rem;padding-left: 2rem;padding-right 2rem;padding-right: 0.1rem;height: 3rem;">
+        <div class="row"style="padding-top: 1rem;padding-left: 2rem;padding-right 2rem;padding-right: 2rem;height: 2rem;">
             <div class="col">
                 <a href="#" style="text-decoration: none; color: black;" data-toggle="modal" data-target="#ceoModel">
-                    <div class="cards" style=" background-color: #f0f1f5;width: 10rem">
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="assets/img/system/carousel/ceo.png" width="30px" height="30px" alt="alt" />
+                    <div class="cards" style="background-color: #f0f1f5;  height: 5rem">
+                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
+                            <div class="col-2 d-flex align-items-center">
+                                <img src="assets/img/system/carousel/ceo.png" width="40px" height="40px" alt="alt" />
                             </div>
                             <div class="col-10">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 0.9rem;">CEO's Message</p>
+                                    <p style="font-size: 1rem;">CEO's Message</p>
                                 </div>
                             </div>
                         </div>
@@ -604,14 +604,14 @@
 
             <div class="col">
                 <a href="view_policies" style="text-decoration: none; color: black;">
-                    <div class="cards" style="background-color: #f0f1f5;width: 8rem">
-                        <div class="row">
+                    <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
                             <div class="col">
-                                <img src="assets/img/system/carousel/policy.png" width="30px" height="30px" alt="alt" />
+                                <img src="assets/img/system/carousel/policy.png" width="40px" height="40px" alt="alt" />
                             </div>
                             <div class="col">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 0.9rem;margin-left: -1.8rem;">Policy</p>
+                                    <p style="font-size: 1.2rem;margin-left: 1rem;">Policy</p>
                                 </div>
                             </div>
                         </div>
@@ -621,14 +621,14 @@
             </div>
             <div class="col">
                 <a href="#" id="view_dele" style="text-decoration: none; color: black;">
-                    <div class="cards" style="background-color: #f0f1f5;width: 12rem">
+                    <div class="cards" style="background-color: #f0f1f5;height: 5rem">
                         <div class="row">
                             <div class="col-2">
-                                <img src="assets/img/system/carousel/delegation.png" width="30px" height="30px" alt="alt" />
+                                <img src="assets/img/system/carousel/delegation.png" width="50px" height="50px" alt="alt" />
                             </div>
                             <div class="col-10">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 0.9rem;">Delegation Authority</p>
+                                    <p style="font-size: 1rem;">Delegation Authority</p>
                                 </div>
                             </div>
                         </div>
@@ -640,14 +640,14 @@
 
             <div class="col">
                 <a href="#" id="view_alco" style="text-decoration: none; color: black;">
-                    <div class="cards" style="background-color: #f0f1f5;width: 10rem">
-                        <div class="row">
+                    <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
                             <div class="col-3">
-                                <img src="assets/img/system/carousel/alco.png" width="30px" height="30px" alt="alt" />
+                                <img src="assets/img/system/carousel/alco.png" width="40px" height="40px" alt="alt" />
                             </div>
                             <div class="col-9">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 0.9rem;">Alco Rates</p>
+                                    <p style="font-size: 1rem;">Alco Rates</p>
                                 </div>
                             </div>
                         </div>
@@ -657,14 +657,14 @@
             </div>
             <div class="col">
                 <a href="#"id="ideas-link" style="text-decoration: none; color: black;">
-                    <div class="cards" style="background-color: #f0f1f5;width: 8rem">
-                        <div class="row">
+                    <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
                             <div class="col-3">
-                                <img src="assets/img/system/carousel/idea.png" width="30px" height="30px" alt="alt" />
+                                <img src="assets/img/system/carousel/idea.png" width="40px" height="40px" alt="alt" />
                             </div>
                             <div class="col-9">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 0.9rem;margin-left: -0.8rem">Ideas</p>
+                                    <p style="font-size: 1.2rem;margin-left: 1.8rem">Ideas</p>
                                 </div>
                             </div>
                         </div>
@@ -675,14 +675,14 @@
             <div class="col">
                 <a href="#" id="whistleblowing-link" style="text-decoration: none; color: black;">
 
-                    <div class="cards"style="background-color: #f0f1f5;width: 14rem">
+                    <div class="cards"style="background-color: #f0f1f5;height: 5rem">
                         <div class="row">
                             <div class="col-2">
                                 <img src="assets/img/system/carousel/whis.png" width="30px" height="30px" alt="alt" />
                             </div>
                             <div class="col-10">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 0.9rem;">Whistleblowing Policy</p>
+                                    <p style="font-size: 1rem;">Whistleblowing Policy</p>
                                 </div>
                             </div>
                         </div>
@@ -693,14 +693,14 @@
             <div class="col">
                 <a href="#" id="select-link" style="text-decoration: none; color: black;">
 
-                    <div class="cards"style="background-color: #f0f1f5;">
-                        <div class="row">
+                    <div class="cards"style="background-color: #f0f1f5;height: 5rem">
+                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
                             <div class="col">
-                                <img src="assets/img/system/carousel/whis.png" width="30px" height="30px" alt="alt" />
+                                <img src="assets/img/system/carousel/whis.png" width="40px" height="40px" alt="alt" />
                             </div>
                             <div class="col">
-                                <div class="txt" style="margin-top: 5px;margin-left: -2rem; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 0.9rem;">FD,FS,PM</p>
+                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                    <p style="font-size: 1rem;">FD,FS,PM</p>
                                 </div>
                             </div>
                         </div>
@@ -718,7 +718,7 @@
 
             <section id="news" style="flex: 1;" class="news" >
                 <div class="col-md-12 col-sm-12 col-xs-12" >
-                    <div class="content" style="width: 110%; padding-top: 10px; height: 550px;">
+                    <div class="content" style="width: 100%; padding-top: 10px; height: 650px;">
                         <div class="contents" >
                             <div class="section-headline text-center">
                                 <h3 style="color: #662D87!important; opacity: 1">News</h3>
@@ -758,13 +758,13 @@
 
             <section id="announce" style="flex: 1;" class="announce">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="content" style="width: 110%; padding-top: 10px; height: 550px;">
+                    <div class="content" style="width: 100%; padding-top: 10px; height: 650px;">
                         <div class="contents">
                             <div class="section-headline text-center">
                                 <h3 style="color: #662D87 !important; opacity: 1">Announcement</h3>
                             </div>
                         </div>
-                        <div style="max-height: 28rem; overflow-y: scroll;">
+                        <div style="max-height: 35rem; overflow-y: scroll;">
                             <table class="table table-hover cell-border" id="tbl3" style="width: 100%; padding-top: 10px; height: 170px">
                                 <thead>
                                     <tr>
@@ -785,7 +785,7 @@
 
             <section id="tele" style="flex: 1; " class="tele">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="content"  style="width:110%;padding-top: 10px;height:550px">
+                    <div class="content"  style="width:100%;padding-top: 10px;height:650px">
                         <div class="contents" >
                             <div class="section-headline text-center">
                                 <h3 style="color: #662D87!important;opacity: 1">Telephone</h3>
@@ -966,13 +966,13 @@
 
             <section id="bday" style="flex: 1; " class="bday">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="content" style="width: 110%; padding-top: 10px; height: 550px; overflow: hidden;">
+                    <div class="content" style="width: 100%; padding-top: 10px; height: 650px; overflow: hidden;">
                         <div class="contents">
                             <div class="section-headline text-center">
                                 <h3 style="color: #662D87!important; opacity: 1">Birthdays</h3>
                             </div>
                         </div>
-                        <div style="max-height: 28rem; overflow-y: scroll;">
+                        <div style="max-height: 35rem; overflow-y: scroll;">
                             <table class="table table-hover cell-border" id="tbl4" style="width: 100%;">
                                 <thead>
                                     <tr>
@@ -1853,7 +1853,7 @@
                                                 const image = document.createElement('img');
                                                 const imageUrl = 'news/path/newsss/' + imageData.path;
                                                 image.src = imageUrl;
-                                                image.style.width = '40%'; // Set the initial width for the thumbnail
+                                                image.style.width = '30%'; // Set the initial width for the thumbnail
                                                 imageContainer.append(image);
                                                 // Add lightbox functionality
                                                 image.addEventListener('click', function () {
@@ -1888,7 +1888,7 @@
                             txtDiv.appendChild(h4);
                             txtDiv.appendChild(p);
                             col10.appendChild(txtDiv);
-                            newsContainer.style.maxHeight = '28rem'; // Set a fixed height for the news container
+                            newsContainer.style.maxHeight = '35rem'; // Set a fixed height for the news container
                             newsContainer.style.overflowY = 'auto'; // Enable vertical scrolling if the content exceeds the container height
 
                             newsContainer.appendChild(col10);

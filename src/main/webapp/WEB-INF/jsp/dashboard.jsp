@@ -700,7 +700,7 @@
                             </div>
                             <div class="col">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;">FD,FS,PM</p>
+                                    <p style="font-size: 1rem;">FD,FS</p>
                                 </div>
                             </div>
                         </div>
@@ -1260,9 +1260,9 @@
                         <div class="col">
                             <a href="fina_statement" class="btn btn-secondary btn-lg active custom-btn" role="button" aria-pressed="true">Financial Statements</a>
                         </div>
-                        <div class="col">
-                            <a href="#" class="btn btn-secondary btn-lg active custom-btn" role="button" aria-pressed="true">Payment Methods</a>
-                        </div>
+                        <!--                        <div class="col">
+                                                    <a href="#" class="btn btn-secondary btn-lg active custom-btn" role="button" aria-pressed="true">Payment Methods</a>
+                                                </div>-->
                     </div>
 
 

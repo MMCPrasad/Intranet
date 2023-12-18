@@ -76,7 +76,7 @@
 
         <div class="row">
             <div class="top" style="margin-left: 4rem; margin-top: 1rem;background-color: #E4D3E6;font-family: 'Philosopher', sans-serif; ">
-                <h1>Our Directors</h1>
+                <h2>Board Of Directors</h2>
             </div>
         </div>
 

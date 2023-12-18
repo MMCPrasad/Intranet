@@ -548,51 +548,54 @@
                         </div>
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-3">
-                                    <div class="text-left">
-                                        <div class="col text-left" style="padding-left: 9px; padding-top: 2px">
-                                            <img src="assets/img/system/mgt/Jayathilake_ceo.jpg" width="70%">
-                                        </div>
-                                        <div class="row col text-left myfont">
-                                            <a style="font-size: 1rem; font-weight: 600; color: #000">Mr. Jayathilake Bandara</a><br>
-                                            <a style="font-size: 1rem; font-weight: 600; color: #000">General Manager / CEO</a>
-                                        </div>
+                                <div class="col">
 
-                                    </div>  
-                                </div>
-                                <div class="col-9">
-                                    <div class="ceo_msg_div">
-                                        <div id="ceo_msg" class="ceo_msg_div col-lg-12 responsive-img text-left" style="max-height: 200px; overflow-y: auto; padding-left: 10px; padding-top: 10px">
-                                            <h5 style="padding-top: 2px">Dear Fintrex Family,</h5>
-                                            <h6>Hope all of you and your families are safe, take care</h6>
-                                            <h6>I am writing this message to refresh all of you on the importance of discipline, adhering to our company policies, procedures, ethical self-conduct and good governance.</h6>
+                                    <div class="row">
+                                        <div class="text-left">
+                                            <div class="col text-left" style="padding-left: 9px; padding-top: 2px">
+                                                <img src="assets/img/system/mgt/Jayathilake_ceo.jpg" width="30%">
+                                            </div>
+                                            <div class="row col text-left myfont">
+                                                <a style="font-size: 1rem; font-weight: 600; color: #000">Mr. Jayathilake Bandara</a><br>
+                                                <a style="font-size: 1rem; font-weight: 600; color: #000">General Manager / CEO</a>
+                                            </div>
 
-                                            <div id="read_more_content" class="responsive-img" style="height: auto; overflow-y: hidden;">
-                                                <h6> A disciplined workforce is always considered as the backbone of any organization. At Fintrex, we consider these attributes as fundamental requirement of all of us. In order to maintain a disciplined workforce and an environment, we have a well-formulated Code of Conducts, Terms, and Conditions stated in the Letter of Appointment and the Disciplinary Policy uploaded into the Intranet, etc. Please ensure to read them, be familiar and live by the best practices. It will uphold you and the company on our journey to be within Top 5 Finance companies within next 5 years.</h6>
+                                        </div>  
+                                    </div>
+                                    <div class="row">
+                                        <div class="ceo_msg_div">
+                                            <div id="ceo_msg" class="ceo_msg_div col-lg-12 responsive-img text-left" style="max-height: 200px; overflow-y: auto; padding-left: 10px; padding-top: 10px">
+                                                <h5 style="padding-top: 2px">Dear Fintrex Family,</h5>
+                                                <h6>Hope all of you and your families are safe, take care</h6>
+                                                <h6>I am writing this message to refresh all of you on the importance of discipline, adhering to our company policies, procedures, ethical self-conduct and good governance.</h6>
 
-                                                <h6>This note is raised as few of our staff members has been found guilty and severely warned during past few weeks over misconducts, procedure violations, misappropriation of funds etc etc. Please note that Management will not tolerate any misconduct of staff and such wrongful actions will be viewed very seriously, and dealt with a Zero tolerance policy. The disciplinary actions will be taken against such staff, including termination of employment.</h6>
+                                                <div id="read_more_content" class="responsive-img" style="height: auto; overflow-y: hidden;">
+                                                    <h6> A disciplined workforce is always considered as the backbone of any organization. At Fintrex, we consider these attributes as fundamental requirement of all of us. In order to maintain a disciplined workforce and an environment, we have a well-formulated Code of Conducts, Terms, and Conditions stated in the Letter of Appointment and the Disciplinary Policy uploaded into the Intranet, etc. Please ensure to read them, be familiar and live by the best practices. It will uphold you and the company on our journey to be within Top 5 Finance companies within next 5 years.</h6>
 
-                                                <h6>Hence you all are kindly requested to conduct yourselves professionally with the highest standards within the company and in the society at large, since you are the brand ambassadors of Fintrex Finance.</h6>
+                                                    <h6>This note is raised as few of our staff members has been found guilty and severely warned during past few weeks over misconducts, procedure violations, misappropriation of funds etc etc. Please note that Management will not tolerate any misconduct of staff and such wrongful actions will be viewed very seriously, and dealt with a Zero tolerance policy. The disciplinary actions will be taken against such staff, including termination of employment.</h6>
 
-                                                <h6>I wish all of you good health and success.</h6>
+                                                    <h6>Hence you all are kindly requested to conduct yourselves professionally with the highest standards within the company and in the society at large, since you are the brand ambassadors of Fintrex Finance.</h6>
 
-                                                <h6>Warm regards,</h6>
+                                                    <h6>I wish all of you good health and success.</h6>
 
-                                                <h5>Jayathilake Bandara</h5>
+                                                    <h6>Warm regards,</h6>
 
-                                                <h5>General Manager / CEO</h5>
+                                                    <h5>Jayathilake Bandara</h5>
+
+                                                    <h5>General Manager / CEO</h5>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
-                            </div> 
-
-
-                            <hr>
-
-                            <video id="yourVideoElementId" width="100%" height="60%" controls>
-                                <source src="assets/img/system/carousel/roadBillion.mp4" type="video/mp4">
-                            </video>
+                                <div class="col">
+                                    <video id="yourVideoElementId" width="100%" height="100%" controls>
+                                        <source src="assets/img/system/carousel/roadBillion.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <hr>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -700,7 +703,7 @@
                             </div>
                             <div class="col">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;">FD,FS</p>
+                                    <p style="font-size: 1rem;margin-left: 1.8rem">FD,FS</p>
                                 </div>
                             </div>
                         </div>
@@ -1248,7 +1251,7 @@
         </div>
     </div>
     <div class="modal fade" id="select_modal" tabindex="-1" role="document">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog " role="document">
             <div class="modal-content">
 
                 <div class="modal-body table-responsive" style="font-size: 12px;  font-family: myFont">

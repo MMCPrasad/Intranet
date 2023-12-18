@@ -85,7 +85,7 @@
                 $.post('login_policy', {username: $('#username').val()}, function (data) {
                     // var data = JSON.parse(res);
                     if (data === "ok") {
-                        window.location.href = '/Intranet-Fintrex/view_dep_policies';
+                        window.location.href = '/Intranet/view_dep_policies';
                     } else if (data === "locked") {
                         var alttemp = '<div class="alert alert-danger alert-dismissible">' +
                                 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +

@@ -64,7 +64,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="text-right">
-                                    <button id="addDirecsBtn" class="btn btn-sm waves-effect waves-light btn-danger"><i class="icon feather icon-plus"></i>Add Notices</button>
+                                    <button id="addDirecsBtn" class="btn btn-sm waves-effect waves-light btn-danger"><i class="icon feather icon-plus"></i>Add Directors</button>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group" style="width: 75rem">
                                         <label for="designation">Model Description<span class="text-danger">*</span></label>
-                                        <input id="model" type="text" name="model" class="form-control"  required autocomplete="off">
+                                        <textarea id="model" name="model" class="form-control" required autocomplete="off"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
@@ -267,13 +267,13 @@
                         contentType: false,
                         success: function (response) {
                             if (response.status === 200) {
-                                Swal.fire('Successful!', 'Announcement details updated successfully', 'success');
+                                Swal.fire('Successful!', 'Director details updated successfully', 'success');
                                 clearForm();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();
                                 dtable.ajax.reload();
                             } else {
-                                Swal.fire('Successful!', 'Announcement details updated successfully', 'success');
+                                Swal.fire('Successful!', 'Director details updated successfully', 'success');
                                 clearForm();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();
@@ -366,7 +366,7 @@
                         if (result.value.status !== 200) {
                             Swal.fire('Error!', result.value.msg, 'error');
                         } else {
-                            Swal.fire('Successfull!', 'System has been Deactivated !', 'success');
+                            Swal.fire('Successfull!', 'Director has been Deactivated !', 'success');
                             dtable.ajax.reload();
                             $('#formSection').hide();
                             $('#tableSection').fadeIn();
@@ -407,7 +407,7 @@
                         if (result.value.status !== 200) {
                             Swal.fire('Error!', result.value.msg, 'error');
                         } else {
-                            Swal.fire('Successfull!', 'System has been Activated !', 'success');
+                            Swal.fire('Successfull!', 'Director has been Activated !', 'success');
                             dtable.ajax.reload();
                             $('#formSection').hide();
                             $('#tableSection').fadeIn();

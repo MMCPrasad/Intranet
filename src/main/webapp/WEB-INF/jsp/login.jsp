@@ -85,7 +85,7 @@
                 $.post('login', {username: $('#username').val()}, function (data) {
                     // var data = JSON.parse(res);
                     if (data === "ok") {
-                        window.location.href = '/Intranet-Fintrex/admincontrol';
+                        window.location.href = '/Intranet/admincontrol';
                     } else if (data === "locked") {
                         var alttemp = '<div class="alert alert-danger alert-dismissible">' +
                                 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +

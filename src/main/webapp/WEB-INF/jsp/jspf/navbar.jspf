@@ -33,7 +33,7 @@
         color: #79c14e;
     }
     .dropdown-item {
-        font-size: 1rem; /* You can adjust the size as needed */
+        font-size: 0.8rem; /* You can adjust the size as needed */
     }
 
 </style>
@@ -46,7 +46,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/Intranet/">
         <img src="files/images/fintrex-din-white1.png" width="150" height="60" class="d-inline-block align-top" alt="">
 
     </a>
@@ -68,11 +68,11 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="aboutus">About Us</a>
-                    <a class="dropdown-item" href="directors">Our Directors</a>
-                    <a class="dropdown-item" href="cptmgt">Our Cop.Management</a>
-                    <a class="dropdown-item" href="seniormngment">Our Senior Management</a>
-                    <a class="dropdown-item" href="brnchmnger">Our Branch Managers</a>
-                    <a class="dropdown-item" href="product">Our Product Offerings</a>
+                    <a class="dropdown-item" href="directors">Board Of Directors</a>
+                    <a class="dropdown-item" href="cptmgt">Cop.Management</a>
+                    <a class="dropdown-item" href="seniormngment">Senior Management</a>
+                    <a class="dropdown-item" href="brnchmnger">Branch Managers</a>
+                    <a class="dropdown-item" href="product">Product Offerings</a>
 
                 </div>
             </li>

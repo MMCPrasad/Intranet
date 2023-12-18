@@ -69,7 +69,7 @@
 
         <div class="row">
             <div class="top" style="margin-left: 4rem; margin-top: 1rem;background-color: #E4D3E6;font-family: 'Philosopher', sans-serif; ">
-                <h1>Our Branch Managers</h1>
+                <h2>Branch Managers</h2>
             </div>
         </div>
 
@@ -139,12 +139,15 @@
                                 const p = document.createElement('p');
                                 p.textContent = image.model;
                                 p.style.fontFamily = 'Georgia, serif';
+                                p.style.textAlign = 'justify'; // Set text-align to justify
+                                p.style.wordSpacing = '0.2em'; // Adjust the word spacing as needed
 
                                 info.appendChild(h4);
                                 info.appendChild(h6);
                                 info.appendChild(p);
                                 col9.appendChild(info);
                                 row.appendChild(col9);
+
 
                                 imgList.appendChild(row);
                                 const hr = document.createElement('hr'); // Create a horizontal line element

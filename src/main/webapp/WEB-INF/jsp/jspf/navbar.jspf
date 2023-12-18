@@ -46,7 +46,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="/Intranet/">
+    <a class="navbar-brand" href="/">
         <img src="files/images/fintrex-din-white1.png" width="150" height="60" class="d-inline-block align-top" alt="">
 
     </a>
@@ -58,7 +58,7 @@
         <ul class="navbar-nav ms-auto p-3" >
             <li class="nav-item">
             <li class="nav-item">
-                <a style="color: white;" class="nav-link" href="/Intranet/" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'">Home</a>
+                <a style="color: white;" class="nav-link" href="/" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'">Home</a>
             </li>
 
             </li>

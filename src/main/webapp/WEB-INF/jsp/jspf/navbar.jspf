@@ -58,7 +58,7 @@
         <ul class="navbar-nav ms-auto p-3" >
             <li class="nav-item">
             <li class="nav-item">
-                <a style="color: white;" class="nav-link" href="/Intranet-Fintrex/" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'">Home</a>
+                <a style="color: white;" class="nav-link" href="/Intranet/" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'">Home</a>
             </li>
 
             </li>
@@ -80,7 +80,7 @@
                 <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="system">Systems </a>
             </li>
             <li class="nav-item">
-                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="system">SWC </a>
+                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="#" onclick="window.open('http://192.168.40.7:8081/welfare/', 'blank')">SWC </a>
             </li>
             <li class="nav-item">
                 <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="login_policy">Departments </a>

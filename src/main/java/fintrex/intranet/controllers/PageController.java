@@ -24,6 +24,11 @@ public class PageController {
         return "dashboard";
     }
 
+    @GetMapping("/Intranet")
+    public String dashboard2() {
+        return "dashboard";
+    }
+
     @GetMapping("/departments")
     public String departments() {
         return "departments";

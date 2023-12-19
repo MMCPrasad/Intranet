@@ -217,7 +217,7 @@
                             if (result.value.status !== 200) {
                                 Swal.fire('Error!', result.value.msg, 'error');
                             } else {
-                                Swal.fire('Successfull!', 'System has been Deactivated !', 'success');
+                                Swal.fire('Successfull!', 'Wish has been Deactivated !', 'success');
                                 dtable.ajax.reload();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();
@@ -258,7 +258,7 @@
                             if (result.value.status !== 200) {
                                 Swal.fire('Error!', result.value.msg, 'error');
                             } else {
-                                Swal.fire('Successfull!', 'System has been Activated !', 'success');
+                                Swal.fire('Successfull!', 'Wish has been Activated !', 'success');
                                 dtable.ajax.reload();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();

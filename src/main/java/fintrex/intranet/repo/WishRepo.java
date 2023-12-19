@@ -19,6 +19,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface WishRepo extends CrudRepository<BdayWishes, Integer> {
 
-    @Query("SELECT `id`, `birthday`, `name`, `wish`, `status` FROM `birthdays` WHERE `birthday` =:callName")
+    @Query("SELECT `id`, `birthday`, `name`, `wish`, `status` FROM `birthdays` WHERE `birthday` =:callName AND `status`='active'")
     Iterable<BirthdayWishDto> getWishesByBirthday(@Param("callName") String callName);
 }

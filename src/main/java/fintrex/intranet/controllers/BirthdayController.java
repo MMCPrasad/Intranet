@@ -9,9 +9,12 @@ import fintrex.intranet.datatable.DataTableRequest;
 import fintrex.intranet.datatable.DataTablesResponse;
 import fintrex.intranet.dto.BirthdayEmpDto;
 import fintrex.intranet.dto.BirthdayWishDto;
+import fintrex.intranet.dto.GetPagesAccDTO;
 import fintrex.intranet.dto.IdeaDataTable;
 import fintrex.intranet.dto.SlimSelectDTO;
 import fintrex.intranet.service.BirthdayService;
+import jakarta.servlet.http.HttpSession;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -55,6 +58,28 @@ public class BirthdayController {
     @PostMapping("/wishes")
     public DataTablesResponse<BirthdayWishDto> getWishes(@RequestBody DataTableRequest param) throws Exception {
         return service.getWishes(param);
+    }
+
+//    @PostMapping("/wishess")
+//    public DataTablesResponse<BirthdayWishDto> getWishess(@RequestBody DataTableRequest param) throws Exception {
+//        return service.getWishess(param);
+//    }
+//    @PostMapping("/wishes")
+//    public Iterable<BirthdayWishDto> getWishesByBirthday(@RequestBody Map<String, String> requestData) {
+//        String callName = requestData.get("data");
+//        return service.getWishesByBirthday(callName);
+//    }
+    @PostMapping("/wishess")
+    public ResponseEntity<Iterable<BirthdayWishDto>> getWishesByBirthday(@RequestBody Map<String, String> requestData, HttpSession session) {
+        String callName = requestData.get("data");
+
+        if (callName != null && !callName.isEmpty()) {
+            Iterable<BirthdayWishDto> wishes = service.getWishesByBirthday(callName);
+            return ResponseEntity.ok(wishes);
+        } else {
+            // Handle invalid or missing data
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @GetMapping("/details/{id}")

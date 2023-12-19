@@ -4,6 +4,7 @@
  */
 package fintrex.intranet.repo;
 
+import fintrex.intranet.dto.BirthdayWishDto;
 import fintrex.intranet.dto.SlimSelectDTO;
 import fintrex.intranet.model.Birthday;
 import org.springframework.data.jdbc.repository.query.Query;

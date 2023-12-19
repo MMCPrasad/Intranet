@@ -1330,8 +1330,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="row" style="font-family: myFont;margin-top: 2rem">
+                        <div class="row" style="background-color: #f0f1f5">
+                            <div class="row" style="font-family: myFont;margin-top: 1rem">
                                 <h4>Wish Him/Her Here!!!</h4>
                                 <div class="col-lg-3" style="font-size: 12px;">
                                     <input id="name" class="form-control" type="text" placeholder="Enter your Name" style="font-size: 12px;">
@@ -1342,763 +1342,767 @@
                                 <div class="col-lg-12">
                                     &nbsp;
                                     <!--<h4 style="font-size: small; font-weight: 600; font-family: myFontB">Describe Your Idea Here</h4>-->
-                                    <textarea id="policy_field" class="form-control" placeholder="Describe Here" style="height: 100px; font-size: 12px;">
-                                    
-                                    </textarea>
+                                    <input id="wishes" class="form-control" placeholder="Drop You Wish Here" style="height: 50px; font-size: 12px;">
+
+
                                 </div>
 
                             </div>
                             <div class="modal-footer">
-                                <button id="save_policy_btn" type="submit" name="save_policy_btn" class="btn btn-primary btn-sm">Submit</button>
+                                <button id="save_wish_btn" type="submit" name="save_policy_btn" class="btn btn-primary btn-sm">Wish</button>
                                 <button type="button" id="close_btnp" class="btn btn-warning btn-sm" data-dismiss="modal">Close</button>
                             </div>
 
-
-
-                            <h4 id="save_msgp" class="text-center" style="font-weight: 600; font-size: medium"></h4>
                         </div>
 
-                        <div class="row">fsdfdsfdsf
+                        <div class="row" style="font-family: myFont;margin-top: 1rem">
+                            <h4>Warm Wishes From Fintrex Family</h4>
+                            <div class="row d-flex align-items-center justify-content-center" id="sysss" style="margin-top: 3rem;">
+
+                            </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-        </div>
+        </div></div>
         <%@include file="jspf/scripts.jspf" %>
-        <script type="text/javascript" src="files/js/slimselect.js"></script>
-        <script type="text/javascript" src="files/js/datatables.min.js"></script>
-        <script type="text/javascript" src="files/js/sweetalert2.js"></script>
-        <script type="text/javascript" src="files/js/func.js"></script>
-        <script type="text/javascript" src="files/js/autoNumeric.js"></script>
-        <script type="text/javascript" src="files/js/dataTables.responsive.min.js"></script>
-        <script type="text/javascript" src="files/js/jquery.highlight.js"></script>
-        <script type="text/javascript" src="files/js/dataTables.searchHighlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        <script>
-        </script>
+    <script type="text/javascript" src="files/js/slimselect.js"></script>
+    <script type="text/javascript" src="files/js/datatables.min.js"></script>
+    <script type="text/javascript" src="files/js/sweetalert2.js"></script>
+    <script type="text/javascript" src="files/js/func.js"></script>
+    <script type="text/javascript" src="files/js/autoNumeric.js"></script>
+    <script type="text/javascript" src="files/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="files/js/jquery.highlight.js"></script>
+    <script type="text/javascript" src="files/js/dataTables.searchHighlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+    </script>
 
 
-        <script>
+    <script>
 
-            function LoadPromo() {
-                fetch('promotion/images')
-                        .then(response => response.json())
-                        .then(images => {
-                            let promoCarousel = $("#promo");
-                            promoCarousel.empty(); // Clear existing content
+        function LoadPromo() {
+            fetch('promotion/images')
+                    .then(response => response.json())
+                    .then(images => {
+                        let promoCarousel = $("#promo");
+                        promoCarousel.empty(); // Clear existing content
 
-                            // Sort the images array in reverse order (assuming images have a timestamp or some identifier)
-                            images = images.reverse();
-
-                            for (let i = 0; i < images.length; i++) {
-                                let itemContainer = $("<div>").addClass("item");
-
-                                // You can customize the content and style as needed
-                                let imageUrl = 'promotion/path/view/' + images[i].path;
-                                let itemDesc = $("<div>").addClass("item-desc");
-
-                                // Create the title element and add margin-top
-                                let title = $("<h3>").text(images[i].heading).css("margin-top", "10px");
-
-                                let description = $("<p>").text(images[i].para);
-
-                                // Add "See More" hyperlink
-                                let seeMoreLink = $("<a>").text("See More").attr("href", "#").addClass("see-more-link");
-                                description.append(seeMoreLink);
-
-                                itemDesc.append(title, description);
-                                itemContainer.css("background-image", "url(" + imageUrl + ")");
-                                itemContainer.append(itemDesc);
-
-                                promoCarousel.append(itemContainer);
-                            }
-
-                            promoCarousel.owlCarousel({
-                                autoWidth: true,
-                                loop: true,
-                                nav: true,
-                                navText: [
-                                    "<i class='fa fa-caret-left'></i>",
-                                    "<i class='fa fa-caret-right'></i>"
-                                ],
-                                autoplay: true,
-                                autoplayHoverPause: true,
-                                autoplayTimeout: 2000, // Set the autoplay speed to 5 seconds (adjust the value as needed)
-                                responsive: {
-                                    0: {
-                                        items: 1
-                                    },
-                                    600: {
-                                        items: 3
-                                    },
-                                    1000: {
-                                        items: 7
-                                    }
-                                }
-                            });
-
-
-                            // Add click event for "See More" links
-                            $(".see-more-link").click(function (e) {
-                                e.preventDefault();
-                                let imagePath = $(this).closest(".item").css("background-image").replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
-                                let imageHeading = $(this).closest(".item").find("h3").text();
-                                openModal(imagePath, imageHeading);
-                            });
-                        });
-            }
-
-            function openModal(imagePath, imageHeading) {
-                // Set the image source in the modal
-                $("#modalImage").attr("src", imagePath);
-
-                // Set the modal title with the image heading
-                $("#promoModalLabel").text(imageHeading);
-
-                // Open the Bootstrap modal
-                $("#promoModal").modal("show");
-            }
-
-            // Call the LoadPromo function when the document is ready
-            $(document).ready(function () {
-                LoadPromo();
-            });
-
-            // Additional code for item click handling
-            $(document).ready(function () {
-                // Use event delegation to handle dynamically added elements
-                $(".custom-carousel").on("click", ".item", function () {
-                    $(".custom-carousel .item").not($(this)).removeClass("active");
-                    $(this).toggleClass("active");
-                });
-            });
-
-
-
-
-
-
-            document.getElementById('savec').addEventListener('click', function () {
-                var epf = document.getElementById('idea_epfpc').value;
-                $.post('idea/get-epf', {epf: epf}, function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        document.getElementById("emp_namepc").innerHTML = data[i].callname;
-                        document.getElementById("departmentpc").innerHTML = data[i].department;
-                    }
-                }
-                );
-            });
-            document.getElementById('savew').addEventListener('click', function () {
-                //                console.log();
-                var epf = document.getElementById('idea_epfp').value;
-                $.post('idea/get-epf', {epf: epf}, function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        document.getElementById("emp_namep").innerHTML = data[i].callname;
-                        document.getElementById("departmentp").innerHTML = data[i].department;
-                    }
-                }
-                );
-            });
-
-
-
-            $('#save_ideas_btn').click(function () {
-                const formData = new FormData();
-
-                formData.append('epf', $('#idea_epfpc').val().trim());
-                formData.append('employee', $('#emp_namepc').text().trim());
-                formData.append('department', $('#departmentpc').text());
-                formData.append('idea', $('#ideas-fieldc').val());
-                formData.append('result', $('#ideaResult').val());
-
-                return fetch('idea/save-idea', {
-                    method: 'POST',
-                    body: formData
-                }).then(response => {
-                    if (!response.ok) {
-                        throw new Error(response.statusText);
-                    } else {
-                        Swal.fire('Successful!', 'Employee has been successfully saved');
-                        clearForms();
-                        $('#ideas-modal').modal('hide');
-                    }
-                    return response.json();
-                });
-            });
-            function clearForms() {
-                $('#ideas-modal').find('input[type!=search]').val('');
-                $('#ideas-modal').find('input[type!=search]').val('');
-                $('#ideas-modal').find('select').each(function () {
-                    if ($(this).data('select')) {
-                        if ($(this).data('select').ajax) {
-                            $(this).data('select').data.data = [];
+                        // Sort the images array in reverse order (assuming images have a timestamp or some identifier)
+                        images = images.reverse();
+                        for (let i = 0; i < images.length; i++) {
+                            let itemContainer = $("<div>").addClass("item");
+                            // You can customize the content and style as needed
+                            let imageUrl = 'promotion/path/view/' + images[i].path;
+                            let itemDesc = $("<div>").addClass("item-desc");
+                            // Create the title element and add margin-top
+                            let title = $("<h3>").text(images[i].heading).css("margin-top", "10px");
+                            let description = $("<p>").text(images[i].para);
+                            // Add "See More" hyperlink
+                            let seeMoreLink = $("<a>").text("See More").attr("href", "#").addClass("see-more-link");
+                            description.append(seeMoreLink);
+                            itemDesc.append(title, description);
+                            itemContainer.css("background-image", "url(" + imageUrl + ")");
+                            itemContainer.append(itemDesc);
+                            promoCarousel.append(itemContainer);
                         }
-                        $(this).data('select').set('');
-                    }
-                });
-            }
 
+                        promoCarousel.owlCarousel({
+                            autoWidth: true,
+                            loop: true,
+                            nav: true,
+                            navText: [
+                                "<i class='fa fa-caret-left'></i>",
+                                "<i class='fa fa-caret-right'></i>"
+                            ],
+                            autoplay: true,
+                            autoplayHoverPause: true,
+                            autoplayTimeout: 2000, // Set the autoplay speed to 5 seconds (adjust the value as needed)
+                            responsive: {
+                                0: {
+                                    items: 1
+                                },
+                                600: {
+                                    items: 3
+                                },
+                                1000: {
+                                    items: 7
+                                }
+                            }
+                        });
+                        // Add click event for "See More" links
+                        $(".see-more-link").click(function (e) {
+                            e.preventDefault();
+                            let imagePath = $(this).closest(".item").css("background-image").replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
+                            let imageHeading = $(this).closest(".item").find("h3").text();
+                            openModal(imagePath, imageHeading);
+                        });
+                    });
+        }
 
-            $(document).ready(function () {
-                $('#ceoModel').on('hidden.bs.modal', function () {
-                    var video = document.getElementById('yourVideoElementId'); // replace 'yourVideoElementId' with the actual ID of your video element
-                    video.pause();
-                });
+        function openModal(imagePath, imageHeading) {
+            // Set the image source in the modal
+            $("#modalImage").attr("src", imagePath);
+            // Set the modal title with the image heading
+            $("#promoModalLabel").text(imageHeading);
+            // Open the Bootstrap modal
+            $("#promoModal").modal("show");
+        }
+
+        // Call the LoadPromo function when the document is ready
+        $(document).ready(function () {
+            LoadPromo();
+        });
+        // Additional code for item click handling
+        $(document).ready(function () {
+            // Use event delegation to handle dynamically added elements
+            $(".custom-carousel").on("click", ".item", function () {
+                $(".custom-carousel .item").not($(this)).removeClass("active");
+                $(this).toggleClass("active");
             });
-            window.onload = function () {
-                toggleReadMore();
-            };
-
-            function toggleReadMore() {
-                var readMoreContent = document.getElementById("read_more_content");
-                var ceoMsg = document.getElementById("ceo_msg");
-
-                if (readMoreContent.style.overflowY === "hidden") {
-                    readMoreContent.style.overflowY = "auto";
-                    ceoMsg.style.height = "auto";
+        });
+        document.getElementById('savec').addEventListener('click', function () {
+            var epf = document.getElementById('idea_epfpc').value;
+            $.post('idea/get-epf', {epf: epf}, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    document.getElementById("emp_namepc").innerHTML = data[i].callname;
+                    document.getElementById("departmentpc").innerHTML = data[i].department;
+                }
+            }
+            );
+        });
+        document.getElementById('savew').addEventListener('click', function () {
+            //                console.log();
+            var epf = document.getElementById('idea_epfp').value;
+            $.post('idea/get-epf', {epf: epf}, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    document.getElementById("emp_namep").innerHTML = data[i].callname;
+                    document.getElementById("departmentp").innerHTML = data[i].department;
+                }
+            }
+            );
+        });
+        $('#save_ideas_btn').click(function () {
+            const formData = new FormData();
+            formData.append('epf', $('#idea_epfpc').val().trim());
+            formData.append('employee', $('#emp_namepc').text().trim());
+            formData.append('department', $('#departmentpc').text());
+            formData.append('idea', $('#ideas-fieldc').val());
+            formData.append('result', $('#ideaResult').val());
+            return fetch('idea/save-idea', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
                 } else {
-                    readMoreContent.style.overflowY = "hidden";
-                    ceoMsg.style.height = "125px"; // Set the initial height
+                    Swal.fire('Successful!', 'Employee has been successfully saved');
+                    clearForms();
+                    $('#ideas-modal').modal('hide');
+                }
+                return response.json();
+            });
+        });
+        function clearForms() {
+            $('#ideas-modal').find('input[type!=search]').val('');
+            $('#ideas-modal').find('input[type!=search]').val('');
+            $('#ideas-modal').find('select').each(function () {
+                if ($(this).data('select')) {
+                    if ($(this).data('select').ajax) {
+                        $(this).data('select').data.data = [];
+                    }
+                    $(this).data('select').set('');
+                }
+            });
+        }
+
+
+        $(document).ready(function () {
+            $('#ceoModel').on('hidden.bs.modal', function () {
+                var video = document.getElementById('yourVideoElementId'); // replace 'yourVideoElementId' with the actual ID of your video element
+                video.pause();
+            });
+        });
+        window.onload = function () {
+            toggleReadMore();
+        };
+        function toggleReadMore() {
+            var readMoreContent = document.getElementById("read_more_content");
+            var ceoMsg = document.getElementById("ceo_msg");
+            if (readMoreContent.style.overflowY === "hidden") {
+                readMoreContent.style.overflowY = "auto";
+                ceoMsg.style.height = "auto";
+            } else {
+                readMoreContent.style.overflowY = "hidden";
+                ceoMsg.style.height = "125px"; // Set the initial height
+            }
+        }
+
+
+        var ideaResult = new SlimSelect({
+            select: '#ideaResult',
+            placeholder: "~Select~",
+            ajax: function (search, callback) {
+                fetch('idea/search-result', {
+                    method: 'POST',
+                    body: new URLSearchParams({search: search || ''})
+                }).then(res => res.json()).then((data) => {
+                    callback(data);
+                });
+            },
+            allowDeselect: true,
+            deselectLabel: '<span class="red">✖</span>'
+        });
+        var brnch = new SlimSelect({
+            select: '#brnch',
+            placeholder: "Branch",
+            ajax: function (search, callback) {
+                fetch('branch/search-branch', {
+                    method: 'POST',
+                    body: new URLSearchParams({search: search || ''})
+                }).then(res => res.json()).then((data) => {
+                    callback(data);
+                });
+            },
+            allowDeselect: true,
+            deselectLabel: '<span class="red">✖</span>'
+        });
+        $('#brnch').data('select', brnch);
+        var filter = '';
+        filter = "2";
+        $('#brnch').change(function () {
+
+            if ($(this).val()) {
+                filter = $(this).val();
+                brnchtable.ajax.reload();
+            }
+        });
+        $.fn.dataTable.ext.errMode = 'none';
+        var brnchtable = $('#brnc').DataTable({
+            "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+            "pageLength": 5,
+            "ordering": true,
+            "autoWidth": false,
+            "bFilter": false,
+            "bPaginate": false,
+            "bLengthChange": false,
+            "bAutoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "order": [[0, "desc"]],
+            "searchHighlight": true,
+            "searchDelay": 350,
+            "ajax": {
+                "url": "branch/emp",
+                "contentType": "application/json",
+                "type": "POST",
+                "data": function (d) {
+                    d.filter = filter;
+                    return JSON.stringify(d);
+                },
+                error: function (xhr, error, code) {
+                    console.log(xhr);
+                    console.log(code);
+                }
+
+            },
+            "columns": [
+                //                    {"data": "id", className: "text-right", "visible": false},
+                {"data": "callname"},
+                {"data": "desig"},
+                {"data": "officeTelNo"},
+                {"data": "extNo"},
+                {"data": "email"},
+                {"data": "officeMobileNo"},
+                {"data": "brnch", "visible": false}
+            ], "language": {
+                'loadingRecords': '&nbsp;',
+                'processing': '<div class="loader2"></div>'
+            }
+        });
+        var emptable = $('#emp').DataTable({
+            "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+            "pageLength": 5,
+            "ordering": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "order": [[0, "desc"]],
+            "searchHighlight": true,
+            "searchDelay": 350,
+            "ajax": {
+                "url": "branch/search-emp",
+                "contentType": "application/json",
+                "type": "POST",
+                "data": function (d) {
+                    d.filter = filter;
+                    return JSON.stringify(d);
+                },
+                error: function (xhr, error, code) {
+                    console.log(xhr);
+                    console.log(code);
+                }
+
+            },
+            "columns": [
+                //                    {"data": "id", className: "text-right", "visible": false},
+                {"data": "callname"},
+                {"data": "desig"},
+                {"data": "brnch"},
+                {"data": "officeTelNo"},
+                {"data": "extNo"},
+                {"data": "email"},
+                {"data": "officeMobileNo"},
+                {"data": "brnch", "visible": false}
+            ], "language": {
+                'loadingRecords': '&nbsp;',
+                'processing': '<div class="loader2"></div>'
+            }
+        });
+        var dptmnt = new SlimSelect({
+            select: '#dptmnt',
+            placeholder: "Department",
+            ajax: function (search, callback) {
+                fetch('department/search-department', {
+                    method: 'POST',
+                    body: new URLSearchParams({search: search || ''})
+                }).then(res => res.json()).then((data) => {
+                    callback(data);
+                });
+            },
+            allowDeselect: true,
+            deselectLabel: '<span class="red">✖</span>'
+        });
+        var dprtble = $('#dprttable').DataTable({
+            "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+            "pageLength": 5,
+            "ordering": true,
+            "autoWidth": false,
+            "bFilter": false,
+            "bPaginate": false,
+            "bLengthChange": false,
+            "bAutoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "order": [[0, "desc"]],
+            "searchHighlight": true,
+            "searchDelay": 350,
+            "ajax": {
+                "url": "department/dep",
+                "contentType": "application/json",
+                "type": "POST",
+                "data": function (d) {
+                    d.filter = filter;
+                    return JSON.stringify(d);
+                },
+                error: function (xhr, error, code) {
+                    console.log(xhr);
+                    console.log(code);
+                }
+
+            },
+            "columns": [
+                //                    {"data": "id", className: "text-right", "visible": false},
+                {"data": "callname"},
+                {"data": "desig"},
+                {"data": "officeTelNo"},
+                {"data": "extNo"},
+                {"data": "email"},
+                {"data": "officeMobileNo"},
+                {"data": "deprt", "visible": false}
+
+            ], "language": {
+                'loadingRecords': '&nbsp;',
+                'processing': '<div class="loader2"></div>'
+            }
+        });
+        $('#dptmnt').data('select', dptmnt);
+        var filter = '';
+        filter = "1";
+        $('#dptmnt').change(function () {
+
+            if ($(this).val()) {
+                filter = $(this).val();
+                dprtble.ajax.reload();
+            }
+        });
+        $.fn.dataTable.ext.errMode = 'none';
+        $(document).ready(function () {
+            // Select the link by its ID
+            var link = $('#whistleblowing-link');
+            // Select the modal by its ID
+            var modal = $('#add_pol_modal');
+            // Add a click event handler to the link
+            link.click(function (event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                // Show the modal
+                modal.modal('show');
+            });
+        });
+        $(document).ready(function () {
+            // Select the link by its ID
+            var link = $('#select-link');
+            // Select the modal by its ID
+            var modal = $('#select_modal');
+            // Add a click event handler to the link
+            link.click(function (event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                // Show the modal
+                modal.modal('show');
+            });
+        });
+        $(document).ready(function () {
+            // Select the link by its ID
+            var link = $('#ideas-link');
+            // Select the modal by its ID
+            var modal = $('#ideas-modal');
+            // Add a click event handler to the link
+            link.click(function (event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                // Show the modal
+                modal.modal('show');
+            });
+        });
+        //Function to hide the <thead> element on page load
+        window.addEventListener('load', function () {
+            var table = document.getElementById("tbl3");
+            if (table) {
+                var thead = table.querySelector("thead");
+                if (thead) {
+                    thead.style.display = "none";
                 }
             }
+        });
+        // Function to hide the <thead> element on page load
+        window.addEventListener('load', function () {
+            var table = document.getElementById("tbl4");
+            if (table) {
+                var thead = table.querySelector("thead");
+                if (thead) {
+                    thead.style.display = "none";
+                }
+            }
+        });
+        $(document).ready(function () {
+            $("#news-slider").owlCarousel({
+                items: 6,
+                itemsDesktop: [1199, 5],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                navigation: true,
+                navigationText: ["", ""],
+                pagination: true,
+                autoPlay: true
+            });
+        });
+        $(document).ready(function () {
+            $("#pol_submit_div").click(function () {
+                $("#add_pol_modal").modal('show');
+            });
+        });
+        document.getElementById("view_dele").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default behavior of following the link
+
+            // Add code here to open the file when the link is clicked.
+            // Replace 'your_file_path' with the actual path to the file you want to open.
+            window.open('files/dele.pdf', '_blank');
+        });
+        document.getElementById("view_alco").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default behavior of following the link
+
+            // Add code here to open the file when the link is clicked.
+            // Replace 'your_file_path' with the actual path to the file you want to open.
+            window.open('files/alco.pdf', '_blank');
+        });
+        // Function to load images and populate the carousel
+        function loadNews() {
+            fetch('news/images')
+                    .then(response => response.json())
+                    .then(newsData => {
+                        newsData.sort((a, b) => b.id - a.id);
+                        const newsContainer = document.getElementById('newsContainer');
+                        newsContainer.innerHTML = ''; // Clear existing content
+
+                        newsData.forEach(newsItem => {
+                            const col10 = document.createElement('div');
+                            col10.classList.add('col-10');
+                            col10.classList.add('news-item'); // Add a class for easier event handling
+
+                            col10.addEventListener('click', function () {
+                                fetch('news/' + newsItem.id)
+                                        .then(response => response.json())
+                                        .then(resp => resp.data)
+                                        .then(newsDetail => {
+                                            const modal = $('#newsModal');
+                                            modal.find('.modal-title').text(newsItem.heading); // Set modal title to the heading
+
+                                            // Set the modal description
+                                            const description = modal.find('.modal-body .description');
+                                            description.text(newsDetail.para); // Set the description text using newsDetail.para
+
+                                            // Set the modal image source
+                                            const imageContainer = modal.find('.modal-body .image-container');
+                                            imageContainer.empty(); // Clear existing images
+
+                                            for (let i = 0; i < newsDetail.images.length; i++) {
+                                                const imageData = newsDetail.images[i];
+                                                const image = document.createElement('img');
+                                                const imageUrl = 'news/path/newsss/' + imageData.path;
+                                                image.src = imageUrl;
+                                                image.style.width = '40%'; // Set the initial width for the thumbnail
+                                                imageContainer.append(image);
+                                                // Add lightbox functionality
+                                                image.addEventListener('click', function () {
+                                                    // Show the modal
+                                                    $('#imageModal').modal('show');
+                                                    // Get the modal body and image element
+                                                    const modalBody = $('#imageModal .modal-body');
+                                                    const modalImage = modalBody.find('img');
+                                                    // Set the source of the lightbox image
+                                                    modalImage.attr('src', imageUrl);
+                                                    // Set the width for the lightbox image
+                                                    modalImage.css('width', '200%'); // Set your desired width, e.g., 100%
+                                                });
+                                            }
 
 
-            var ideaResult = new SlimSelect({
-                select: '#ideaResult',
-                placeholder: "~Select~",
-                ajax: function (search, callback) {
-                    fetch('idea/search-result', {
-                        method: 'POST',
-                        body: new URLSearchParams({search: search || ''})
-                    }).then(res => res.json()).then((data) => {
-                        callback(data);
+                                            modal.modal('show');
+                                        });
+                            });
+                            const txtDiv = document.createElement('div');
+                            txtDiv.classList.add('txt');
+                            txtDiv.style.marginTop = '5px';
+                            txtDiv.style.marginLeft = '5px';
+                            txtDiv.style.fontFamily = "'Exo 2', sans-serif";
+                            const h4 = document.createElement('h4');
+                            h4.style.fontSize = '1rem';
+                            h4.style.fontWeight = '700';
+                            h4.textContent = newsItem.heading; // Set the heading to the newsItem's heading
+
+                            const p = document.createElement('p');
+                            p.textContent = newsItem.content;
+                            txtDiv.appendChild(h4);
+                            txtDiv.appendChild(p);
+                            col10.appendChild(txtDiv);
+                            newsContainer.style.maxHeight = '28rem'; // Set a fixed height for the news container
+                            newsContainer.style.overflowY = 'auto'; // Enable vertical scrolling if the content exceeds the container height
+
+                            newsContainer.appendChild(col10);
+                        });
                     });
+        }
+
+        // Call the loadNews function when the document is ready
+        $(document).ready(function () {
+            loadNews();
+        });
+        var announcements = $('#tbl3').DataTable({
+            "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+            "pageLength": 5,
+            "ordering": false,
+            "autoWidth": false,
+            "bFilter": false,
+            "bPaginate": false,
+            "bLengthChange": false,
+            "bAutoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "order": [[1, "asc"]],
+            "searchHighlight": true,
+            "searchDelay": 350,
+            "ajax": {
+                "url": "announcement/announcement-table",
+                "contentType": "application/json",
+                "type": "POST",
+                "data": function (d) {
+                    d.filter = filter;
+                    return JSON.stringify(d);
                 },
-                allowDeselect: true,
-                deselectLabel: '<span class="red">✖</span>'
-            });
-
-
-            var brnch = new SlimSelect({
-                select: '#brnch',
-                placeholder: "Branch",
-                ajax: function (search, callback) {
-                    fetch('branch/search-branch', {
-                        method: 'POST',
-                        body: new URLSearchParams({search: search || ''})
-                    }).then(res => res.json()).then((data) => {
-                        callback(data);
+                error: function (xhr, error, code) {
+                    console.log(xhr);
+                    console.log(code);
+                }
+            },
+            "columns": [
+                {"data": "id", className: "text-right", "visible": false},
+                {"data": "name"},
+                {"data": "date"},
+                {"data": "path", "visible": false},
+            ],
+            "columnDefs": [
+                {
+                    "targets": [1, 2], // Indexes of the columns you want to modify (1 and 2 in this case)
+                    "render": function (data, type, row) {
+                        if (type === 'display') {
+                            // Apply the CSS style to remove underline and set the font color to purple
+                            return '<span style="text-decoration: none; color: purple;">' + data + '</span>';
+                        }
+                        return data;
+                    }
+                }
+            ],
+            "language": {
+                'loadingRecords': '&nbsp;',
+                'processing': '<div class="loader2"></div>',
+                "info": '', // Hide the table information by setting it to an empty string
+            },
+            "createdRow": function (row, data) {
+                $(row).find('td').first().html('<a target="_blank" href="announcement/path/view/' + data['path'] + '#embedded=true&toolbar=0&navpanes=0">' + data['name'] + '</a>');
+            }
+        });
+        var selectedCallName;
+        $.fn.dataTable.ext.errMode = 'none';
+        var dtable1 = $('#tbl4').DataTable({
+            "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+            "pageLength": 5,
+            "ordering": true,
+            "autoWidth": false,
+            "bFilter": false,
+            "bPaginate": false,
+            "bLengthChange": false,
+            "bAutoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "order": [[2, "asc"]],
+            "searchHighlight": true,
+            "searchDelay": 350,
+            "ajax": {
+                "url": "birthday/dob",
+                "contentType": "application/json",
+                "type": "POST",
+                "data": function (d) {
+                    return JSON.stringify(d);
+                },
+                error: function (xhr, error, code) {
+                    // Handle error if needed
+                }
+            },
+            "columns": [
+                {"data": "id", className: "text-right", "visible": false},
+                {"data": "callName"},
+                {"data": "dob", "width": "3rem"},
+                {"data": "branch"}
+            ],
+            "language": {
+                'loadingRecords': '&nbsp;',
+                'processing': '<div class="loader2"></div>',
+                "info": '' // Hide the table information by setting it to an empty string
+            },
+            "rowCallback": function (row, data) {
+                var today = new Date();
+                var dobDate = new Date(data.dob);
+                // Check if the dob month and date are equal to the current system month and date
+                if (dobDate.getMonth() === today.getMonth() && dobDate.getDate() === today.getDate()) {
+                    // Make the row clickable
+                    $(row).on('click', function () {
+                        // Store the selected callName
+                        selectedCallName = data.callName;
+                        // Open the modal when a row is clicked
+                        $('#bdaymodal').modal('show');
+                        // Populate modal content with row data
+                        $('#modalTitle').html("HAPPY BIRTHDAY " + data.callName);
+                        $('#dobText').html(data.dob);
+                        $('#callNameText').html(data.callName);
+                        // Set the initial value of the name input
+                        $('#callNameText').val(data.callName);
+                        // Load and display relevant wishes for the selected callName
+                        loadAndDisplayWishes(selectedCallName);
                     });
+                } else {
+                    // Disable click event for non-matching dob dates
+                    $(row).off('click');
+                    $(row).css('cursor', 'not-allowed');
+                }
+            }
+        });
+        function loadAndDisplayWishes(callName) {
+            fetch('birthday/wishess', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-                allowDeselect: true,
-                deselectLabel: '<span class="red">✖</span>'
-            });
-            $('#brnch').data('select', brnch);
+                body: JSON.stringify({data: callName}),
+            }
+            )
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Received data:', data);
+                        if (data && Array.isArray(data) && data.length > 0) {
+                            var wishesData = data;
+                            // Check if wishesData is an array of objects
+                            if (wishesData.every(obj => typeof obj === 'object' && obj !== null)) {
+                                // Clear previous wishes
+                                $('#sysss').empty();
 
-            var filter = '';
-            filter = "2";
-            $('#brnch').change(function () {
+                                // Create a new row
+                                var row = $('<div class="row" style="margin-top: -1rem;"></div>');
 
-                if ($(this).val()) {
-                    filter = $(this).val();
-                    brnchtable.ajax.reload();
-                }
-            });
-
-            $.fn.dataTable.ext.errMode = 'none';
-
-            var brnchtable = $('#brnc').DataTable({
-                "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
-                "pageLength": 5,
-                "ordering": true,
-                "autoWidth": false,
-                "bFilter": false,
-                "bPaginate": false,
-                "bLengthChange": false,
-                "bAutoWidth": false,
-                "processing": true,
-                "serverSide": true,
-                "order": [[0, "desc"]],
-                "searchHighlight": true,
-                "searchDelay": 350,
-                "ajax": {
-                    "url": "branch/emp",
-                    "contentType": "application/json",
-                    "type": "POST",
-                    "data": function (d) {
-                        d.filter = filter;
-                        return JSON.stringify(d);
-                    },
-                    error: function (xhr, error, code) {
-                        console.log(xhr);
-                        console.log(code);
-                    }
-
-                },
-                "columns": [
-                    //                    {"data": "id", className: "text-right", "visible": false},
-                    {"data": "callname"},
-                    {"data": "desig"},
-                    {"data": "officeTelNo"},
-                    {"data": "extNo"},
-                    {"data": "email"},
-                    {"data": "officeMobileNo"},
-                    {"data": "brnch", "visible": false}
-                ], "language": {
-                    'loadingRecords': '&nbsp;',
-                    'processing': '<div class="loader2"></div>'
-                }
-            });
-            var emptable = $('#emp').DataTable({
-                "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
-                "pageLength": 5,
-                "ordering": true,
-                "autoWidth": false,
-                "processing": true,
-                "serverSide": true,
-                "order": [[0, "desc"]],
-                "searchHighlight": true,
-                "searchDelay": 350,
-                "ajax": {
-                    "url": "branch/search-emp",
-                    "contentType": "application/json",
-                    "type": "POST",
-                    "data": function (d) {
-                        d.filter = filter;
-                        return JSON.stringify(d);
-                    },
-                    error: function (xhr, error, code) {
-                        console.log(xhr);
-                        console.log(code);
-                    }
-
-                },
-                "columns": [
-                    //                    {"data": "id", className: "text-right", "visible": false},
-                    {"data": "callname"},
-                    {"data": "desig"},
-                    {"data": "brnch"},
-                    {"data": "officeTelNo"},
-                    {"data": "extNo"},
-                    {"data": "email"},
-                    {"data": "officeMobileNo"},
-                    {"data": "brnch", "visible": false}
-                ], "language": {
-                    'loadingRecords': '&nbsp;',
-                    'processing': '<div class="loader2"></div>'
-                }
-            });
-
-
-
-
-
-            var dptmnt = new SlimSelect({
-                select: '#dptmnt',
-                placeholder: "Department",
-                ajax: function (search, callback) {
-                    fetch('department/search-department', {
-                        method: 'POST',
-                        body: new URLSearchParams({search: search || ''})
-                    }).then(res => res.json()).then((data) => {
-                        callback(data);
-                    });
-                },
-                allowDeselect: true,
-                deselectLabel: '<span class="red">✖</span>'
-            });
-
-
-
-
-            var dprtble = $('#dprttable').DataTable({
-                "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
-                "pageLength": 5,
-                "ordering": true,
-                "autoWidth": false,
-                "bFilter": false,
-                "bPaginate": false,
-                "bLengthChange": false,
-                "bAutoWidth": false,
-                "processing": true,
-                "serverSide": true,
-                "order": [[0, "desc"]],
-                "searchHighlight": true,
-                "searchDelay": 350,
-                "ajax": {
-                    "url": "department/dep",
-                    "contentType": "application/json",
-                    "type": "POST",
-                    "data": function (d) {
-                        d.filter = filter;
-                        return JSON.stringify(d);
-                    },
-                    error: function (xhr, error, code) {
-                        console.log(xhr);
-                        console.log(code);
-                    }
-
-                },
-                "columns": [
-                    //                    {"data": "id", className: "text-right", "visible": false},
-                    {"data": "callname"},
-                    {"data": "desig"},
-                    {"data": "officeTelNo"},
-                    {"data": "extNo"},
-                    {"data": "email"},
-                    {"data": "officeMobileNo"},
-                    {"data": "deprt", "visible": false}
-
-                ], "language": {
-                    'loadingRecords': '&nbsp;',
-                    'processing': '<div class="loader2"></div>'
-                }
-            });
-            $('#dptmnt').data('select', dptmnt);
-
-            var filter = '';
-            filter = "1";
-            $('#dptmnt').change(function () {
-
-                if ($(this).val()) {
-                    filter = $(this).val();
-                    dprtble.ajax.reload();
-                }
-            });
-            $.fn.dataTable.ext.errMode = 'none';
-
-
-
-            $(document).ready(function () {
-                // Select the link by its ID
-                var link = $('#whistleblowing-link');
-
-                // Select the modal by its ID
-                var modal = $('#add_pol_modal');
-
-                // Add a click event handler to the link
-                link.click(function (event) {
-                    event.preventDefault(); // Prevent the default link behavior
-
-                    // Show the modal
-                    modal.modal('show');
-                });
-            });
-
-            $(document).ready(function () {
-                // Select the link by its ID
-                var link = $('#select-link');
-
-                // Select the modal by its ID
-                var modal = $('#select_modal');
-
-                // Add a click event handler to the link
-                link.click(function (event) {
-                    event.preventDefault(); // Prevent the default link behavior
-
-                    // Show the modal
-                    modal.modal('show');
-                });
-            });
-            $(document).ready(function () {
-                // Select the link by its ID
-                var link = $('#ideas-link');
-
-                // Select the modal by its ID
-                var modal = $('#ideas-modal');
-
-                // Add a click event handler to the link
-                link.click(function (event) {
-                    event.preventDefault(); // Prevent the default link behavior
-
-                    // Show the modal
-                    modal.modal('show');
-                });
-            });
-
-
-
-
-            //Function to hide the <thead> element on page load
-            window.addEventListener('load', function () {
-                var table = document.getElementById("tbl3");
-                if (table) {
-                    var thead = table.querySelector("thead");
-                    if (thead) {
-                        thead.style.display = "none";
-                    }
-                }
-            });
-            // Function to hide the <thead> element on page load
-            window.addEventListener('load', function () {
-                var table = document.getElementById("tbl4");
-                if (table) {
-                    var thead = table.querySelector("thead");
-                    if (thead) {
-                        thead.style.display = "none";
-                    }
-                }
-            });
-            $(document).ready(function () {
-                $("#news-slider").owlCarousel({
-                    items: 6,
-                    itemsDesktop: [1199, 5],
-                    itemsDesktopSmall: [980, 2],
-                    itemsMobile: [600, 1],
-                    navigation: true,
-                    navigationText: ["", ""],
-                    pagination: true,
-                    autoPlay: true
-                });
-            });
-
-
-
-
-
-            $(document).ready(function () {
-                $("#pol_submit_div").click(function () {
-                    $("#add_pol_modal").modal('show');
-                });
-            });
-
-
-
-
-            document.getElementById("view_dele").addEventListener("click", function (event) {
-                event.preventDefault(); // Prevent the default behavior of following the link
-
-                // Add code here to open the file when the link is clicked.
-                // Replace 'your_file_path' with the actual path to the file you want to open.
-                window.open('files/dele.pdf', '_blank');
-            });
-            document.getElementById("view_alco").addEventListener("click", function (event) {
-                event.preventDefault(); // Prevent the default behavior of following the link
-
-                // Add code here to open the file when the link is clicked.
-                // Replace 'your_file_path' with the actual path to the file you want to open.
-                window.open('files/alco.pdf', '_blank');
-            });
-
-
-
-
-
-            // Function to load images and populate the carousel
-            function loadNews() {
-                fetch('news/images')
-                        .then(response => response.json())
-                        .then(newsData => {
-                            newsData.sort((a, b) => b.id - a.id);
-                            const newsContainer = document.getElementById('newsContainer');
-                            newsContainer.innerHTML = ''; // Clear existing content
-
-                            newsData.forEach(newsItem => {
-                                const col10 = document.createElement('div');
-                                col10.classList.add('col-10');
-                                col10.classList.add('news-item'); // Add a class for easier event handling
-
-                                col10.addEventListener('click', function () {
-                                    fetch('news/' + newsItem.id)
-                                            .then(response => response.json())
-                                            .then(resp => resp.data)
-                                            .then(newsDetail => {
-                                                const modal = $('#newsModal');
-                                                modal.find('.modal-title').text(newsItem.heading); // Set modal title to the heading
-
-                                                // Set the modal description
-                                                const description = modal.find('.modal-body .description');
-                                                description.text(newsDetail.para); // Set the description text using newsDetail.para
-
-                                                // Set the modal image source
-                                                const imageContainer = modal.find('.modal-body .image-container');
-                                                imageContainer.empty(); // Clear existing images
-
-                                                for (let i = 0; i < newsDetail.images.length; i++) {
-                                                    const imageData = newsDetail.images[i];
-                                                    const image = document.createElement('img');
-                                                    image.src = 'news/path/newsss/' + imageData.path;
-                                                    image.style.width = '30%';
-                                                    imageContainer.append(image);
-
-                                                    // Add lightbox functionality
-                                                    image.addEventListener('click', function () {
-                                                        $('#imageModal').modal('show');
-                                                        $('#imageModal .modal-body img').attr('src', image.src);
-                                                    });
-                                                }
-
-                                                modal.modal('show');
-                                            });
+                                // Display relevant wishes
+                                wishesData.forEach(wish => {
+                                    console.log('Individual wish:', wish);
+                                    var card = `<div class="col-4" style="width: 20rem;">` +
+                                            `<div class="card" style="height: 10rem">` +
+                                            `<div class="card-body">` +
+                                            `<h5 class="card-header">From:` + wish.name + `</h5>` +
+                                            `<p class="card-text" style="margin-left: 1rem;">` + wish.wish + `</p>` +
+                                            ` </div></div></div>`;
+                                    row.append(card);
                                 });
 
-                                const txtDiv = document.createElement('div');
-                                txtDiv.classList.add('txt');
-                                txtDiv.style.marginTop = '5px';
-                                txtDiv.style.marginLeft = '5px';
-                                txtDiv.style.fontFamily = "'Exo 2', sans-serif";
-
-                                const h4 = document.createElement('h4');
-                                h4.style.fontSize = '1rem';
-                                h4.style.fontWeight = '700';
-                                h4.textContent = newsItem.heading; // Set the heading to the newsItem's heading
-
-                                const p = document.createElement('p');
-                                p.textContent = newsItem.content;
-
-                                txtDiv.appendChild(h4);
-                                txtDiv.appendChild(p);
-                                col10.appendChild(txtDiv);
-                                newsContainer.style.maxHeight = '28rem'; // Set a fixed height for the news container
-                                newsContainer.style.overflowY = 'auto'; // Enable vertical scrolling if the content exceeds the container height
-
-                                newsContainer.appendChild(col10);
-                            });
-                        });
-            }
-
-            // Call the loadNews function when the document is ready
-            $(document).ready(function () {
-                loadNews();
-            });
-
-
-
-
-
-            var announcements = $('#tbl3').DataTable({
-                "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
-                "pageLength": 5,
-                "ordering": false,
-                "autoWidth": false,
-                "bFilter": false,
-                "bPaginate": false,
-                "bLengthChange": false,
-                "bAutoWidth": false,
-                "processing": true,
-                "serverSide": true,
-                "order": [[1, "asc"]],
-                "searchHighlight": true,
-                "searchDelay": 350,
-                "ajax": {
-                    "url": "announcement/announcement-table",
-                    "contentType": "application/json",
-                    "type": "POST",
-                    "data": function (d) {
-                        d.filter = filter;
-                        return JSON.stringify(d);
-                    },
-                    error: function (xhr, error, code) {
-                        console.log(xhr);
-                        console.log(code);
-                    }
-                },
-                "columns": [
-                    {"data": "id", className: "text-right", "visible": false},
-                    {"data": "name"},
-                    {"data": "date"},
-                    {"data": "path", "visible": false},
-                ],
-
-                "columnDefs": [
-                    {
-                        "targets": [1, 2], // Indexes of the columns you want to modify (1 and 2 in this case)
-                        "render": function (data, type, row) {
-                            if (type === 'display') {
-                                // Apply the CSS style to remove underline and set the font color to purple
-                                return '<span style="text-decoration: none; color: purple;">' + data + '</span>';
+                                // Append the row to the container
+                                $('#sysss').append(row);
+                            } else {
+                                console.error('Invalid or missing data structure: Expected an array of objects.', wishesData);
                             }
-                            return data;
+                        } else {
+                            console.error('Invalid or missing data structure: Expected a non-empty array.', data);
                         }
-                    }
-                ],
+                    })
+                    .catch(error => {
+                        console.error('An error occurred:', error);
+                    });
+        }
 
-                "language": {
-                    'loadingRecords': '&nbsp;',
-                    'processing': '<div class="loader2"></div>',
-                    "info": '', // Hide the table information by setting it to an empty string
-                },
-                "createdRow": function (row, data) {
-                    $(row).find('td').first().html('<a target="_blank" href="announcement/path/view/' + data['path'] + '#embedded=true&toolbar=0&navpanes=0">' + data['name'] + '</a>');
+        $('#save_wish_btn').click(function ()
+        {
+            const formData = new FormData();
+            // Append values to the FormData
+            formData.append('birthday', $('#callNameText').val()); // Use the entered name as the birthday
+            formData.append('name', $('#name').val());
+            formData.append('wish', $('#wishes').val());
+//            formData.append('userId', data.id); // Assuming 'userId' is the column where you store the user ID
+
+            return fetch('birthday/save-wish', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                } else {
+                    Swal.fire('Successful!', 'Wish has been successfully saved');
+                    clearFormss();
+                    $('#bdaymodal').modal('hide');
+                }
+                return response.json();
+            });
+        });
+        function clearFormss()
+        {
+            $('#bdaymodal').find('input[type!=search]').val('');
+            $('#bdaymodal').find('input[type!=search]').val('');
+            $('#bdaymodal').find('select').each(function () {
+                if ($(this).data('select')) {
+                    if ($(this).data('select').ajax) {
+                        $(this).data('select').data.data = [];
+                    }
+                    $(this).data('select').set('');
                 }
             });
-
-
-
-
-
-
-            $.fn.dataTable.ext.errMode = 'none';
-
-            var dtable1 = $('#tbl4').DataTable({
-                "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
-                "pageLength": 5,
-                "ordering": true,
-                "autoWidth": false,
-                "bFilter": false,
-                "bPaginate": false,
-                "bLengthChange": false,
-                "bAutoWidth": false,
-                "processing": true,
-                "serverSide": true,
-                "order": [[2, "asc"]],
-                "searchHighlight": true,
-                "searchDelay": 350,
-                "ajax": {
-                    "url": "birthday/dob",
-                    "contentType": "application/json",
-                    "type": "POST",
-                    "data": function (d) {
-                        return JSON.stringify(d);
-                    },
-                    error: function (xhr, error, code) {
-                    }
-                },
-                "columns": [
-                    {"data": "id", className: "text-right", "visible": false},
-                    {"data": "callName"},
-                    {"data": "dob", "width": "3rem"},
-                    {"data": "branch"}
-                ],
-                "language": {
-                    'loadingRecords': '&nbsp;',
-                    'processing': '<div class="loader2"></div>',
-                    "info": '', // Hide the table information by setting it to an empty string
-                },
-                "rowCallback": function (row, data) {
-                    var today = new Date();
-                    var dobDate = new Date(data.dob);
-
-                    // Check if the dob month and date are equal to the current system month and date
-                    if (dobDate.getMonth() === today.getMonth() && dobDate.getDate() === today.getDate()) {
-                        // Make the row clickable
-                        $(row).on('click', function () {
-                            // Open the modal when a row is clicked
-                            $('#bdaymodal').modal('show');
-
-                            // Populate modal content with row data
-                            $('#modalTitle').html("HAPPY BIRTHDAY " + data.callName);
-                            $('#dobText').html(data.dob);
-                            $('#callNameText').html(data.callName);
-                        });
-                    } else {
-                        // Disable click event for non-matching dob dates
-                        $(row).off('click');
-                        $(row).css('cursor', 'not-allowed'); // Optional: change cursor style
-                    }
-                }
-            });
-            var filter = '';
-            filter = "2";
-            $('#dtable1').change(function () {
-                if ($(this).val()) {
-                    filter = $(this).val();
-                    dtable.ajax.reload();
-                }
-            });
-
-            $.fn.dataTable.ext.errMode = 'none';
+        }
 
 
 
@@ -2106,7 +2110,26 @@
 
 
 
-        </script>
+
+        var filter = '';
+        filter = "2";
+        $('#dtable1').change(function ()
+        {
+            if ($(this).val()) {
+                filter = $(this).val();
+                dtable.ajax.reload();
+            }
+        }
+        );
+        $.fn.dataTable.ext.errMode = 'none';
+
+
+
+
+
+
+
+    </script>
 
 
 

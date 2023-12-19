@@ -10,6 +10,7 @@ import fintrex.intranet.datatable.DataTablesResponse;
 import fintrex.intranet.model.BdayWishes;
 import fintrex.intranet.dto.BirthdayEmpDto;
 import fintrex.intranet.dto.BirthdayWishDto;
+import fintrex.intranet.dto.GetPagesAccDTO;
 import fintrex.intranet.dto.SlimSelectDTO;
 import fintrex.intranet.repo.BirthdayRepo;
 import fintrex.intranet.repo.WishRepo;
@@ -47,6 +48,7 @@ public class BirthdayService {
         notice.setBirthday(birthday);
         notice.setName(name);
         notice.setWish(wish);
+        notice.setStatus("active");
         notice = repor.save(notice);
 
         return notice;
@@ -57,6 +59,20 @@ public class BirthdayService {
 
     }
 
+    public DataTablesResponse<BirthdayWishDto> getWishess(DataTableRequest param) throws Exception {
+        return dobdobs.getData(BirthdayWishDto.class, param, "SELECT `id`, birthday, `name`, wish, `status` FROM `birthdays` WHERE `birthday`=?");
+
+    }
+
+    public Iterable<BirthdayWishDto> getWishesByBirthday(String callName) {
+        return repor.getWishesByBirthday(callName);
+    }
+
+//    public DataTablesResponse<BirthdayWishDto> getWishess(DataTableRequest param) throws Exception {
+//        String data = param.getData();
+//        String sqlQuery = "SELECT `id`, birthday, `name`, wish, `status` FROM `birthdays` WHERE `birthday`=?";
+//        return dobdobs.getData(BirthdayWishDto.class, param, sqlQuery, new Object[]{data});
+//    }
     public BdayWishes deactivateWish(Integer id) throws Exception {
         BdayWishes syst = repor.findById(id).get();
         syst.setStatus("deactivate");

@@ -49,6 +49,7 @@
                                     <table class="table table-hover table-bordered m-b-0" id="tbll">
                                         <thead>
                                             <tr>
+                                                <th>id</th>
                                                 <th>BirthDay</th>
                                                 <th>Name</th>                                             
                                                 <th>Wish</th>                                             
@@ -74,14 +75,11 @@
 
                     <div class="" id="formSection" style="display: none">
                         <div class="card">
+                            <div class="card-header">
+                                <!-- Your card header content here -->
+                            </div>
                             <div class="card-block p-b-0">
-                                <div class="card-header">
-                                    <div class="card-header-right">
-                                        <ul class="list-unstyled card-option">
-                                            <li><i class="feather icon-x cls-card"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <!-- Your form content here -->
 
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group" style="width: 75rem">
@@ -90,17 +88,18 @@
                                     </div>
                                 </div>
 
-
-
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group" style="width: 75rem">
                                         <label for="paragraph">Paragraph<span class="text-danger">*</span></label>
-                                        <textarea id="para"  type="text" name="paragraph" class="form-control" required autocomplete="off"></textarea>
+                                        <textarea id="para" type="text" name="paragraph" class="form-control" required autocomplete="off"></textarea>
                                     </div>
                                 </div>
 
+                            </div>
 
-
+                            <!-- Card Footer -->
+                            <div class="card-footer d-flex justify-content-end"> <!-- Align items to the end (right) -->
+                                <button id="closeFormBtn" class="btn btn-sm waves-effect waves-light btn-secondary">Close</button>
                             </div>
                         </div>
                     </div>
@@ -123,7 +122,10 @@
 
 
             <script>
-
+                $(document).on('click', '#closeFormBtn', function () {
+                    $('#formSection').hide();
+                    $('#tableSection').fadeIn();
+                });
 
                 $.fn.dataTable.ext.errMode = 'none';
                 var dtable = $('#tbll').DataTable({
@@ -271,10 +273,10 @@
                             .then(resp => resp.json())
                             .then((resp) => {
                                 let data = resp.data;
-                                clearForm();
+
                                 console.log(data.heading);
-                                $('#name').val(data.heading);
-                                $('#para').val(data.para);
+                                $('#name').val(data.name);
+                                $('#para').val(data.wish);
 //                                $('#saveBtn').data('mode', 'update'); // Set the mode to 'update'
 //                                $('#saveBtn').data('id', id);
 //                                $('#saveBtn').html('<i class="icon feather icon-save"></i>Update'); // Change button text to 'Update'

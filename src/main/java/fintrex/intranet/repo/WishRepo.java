@@ -4,6 +4,7 @@
  */
 package fintrex.intranet.repo;
 
+import fintrex.intranet.dto.BirthdayWishDto;
 import fintrex.intranet.dto.SlimSelectDTO;
 import fintrex.intranet.model.BdayWishes;
 import org.springframework.data.jdbc.repository.query.Query;
@@ -18,4 +19,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface WishRepo extends CrudRepository<BdayWishes, Integer> {
 
+    @Query("SELECT `id`, `birthday`, `name`, `wish`, `status` FROM `birthdays` WHERE `birthday` =:callName")
+    Iterable<BirthdayWishDto> getWishesByBirthday(@Param("callName") String callName);
 }

@@ -139,6 +139,7 @@
                                 p.style.fontFamily = 'Georgia, serif';
                                 p.style.textAlign = 'justify'; // Set text-align to justify
                                 p.style.wordSpacing = '0.2em'; // Adjust the word spacing as needed
+                                p.style.whiteSpace = 'pre-wrap';
 
                                 info.appendChild(h4);
                                 info.appendChild(h6);

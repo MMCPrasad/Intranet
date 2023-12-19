@@ -214,6 +214,11 @@ public class PageController {
         return "statement";
     }
 
+    @GetMapping("/wishes")
+    public String wishes() {
+        return "wishes";
+    }
+
     @Autowired
     PageService ser;
 

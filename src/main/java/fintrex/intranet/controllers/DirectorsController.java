@@ -115,50 +115,6 @@ public class DirectorsController {
         return service.update(id, name, designation, model, role, file);
     }
 
-//    @PostMapping("/save")
-//    @ResponseBody
-//    public Directors uploads(MultipartHttpServletRequest req) throws Exception {
-//        String name = req.getParameter("name");
-//        String type = req.getParameter("type");
-//        String link = req.getParameter("link");
-//        MultipartFile file = req.getFile("file");
-//        return service.save(name, type, link, file);
-//    }
-//
-//    @PostMapping("/update")
-//    @ResponseBody
-//    public Directors update(MultipartHttpServletRequest req) throws Exception {
-//        Integer id = Integer.parseInt(req.getParameter("id"));
-//        String name = req.getParameter("name");
-//        String type = req.getParameter("type");
-//        String link = req.getParameter("link");
-//        MultipartFile file = req.getFile("file");
-//        return service.update(id, name, type, link, file);
-//    }
-//    @PostMapping("/path/upload")
-//    @ResponseBody
-//    public String upload(MultipartHttpServletRequest req) throws Exception {
-//        MultiValueMap<String, MultipartFile> multiFileMap = req.getMultiFileMap();
-//        String name = req.getParameter("name");
-//        String role = req.getParameter("role");
-//        String designation = req.getParameter("designation");
-//        String model = req.getParameter("model");
-//
-//        for (Map.Entry<String, List<MultipartFile>> entry : multiFileMap.entrySet()) {
-//            List<MultipartFile> val = entry.getValue();
-//
-//            for (int i = 0; i < val.size(); i++) {
-//                Directors savedImage = service.save(name, role, designation, null, model);
-//                String[] split = val.get(i).getOriginalFilename().split("\\.");
-//                File desd = new File("E:\\chirantha\\intranet\\Directors\\" + savedImage.getId() + "." + split[split.length - 1]);
-//                System.out.println(desd.getName());
-//                val.get(i).transferTo(desd);
-//                service.update(savedImage.getId(), name, role, designation, desd.getName(), model);
-//            }
-//        }
-//
-//        return "ok";
-//    }
     @GetMapping("/path/view/{name}")
     @ResponseBody
     public void view(@PathVariable String name, HttpServletResponse resp) throws IOException {

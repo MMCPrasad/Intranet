@@ -36,6 +36,7 @@ public class DbConfig extends AbstractJdbcConfiguration {
 //        dataSource.setUrl("jdbc:mysql://192.168.40.7:3306/fintrex_intranet?useUnicode=true&characterEncoding=UTF-8");
         dataSource.setUsername("root");
         dataSource.setPassword("1234");
+//      
 //        dataSource.setPassword("Test@-123");
         return dataSource;
     }

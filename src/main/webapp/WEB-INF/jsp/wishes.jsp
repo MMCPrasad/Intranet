@@ -188,7 +188,7 @@
                     let id = $(this).parents('tr').data('id');
                     Swal.fire({
                         title: 'Are you sure?',
-                        text: "This Notice Will be Deleted!",
+                        text: "This Wish Will be Deleted!",
                         icon: 'warning',
                         showCancelButton: true,
                         confirmButtonColor: '#3085d6',

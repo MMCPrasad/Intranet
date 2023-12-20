@@ -1325,7 +1325,7 @@
                         <div class="row">
                             <div style="background-image: url('assets/img/system/birthday1.jpg'); background-size: cover; height: 500px; position: relative; text-align: center;">
                                 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white;">
-                                    <h4 style="margin-top: 15rem;">Today <span id="dobText"></span> is a SPECIAL DAY for us Since it's your BIRTHDAY.....</h4>
+                                    <h4 style="margin-top: 15rem;">Today  is a SPECIAL DAY for us Since it's your BIRTHDAY.....</h4>
                                     <h5>Hi <span id="callNameText"></span>,</h5>
                                     <p>On this Special Day<br>May all your Dreams come true.</p>
                                     <p>We wish you a long life filled with Health, Wealth, and Happiness!</p>
@@ -2008,7 +2008,7 @@
                         $('#bdaymodal').modal('show');
                         // Populate modal content with row data
                         $('#modalTitle').html("HAPPY BIRTHDAY " + data.callName);
-                        $('#dobText').html(data.dob);
+
                         $('#callNameText').html(data.callName);
                         // Set the initial value of the name input
                         $('#callNameText').val(data.callName);
@@ -2048,7 +2048,7 @@
                                 wishesData.forEach(wish => {
                                     console.log('Individual wish:', wish);
                                     var card = `<div class="col-4" style="width: 20rem;">` +
-                                            `<div class="card" style="height: 10rem">` +
+                                            `<div class="card" >` +
                                             `<div class="card-body">` +
                                             `<h5 class="card-header">From:` + wish.name + `</h5>` +
                                             `<p class="card-text" style="margin-left: 1rem;">` + wish.wish + `</p>` +

@@ -7,8 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
 
 <style>
-
-
     .bg-light {
         background-color: #6c4892!important;
         font-family: Jost;
@@ -16,45 +14,45 @@
         font-weight: bold;
     }
 
-    .nav-item{
+    .nav-item {
         padding-right: 10px;
     }
-    .nav-right{
+
+    .nav-right {
         color: white;
     }
 
-    .show-notification{
+    .show-notification {
         color: black;
     }
 
     .navbar {
-        padding: 10px; /* Adjust the top and bottom padding */
-        max-height: 5rem; /* Set a minimum height */
+        padding: 10px;
+        max-height: 5rem;
     }
 
-
-
     .welcome-section {
-        display: none; /* Hide the welcome section for now, adjust as needed */
+        display: none;
     }
 
     .nav-right {
         display: flex;
-        margin-left: 95rem;
-
+        align-items: center;
+        margin-left: auto;
+        width: 14%;
     }
 
     .user-profile {
-        margin-right: 10px; /* Adjust the right margin of the user profile image */
+        margin-right: 10px;
     }
 
     .dropdown-menu {
-        min-width: 150px; /* Set a minimum width for the dropdown menu */
+        min-width: 150px;
     }
 
     .profile-notification a {
-        padding: 10px; /* Adjust the padding of the dropdown menu items */
-        font-size: 1rem; /* Adjust the font size of the dropdown menu items */
+        padding: 10px;
+        font-size: 1rem;
     }
 
 </style>
@@ -74,7 +72,6 @@
     <div class="navbar-container container-fluid">
 
         <ul class="nav-right">
-
             <div class="dropdown-primary dropdown">
                 <div class="dropdown-toggle" data-toggle="dropdown">
                     <img width="30%" src="files/images/user.png" class="img-radius" alt="My Photo">

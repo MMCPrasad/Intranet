@@ -56,7 +56,7 @@ public class LoginController {
     }
 
     @PostMapping("/login_policy")
-    public String checkLogins(@RequestParam String username, HttpSession session) {
+    public String checkLogins(@RequestParam String username, @RequestParam String password, HttpSession session) {
 
         UserPolicy userr = servr.checkLogins(username);
 
@@ -64,13 +64,29 @@ public class LoginController {
             return "error";
         } else {
 
-            session.setAttribute("uid", userr.getId());
-            session.setAttribute("username", username);
+            Hashtable props = new Hashtable();
+            props.put(Context.SECURITY_PRINCIPAL, username + "@fintrexfinance.com");
+            props.put(Context.SECURITY_CREDENTIALS, password);
+            props.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
+            props.put(Context.PROVIDER_URL, "ldap://ad1.fintrex.lk:389");
+
+            try {
+                InitialLdapContext c = new InitialLdapContext(props, null);
+                session.setAttribute("uid", userr.getId());
+                session.setAttribute("username", username);
 //            session.setAttribute("type", user.getUserType().getId());
 //            String dashboard = servr.getDashboard(user.getUserType().getId());
 //            session.setAttribute("dashboard", dashboard);
 
-            return "ok";
+                return "ok";
+
+            } catch (javax.naming.CommunicationException e) {
+                e.printStackTrace();
+                return "error";
+            } catch (NamingException e) {
+                e.printStackTrace();
+                return "error";
+            }
 
         }
     }

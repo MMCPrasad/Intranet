@@ -82,7 +82,7 @@
                 $('#altarea').html('');
                 loadDiv($('#card-block').parents('.card-block'));
                 $(this).html('<i class="feather icon-radio rotate-refresh"></i>');
-                $.post('login_policy', {username: $('#username').val()}, function (data) {
+                $.post('login_policy', {username: $('#username').val(), password: $('#password').val()}, function (data) {
                     // var data = JSON.parse(res);
                     if (data === "ok") {
                         window.location.href = '/Intranet/view_dep_policies';
@@ -108,7 +108,6 @@
                     $('#altarea').append(alttemp);
                 });
             });
-
             $('#password').on('keypress', function (e) {
                 if (e.which === 13) {
                     $('#loginbtn').click();

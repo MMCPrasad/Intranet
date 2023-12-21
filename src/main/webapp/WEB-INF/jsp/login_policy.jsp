@@ -79,6 +79,9 @@
                     return;
                 }
 
+
+
+
                 $('#altarea').html('');
                 loadDiv($('#card-block').parents('.card-block'));
                 $(this).html('<i class="feather icon-radio rotate-refresh"></i>');

@@ -34,5 +34,10 @@ public class Statement {
     private String type;
     private String path;
     private String status;
+    @CreatedBy
+    private Integer entBy;
+    @CreatedDate
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
+    private Date entOn;
 
 }

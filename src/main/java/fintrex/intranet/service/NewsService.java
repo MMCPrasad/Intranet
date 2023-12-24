@@ -38,7 +38,7 @@ public class NewsService {
     private NewsImageRepo nerepo;
 
     public DataTablesResponse<NewsDto> getNewss(DataTableRequest param) throws Exception {
-        return userDt.getData(NewsDto.class, param, "SELECT `id`,`heading`,`status` FROM `news` WHERE TRUE");
+        return userDt.getData(NewsDto.class, param, "SELECT x.`id`,x.`heading`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on` FROM `news` X WHERE TRUE");
 
     }
 

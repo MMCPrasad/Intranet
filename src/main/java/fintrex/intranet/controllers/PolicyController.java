@@ -136,29 +136,6 @@ public class PolicyController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-//    @PostMapping("/path/upload")
-//    @ResponseBody
-//    public String upload(MultipartHttpServletRequest req) throws IOException {
-//        MultiValueMap<String, MultipartFile> multiFileMap = req.getMultiFileMap();
-//        String name = req.getParameter("name");
-//        String type = req.getParameter("type");
-//        String subtype = req.getParameter("subtype");
-//
-//        for (Map.Entry<String, List<MultipartFile>> entry : multiFileMap.entrySet()) {
-//            List<MultipartFile> val = entry.getValue();
-//
-//            for (int i = 0; i < val.size(); i++) {
-//                Policy savedImage = service.save(name, type, subtype, null);
-//                String[] split = val.get(i).getOriginalFilename().split("\\.");
-//                File des = new File("E:\\chirantha\\intranet\\Polices\\" + savedImage.getId() + "." + split[split.length - 1]);
-//                System.out.println(des.getName());
-//                val.get(i).transferTo(des);
-//                service.update(savedImage.getId(), name, type, subtype, des.getName());
-//            }
-//        }
-//
-//        return "ok";
-//    }
     @PostMapping("/save")
     @ResponseBody
     public Policy upload(MultipartHttpServletRequest req) throws Exception {

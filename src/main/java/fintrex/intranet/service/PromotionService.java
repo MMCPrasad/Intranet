@@ -33,7 +33,7 @@ public class PromotionService {
     private PromotionRepo repo;
 
     public DataTablesResponse<PromotionDTO> getPromo(DataTableRequest param) throws Exception {
-        return userDt.getData(PromotionDTO.class, param, "SELECT `id`,`heading`,`status` FROM `promotions` WHERE TRUE");
+        return userDt.getData(PromotionDTO.class, param, "SELECT x.`id`,x.`heading`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on` FROM `promotions` X WHERE TRUE");
 
     }
 

@@ -56,7 +56,7 @@ public class PolicyService {
     private PolicyTypeRepo rep;
 
     public DataTablesResponse<PolicyDto> getPolicies(DataTableRequest param) throws Exception {
-        return userDt.getData(PolicyDto.class, param, "SELECT `id`,`name`,`status` FROM `policies` WHERE TRUE");
+        return userDt.getData(PolicyDto.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on` FROM `policies` X WHERE TRUE");
 
     }
 
@@ -180,11 +180,11 @@ public class PolicyService {
     private DataTableRepo<UserTypeDataTable> userTypeDt;
 
     public DataTablesResponse<UserDataTable> getUsers(DataTableRequest param) throws Exception {
-        return userDts.getData(UserDataTable.class, param, "select `id`,`username`,`name`,(select `name` from `user_type_policy` where `id`= u.`userType`) as `userTypes`,`status` FROM `users_policy` u WHERE true ");
+        return userDts.getData(UserDataTable.class, param, "SELECT `id`,`username`,`name`,(SELECT `name` FROM `user_type_policy` WHERE `id`= u.`userType`) AS `userTypes`,(SELECT d.`name` FROM `users` d WHERE d.`id`=`ent_by`) AS `ent_by`,ent_on,`status` FROM `users_policy` u WHERE TRUE ");
     }
 
     public DataTablesResponse<UserTypeDataTable> getUserType(DataTableRequest param) throws Exception {
-        return userTypeDt.getData(UserTypeDataTable.class, param, "SELECT `id`,`name`,`status` FROM `user_type_policy` WHERE TRUE ");
+        return userTypeDt.getData(UserTypeDataTable.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on` FROM `user_type_policy` X WHERE TRUE ");
     }
 
     public UserPolicy getUser(Integer id) throws Exception {

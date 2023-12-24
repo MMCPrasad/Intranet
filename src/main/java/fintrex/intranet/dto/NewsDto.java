@@ -26,7 +26,7 @@ public class NewsDto {
     public String path;
     public String status;
     public String ent_by;
-    public Date ent_on;
+    public String ent_on;
     public String mod_by;
     public Date mod_on;
 

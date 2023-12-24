@@ -52,6 +52,8 @@
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Heading</th>
+                                                <th>Ent On</th>
+                                                <th>Ent By</th>
                                                 <th style="width:1px;">Status</th>
                                                 <th style="width:1px;">Action</th>
                                             </tr>
@@ -157,6 +159,8 @@
                 "columns": [
                     {"data": "id", className: "text-right", "visible": false},
                     {"data": "heading"},
+                    {"data": "ent_on"},
+                    {"data": "ent_by"},
                     {"data": "status"}
                 ], "language": {
                     'loadingRecords': '&nbsp;',
@@ -172,7 +176,7 @@
                     }
 
                     $(row).append(action_td);
-                    setTableStatus($(row).find('td').eq(1));
+                    setTableStatus($(row).find('td').eq(3));
                     $(row).data('id', data['id']);
                 }
             });

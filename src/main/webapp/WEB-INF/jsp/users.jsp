@@ -65,6 +65,8 @@
                                                                             <th>Username</th>
                                                                             <th>User</th>
                                                                             <th>User Type</th>  
+                                                                            <th>Ent On</th>  
+                                                                            <th>Ent By</th>  
                                                                             <th style="width:1px;">Status</th>
                                                                             <th style="width:1px;">Action</th>
                                                                         </tr>
@@ -181,6 +183,8 @@
                     {"data": "id", className: "text-right", "visible": false},
                     {"data": "username"},
                     {"data": "name"},
+                    {"data": "ent_on"},
+                    {"data": "ent_by"},
                     {"data": "userTypes"},
                     {"data": "status"}
                 ], "language": {
@@ -196,7 +200,7 @@
                     }
                     $(row).append(action_td);
 
-                    setTableStatus($(row).find('td').eq(4));
+                    setTableStatus($(row).find('td').eq(5));
                     $(row).data('id', data['id']);
                 }
             });

@@ -21,6 +21,8 @@ public class StatementDTO {
     public String name;
     public String type;
     public String path;
+    public String ent_on;
+    public String ent_by;
     public String status;
 
 }

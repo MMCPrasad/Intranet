@@ -1888,6 +1888,7 @@
 
                             const p = document.createElement('p');
                             p.textContent = newsItem.content;
+
                             txtDiv.appendChild(h4);
                             txtDiv.appendChild(p);
                             col10.appendChild(txtDiv);

@@ -33,7 +33,7 @@ public class SystemService {
     private SystemTypeRepo repor;
 
     public DataTablesResponse<SystemDto> getSystems(DataTableRequest param) throws Exception {
-        return userDt.getData(SystemDto.class, param, "SELECT `id`,`name`,`status` FROM `systems` WHERE TRUE");
+        return userDt.getData(SystemDto.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on` FROM `systems` X WHERE TRUE");
 
     }
 

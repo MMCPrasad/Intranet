@@ -26,6 +26,8 @@ public class DirectorDataTable {
     public String role;
     public String designation;
     public String path;
+    public String ent_by;
+    public String ent_on;
     public String status;
 
 }

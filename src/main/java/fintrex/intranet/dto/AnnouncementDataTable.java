@@ -25,6 +25,8 @@ public class AnnouncementDataTable {
     public String name;
     public String date;
     public String path;
+    public String ent_by;
+    public String ent_on;
     public String status;
 
 }

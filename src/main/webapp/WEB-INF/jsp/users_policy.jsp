@@ -49,7 +49,7 @@
                                                 <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 col-12">
                                                     <div class="card">
                                                         <div class="card-header">
-                                                            <h6>Users</h6>
+                                                            <h4>Users</h4>
                                                             <div class="card-header-right">
                                                                 <ul class="list-unstyled card-option">
                                                                     <li><i class="feather icon-maximize full-card"></i></li>
@@ -65,6 +65,8 @@
                                                                             <th>Username</th>
                                                                             <th>User</th>
                                                                             <th>User Type</th>  
+                                                                            <th>Ent On</th>  
+                                                                            <th>Ent By</th>  
                                                                             <th style="width:1px;">Status</th>
                                                                             <th style="width:1px;">Action</th>
                                                                         </tr>
@@ -182,6 +184,8 @@
                     {"data": "username"},
                     {"data": "name"},
                     {"data": "userTypes"},
+                    {"data": "ent_on"},
+                    {"data": "ent_by"},
                     {"data": "status"}
                 ], "language": {
                     'loadingRecords': '&nbsp;',
@@ -196,7 +200,7 @@
                     }
                     $(row).append(action_td);
 
-                    setTableStatus($(row).find('td').eq(4));
+                    setTableStatus($(row).find('td').eq(5));
                     $(row).data('id', data['id']);
                 }
             });

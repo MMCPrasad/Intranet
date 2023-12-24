@@ -49,7 +49,7 @@
                                                 <div class="col-lg-10 offset-lg-1 col-xl-12 offset-xl-0 col-12">
                                                     <div class="card">
                                                         <div class="card-header">
-                                                            <h6>User Types</h6>
+                                                            <h4>User Types</h4>
                                                             <div class="card-header-right">
                                                                 <ul class="list-unstyled card-option">
                                                                     <li><i class="feather icon-maximize full-card"></i></li>
@@ -63,6 +63,8 @@
                                                                         <tr>
                                                                             <th>Id</th>
                                                                             <th>User Type</th>
+                                                                            <th>Ent O</th>
+                                                                            <th>Ent By</th>
 
                                                                             <th style="width:1px;">Status</th>
                                                                             <th style="width:1px;">Action</th>
@@ -172,6 +174,8 @@
                 "columns": [
                     {"data": "id", className: "text-right", "visible": false},
                     {"data": "name"},
+                    {"data": "ent_on"},
+                    {"data": "ent_by"},
                     {"data": "status"}
                 ], "language": {
                     'loadingRecords': '&nbsp;',
@@ -186,7 +190,7 @@
                     }
 
                     $(row).append(action_td);
-                    setTableStatus($(row).find('td').eq(2));
+                    setTableStatus($(row).find('td').eq(3));
                     $(row).data('id', data['id']);
                 }
 

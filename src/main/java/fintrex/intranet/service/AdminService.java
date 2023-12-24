@@ -42,11 +42,11 @@ public class AdminService {
     private DataTableRepo<UserTypeDataTable> userTypeDt;
 
     public DataTablesResponse<UserDataTable> getUsers(DataTableRequest param) throws Exception {
-        return userDt.getData(UserDataTable.class, param, "select `id`,`username`,`name`,(select `name` from `user_type` where `id`= u.`userType`) as `userTypes`,`status` FROM `users` u WHERE true ");
+        return userDt.getData(UserDataTable.class, param, "SELECT `id`,`username`,`name`,(SELECT `name` FROM `user_type` WHERE `id`= u.`userType`) AS `userTypes`,(SELECT d.`name` FROM `users` d WHERE d.`id`=`ent_by`) AS `ent_by`,`ent_on`,`status` FROM `users` u WHERE TRUE ");
     }
 
     public DataTablesResponse<UserTypeDataTable> getUserType(DataTableRequest param) throws Exception {
-        return userTypeDt.getData(UserTypeDataTable.class, param, "SELECT `id`,`name`,`status` FROM `user_type` WHERE TRUE ");
+        return userTypeDt.getData(UserTypeDataTable.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on` FROM `user_type` X WHERE TRUE ");
     }
 
     public User getUser(Integer id) throws Exception {

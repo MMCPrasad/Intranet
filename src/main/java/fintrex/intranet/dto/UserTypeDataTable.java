@@ -9,10 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- *
- * @author Akash
- */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -22,5 +18,8 @@ public class UserTypeDataTable {
     public Integer id;
     public String name;
     public String pages;
+
+    public String ent_on;
+    public String ent_by;
     public String status;
 }

@@ -23,6 +23,8 @@ public class PromotionDTO {
     public Integer id;
     public String heading;
     public String path;
+    public String ent_on;
+    public String ent_by;
     public String status;
 
 }

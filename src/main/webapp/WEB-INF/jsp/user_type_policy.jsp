@@ -33,6 +33,12 @@
                 margin: auto;
 
             }
+            .pagetitle h3 {
+                font-size: 28px;
+                margin-bottom: 0;
+                font-weight: 600;
+                color: #31d422;
+            }
         </style>
         <div id="pcoded" class="pcoded">
             <div class="pcoded-overlay-box"></div>
@@ -46,10 +52,26 @@
                                         <div class="page-body">
 
                                             <div class="row" id="table_sec">
+                                                <div class="pagetitle" style=" padding-left: 5rem; "><h3>Admin Dashboard</h3>
+                                                    <nav>
+                                                        <ol class="breadcrumb">
+                                                            <li class="breadcrumb-item">
+                                                                <a href="/Intranet/">Home</a>
+                                                            </li>
+                                                            <li class="breadcrumb-item">
+                                                                <a href="admincontrol">Admin</a> 
+                                                            </li>
+                                                            <li class="breadcrumb-item">
+                                                                <a >User Types - Policy</a> 
+                                                            </li>
+
+                                                        </ol>
+                                                    </nav>
+                                                </div>
                                                 <div class="col-lg-10 offset-lg-1 col-xl-12 offset-xl-0 col-12">
                                                     <div class="card">
                                                         <div class="card-header">
-                                                            <h4>User Types</h4>
+                                                            <h4>User Types - Policy</h4>
                                                             <div class="card-header-right">
                                                                 <ul class="list-unstyled card-option">
                                                                     <li><i class="feather icon-maximize full-card"></i></li>

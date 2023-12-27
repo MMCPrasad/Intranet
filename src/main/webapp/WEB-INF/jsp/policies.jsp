@@ -32,6 +32,12 @@
                 margin: auto;
 
             }
+            .pagetitle h3 {
+                font-size: 28px;
+                margin-bottom: 0;
+                font-weight: 600;
+                color: #31d422;
+            }
         </style>
         <div class="tab-pane fade show active profile-overview" id="profile-overview">
 
@@ -39,7 +45,22 @@
                 <div class="page-body">
 
                     <div class="row" id="tableSection">
+                        <div class="pagetitle" style=" padding-left: 5rem; "><h3>Admin Dashboard</h3>
+                            <nav>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/Intranet/">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="admincontrol">Admin</a> 
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a >Policies</a> 
+                                    </li>
 
+                                </ol>
+                            </nav>
+                        </div>
                         <div class="card" >
                             <div class="card-header">
                                 <h4>Policies</h4>

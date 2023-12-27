@@ -19,19 +19,26 @@
         <style>
 
 
+            .card-registration .select-input.form-control[readonly]:not([disabled]) {
+                font-size: 1rem;
+                line-height: 2.15;
+                padding-left: .75em;
+                padding-right: .75em;
+            }
+            .card-registration .select-arrow {
+                top: 13px;
+            }
             .card{
                 width: 90em;
                 justify-content: center;
                 margin: auto;
 
             }
-            .placeholder {
-                display: inline-block;
-                min-height: 1em;
-                vertical-align: middle;
-                cursor: pointer;
-                background-color: transparent;
-                opacity: 1;
+            .pagetitle h3 {
+                font-size: 28px;
+                margin-bottom: 0;
+                font-weight: 600;
+                color: #31d422;
             }
 
         </style>
@@ -41,7 +48,22 @@
                 <div class="page-body">
 
                     <div class="row" id="tableSection">
+                        <div class="pagetitle" style=" padding-left: 5rem; "><h3>Admin Dashboard</h3>
+                            <nav>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/Intranet/">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="admincontrol">Admin</a> 
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a >Ideas</a> 
+                                    </li>
 
+                                </ol>
+                            </nav>
+                        </div>
                         <div class="card" >
                             <div class="card-header">
                                 <h4>Review Ideas</h4>

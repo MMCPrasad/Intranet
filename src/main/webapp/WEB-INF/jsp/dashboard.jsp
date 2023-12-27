@@ -1216,21 +1216,21 @@
                 <div class="modal-body table-responsive" style="font-size: 12px;  font-family: myFont">
                     <div class="row" style="font-family: myFont">
                         <div class="col-lg-3" style="font-size: 12px;">
-                            <input id="idea_epfp" onkeyup=""  class="form-control" type="number" placeholder="Enter your EPF" style="font-size: 12px;">
+                            <input id="idea_epfwh" onkeyup=""  class="form-control" type="number" placeholder="Enter your EPF" style="font-size: 12px;">
                             <div class="bbb"style="margin-top:0.5rem;margin-bottom: 0.5rem;"><button id="savew" type="button" class="btn btn-outline-secondary">Search</button></div>
                         </div>
                         <div class="col-lg-4">
-                            <h4 id="emp_namep" style="font-size: 12px; font-weight: 600; font-family: myFont"></h4>
+                            <h4 id="emp_namewi" style="font-size: 12px; font-weight: 600; font-family: myFont"></h4>
                         </div>
                         <div class="col-lg-4">
-                            <h4 id="departmentp" style="font-size: 12px; font-weight: 600; font-family: myFont"></h4>
+                            <h4 id="departmentwi" style="font-size: 12px; font-weight: 600; font-family: myFont"></h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             &nbsp;
                             <!--<h4 style="font-size: small; font-weight: 600; font-family: myFontB">Describe Your Idea Here</h4>-->
-                            <textarea id="policy_field" class="form-control" placeholder="Describe Here" style="height: 100px; font-size: 12px;">
+                            <textarea id="whistle_field" class="form-control" placeholder="Describe Here" style="height: 100px; font-size: 12px;">
                                     
                             </textarea>
                         </div>
@@ -1239,11 +1239,11 @@
 
 
 
-                    <h4 id="save_msgp" class="text-center" style="font-weight: 600; font-size: medium"></h4>
+                    <h4 id="save_whistle" class="text-center" style="font-weight: 600; font-size: medium"></h4>
                 </div>
 
                 <div class="modal-footer">
-                    <button id="save_policy_btn" type="submit" name="save_policy_btn" class="btn btn-primary btn-sm">Submit</button>
+                    <button id="save_whistle_btn" type="submit" name="save_policy_btn" class="btn btn-primary btn-sm">Submit</button>
                     <button type="button" id="close_btnp" class="btn btn-warning btn-sm" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -1477,15 +1477,26 @@
         });
         document.getElementById('savew').addEventListener('click', function () {
             //                console.log();
-            var epf = document.getElementById('idea_epfp').value;
+            var epf = document.getElementById('idea_epfwh').value;
             $.post('idea/get-epf', {epf: epf}, function (data) {
                 for (var i = 0; i < data.length; i++) {
-                    document.getElementById("emp_namep").innerHTML = data[i].callname;
-                    document.getElementById("departmentp").innerHTML = data[i].department;
+                    document.getElementById("emp_namewi").innerHTML = data[i].callname;
+                    document.getElementById("departmentwi").innerHTML = data[i].department;
                 }
             }
             );
         });
+//        document.getElementById('save_whistle').addEventListener('click', function () {
+//            //                console.log();
+//            var epf = document.getElementById('idea_epfwh').value;
+//            $.post('idea/get-epf', {epf: epf}, function (data) {
+//                for (var i = 0; i < data.length; i++) {
+//                    document.getElementById("emp_namewi").innerHTML = data[i].callname;
+//                    document.getElementById("departmentwi").innerHTML = data[i].department;
+//                }
+//            }
+//            );
+//        });
         $('#save_ideas_btn').click(function () {
             const formData = new FormData();
             formData.append('epf', $('#idea_epfpc').val().trim());

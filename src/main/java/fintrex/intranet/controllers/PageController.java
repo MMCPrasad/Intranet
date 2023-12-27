@@ -24,7 +24,7 @@ public class PageController {
         return "dashboard";
     }
 
-    @GetMapping("/Intranet")
+    @GetMapping("/home")
     public String dashboard2() {
         return "dashboard";
     }

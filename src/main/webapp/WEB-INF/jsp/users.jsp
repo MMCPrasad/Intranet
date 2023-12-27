@@ -28,10 +28,17 @@
                 top: 13px;
             }
             .card{
-                width: 70em;
+                width: 90em;
                 justify-content: center;
                 margin: auto;
+                margin-left: -7rem;
 
+            }
+            .pagetitle h3 {
+                font-size: 28px;
+                margin-bottom: 0;
+                font-weight: 600;
+                color: #31d422;
             }
         </style>
         <div id="pcoded" class="pcoded">
@@ -46,10 +53,26 @@
                                         <div class="page-body">
 
                                             <div class="row" id="tableSection">
+                                                <div class="pagetitle" style=" padding-left: 5rem; "><h3>Admin Dashboard</h3>
+                                                    <nav>
+                                                        <ol class="breadcrumb">
+                                                            <li class="breadcrumb-item">
+                                                                <a href="/Intranet/">Home</a>
+                                                            </li>
+                                                            <li class="breadcrumb-item">
+                                                                <a href="admincontrol">Admin</a> 
+                                                            </li>
+                                                            <li class="breadcrumb-item">
+                                                                <a >Users</a> 
+                                                            </li>
+
+                                                        </ol>
+                                                    </nav>
+                                                </div>
                                                 <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 col-12">
                                                     <div class="card">
                                                         <div class="card-header">
-                                                            <h6>Users</h6>
+                                                            <h4>Users</h4>
                                                             <div class="card-header-right">
                                                                 <ul class="list-unstyled card-option">
                                                                     <li><i class="feather icon-maximize full-card"></i></li>

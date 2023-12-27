@@ -1475,17 +1475,48 @@
             }
             );
         });
+        // Variables to store employee name and department
         document.getElementById('savew').addEventListener('click', function () {
-            //                console.log();
             var epf = document.getElementById('idea_epfwh').value;
+
             $.post('idea/get-epf', {epf: epf}, function (data) {
                 for (var i = 0; i < data.length; i++) {
-                    document.getElementById("emp_namewi").innerHTML = data[i].callname;
-                    document.getElementById("departmentwi").innerHTML = data[i].department;
+                    // Assign name and department
+                    var employeeName = data[i].callname;
+                    var department = data[i].department;
+
+                    // Update UI with name and department
+                    document.getElementById("emp_namewi").innerHTML = employeeName;
+                    document.getElementById("departmentwi").innerHTML = department;
                 }
-            }
-            );
+            });
         });
+
+        document.getElementById('save_whistle_btn').addEventListener('click', function () {
+            // Retrieve whistle description
+            var whistleDescription = document.getElementById('whistle_field').value;
+
+            // Retrieve employee name and department from UI
+            var employeeName = document.getElementById('emp_namewi').innerText;
+            var department = document.getElementById('departmentwi').innerText;
+
+            // Send data to server
+            $.ajax({
+                type: 'POST',
+                url: 'whistle/submitWhistle',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    employeeName: employeeName,
+                    department: department,
+                    whistleDescription: whistleDescription
+                }),
+                success: function (response) {
+                    alert(response);
+                }
+            });
+        });
+
+
 //        document.getElementById('save_whistle').addEventListener('click', function () {
 //            //                console.log();
 //            var epf = document.getElementById('idea_epfwh').value;

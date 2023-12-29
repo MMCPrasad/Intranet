@@ -363,7 +363,7 @@
                 let id = $(this).parents('tr').data('id');
                 Swal.fire({
                     title: 'Are you sure?',
-                    text: "This Notice Will be Deleted!",
+                    text: "This Director Will be Deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -404,7 +404,7 @@
                 let id = $(this).parents('tr').data('id');
                 Swal.fire({
                     title: 'Are you sure?',
-                    text: "System Will be Activated!",
+                    text: "Director Will be Activated!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',

@@ -1903,15 +1903,21 @@
                                                 // Add lightbox functionality
                                                 image.addEventListener('click', function () {
                                                     // Show the modal
-                                                    $('#imageModal').modal('show');
+                                                    const imageModal = $('#imageModal');
+                                                    imageModal.modal('show');
+
                                                     // Get the modal body and image element
-                                                    const modalBody = $('#imageModal .modal-body');
+                                                    const modalBody = imageModal.find('.modal-body');
                                                     const modalImage = modalBody.find('img');
+
                                                     // Set the source of the lightbox image
                                                     modalImage.attr('src', imageUrl);
-                                                    // Set the width for the lightbox image
-                                                    modalImage.css('width', '200%'); // Set your desired width, e.g., 100%
+
+                                                    // Set the width for the modal (adjust the value as needed)
+                                                    imageModal.find('.modal-dialog').css('max-width', '60%'); // Set your desired width, e.g., '80%'
                                                 });
+
+
                                             }
 
 
@@ -1930,6 +1936,8 @@
 
                             const p = document.createElement('p');
                             p.textContent = newsItem.content;
+                            p.style.wordSpacing = '0.2em'; // Adjust the word spacing as needed
+                            p.style.whiteSpace = 'pre-wrap';
 
                             txtDiv.appendChild(h4);
                             txtDiv.appendChild(p);

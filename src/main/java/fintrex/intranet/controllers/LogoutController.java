@@ -26,13 +26,13 @@ public class LogoutController {
     public String Logout(HttpSession session) {
         session.removeAttribute("uid");
         session.removeAttribute("username");
-        return "login";
+        return "dashboard";
     }
 
     @GetMapping("/logoutPol")
     public String LogoutPol(HttpSession session) {
         session.removeAttribute("uid");
         session.removeAttribute("username");
-        return "login_policy";
+        return "dashboard";
     }
 }

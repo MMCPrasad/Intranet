@@ -234,7 +234,7 @@
             let id = $(this).parents('tr').data('id');
             Swal.fire({
                 title: 'Are you sure?',
-                text: "This Notice Will be Deleted!",
+                text: "This Financial-Statement Will be Deleted!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -275,7 +275,7 @@
             let id = $(this).parents('tr').data('id');
             Swal.fire({
                 title: 'Are you sure?',
-                text: "System Will be Activated!",
+                text: "Financial-Statement Will be Activated!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -376,7 +376,7 @@
                     if (!response.ok) {
                         throw new Error(response.statusText);
                     } else {
-                        Swal.fire('Successful!', 'News has been successfully saved', 'success');
+                        Swal.fire('Successful!', 'Financial-Statement has been successfully saved', 'success');
                         clearForm();
                         $('#formSection').hide();
                         $('#tableSection').fadeIn();
@@ -408,13 +408,13 @@
                     contentType: false,
                     success: function (response) {
                         if (response.status === 200) {
-                            Swal.fire('Successful!', 'Announcement details updated successfully', 'success');
+                            Swal.fire('Successful!', 'Financial-Statement details updated successfully', 'success');
                             clearForm();
                             $('#formSection').hide();
                             $('#tableSection').fadeIn();
                             dtable.ajax.reload();
                         } else {
-                            Swal.fire('Successful!', 'Announcement details updated successfully', 'success');
+                            Swal.fire('Successful!', 'Financial-Statement details updated successfully', 'success');
                             clearForm();
                             $('#formSection').hide();
                             $('#tableSection').fadeIn();

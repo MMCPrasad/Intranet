@@ -235,7 +235,7 @@
                 let id = $(this).parents('tr').data('id');
                 Swal.fire({
                     title: 'Are you sure?',
-                    text: "This Notice Will be Deleted!",
+                    text: "This News Will be Deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -264,7 +264,7 @@
                         if (result.value.status !== 200) {
                             Swal.fire('Error!', result.value.msg, 'error');
                         } else {
-                            Swal.fire('Successfull!', 'System has been Deactivated !', 'success');
+                            Swal.fire('Successfull!', 'News has been Deactivated !', 'success');
                             dtable.ajax.reload();
                             $('#formSection').hide();
                             $('#tableSection').fadeIn();
@@ -276,7 +276,7 @@
                 let id = $(this).parents('tr').data('id');
                 Swal.fire({
                     title: 'Are you sure?',
-                    text: "System Will be Activated!",
+                    text: "News Will be Activated!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -305,7 +305,7 @@
                         if (result.value.status !== 200) {
                             Swal.fire('Error!', result.value.msg, 'error');
                         } else {
-                            Swal.fire('Successfull!', 'System has been Activated !', 'success');
+                            Swal.fire('Successfull!', 'News has been Activated !', 'success');
                             dtable.ajax.reload();
                             $('#formSection').hide();
                             $('#tableSection').fadeIn();
@@ -412,13 +412,13 @@
                         contentType: false,
                         success: function (response) {
                             if (response.status === 200) {
-                                Swal.fire('Successful!', 'System details updated successfully', 'success');
+                                Swal.fire('Successful!', 'News details updated successfully', 'success');
                                 clearForm();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();
                                 dtable.ajax.reload();
                             } else {
-                                Swal.fire('Successful!', 'System details updated successfully', 'success');
+                                Swal.fire('Successful!', 'News details updated successfully', 'success');
                                 clearForm();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();
@@ -429,7 +429,7 @@
                             console.log(xhr);
                             console.log(status);
                             console.log(error);
-                            Swal.fire('Error!', 'Failed to update system details', 'error');
+                            Swal.fire('Error!', 'Failed to update News details', 'error');
                         }
                     });
                 }

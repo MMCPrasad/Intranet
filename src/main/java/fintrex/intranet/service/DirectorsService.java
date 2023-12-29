@@ -87,7 +87,7 @@ public class DirectorsService {
         system = repo.save(system);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Directors\\" + system.getId() + "." + split[split.length - 1]);
+            File des = new File("intranet\\Directors\\" + system.getId() + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }
@@ -102,7 +102,7 @@ public class DirectorsService {
         system.setRole(role);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Directors\\" + id + "." + split[split.length - 1]);
+            File des = new File("intranet\\Directors\\" + id + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }

@@ -103,7 +103,7 @@ public class PromotionController {
     @ResponseBody
     public void view(@PathVariable String name, HttpServletResponse resp) throws IOException {
 
-        File file = new File("E:\\chirantha\\intranet\\Promotions\\" + name);
+        File file = new File("intranet\\Promotions\\" + name);
 
         if (!file.exists()) {
             resp.sendError(404, "file not found");

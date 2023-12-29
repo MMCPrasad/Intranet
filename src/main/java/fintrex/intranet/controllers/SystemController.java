@@ -108,7 +108,7 @@ public class SystemController {
     @ResponseBody
     public void view(@PathVariable String name, HttpServletResponse resp) throws IOException {
 
-        File file = new File("E:\\chirantha\\intranet\\Systems\\" + name);
+        File file = new File("intranet\\Systems\\" + name);
 
         if (!file.exists()) {
             resp.sendError(404, "file not found");

@@ -161,7 +161,7 @@ public class PolicyController {
     @ResponseBody
     public void view(@PathVariable String name, HttpServletResponse resp) throws IOException {
 
-        File file = new File("E:\\chirantha\\intranet\\Polices\\" + name);
+        File file = new File("intranet\\Polices\\" + name);
 
         if (!file.exists()) {
             resp.sendError(404, "file not found");

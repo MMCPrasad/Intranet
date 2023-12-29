@@ -91,7 +91,7 @@ public class StatementService {
         system = repo.save(system);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Statements\\" + system.getId() + "." + split[split.length - 1]);
+            File des = new File("intranet\\Statements\\" + system.getId() + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }
@@ -104,7 +104,7 @@ public class StatementService {
         system.setType(type);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Statements\\" + id + "." + split[split.length - 1]);
+            File des = new File("intranet\\Statements\\" + id + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }

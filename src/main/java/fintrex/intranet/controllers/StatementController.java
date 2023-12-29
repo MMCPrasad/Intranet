@@ -122,7 +122,7 @@ public class StatementController {
     @ResponseBody
     public void view(@PathVariable String name, HttpServletResponse resp) throws IOException {
 
-        File file = new File("E:\\chirantha\\intranet\\Statements\\" + name);
+        File file = new File("intranet\\Statements\\" + name);
 
         if (!file.exists()) {
             resp.sendError(404, "file not found");

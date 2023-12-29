@@ -73,7 +73,7 @@ public class PromotionService {
         system = repo.save(system);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Promotions\\" + system.getId() + "." + split[split.length - 1]);
+            File des = new File("intranet\\Promotions\\" + system.getId() + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }
@@ -86,7 +86,7 @@ public class PromotionService {
         system.setPara(para);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Promotions\\" + id + "." + split[split.length - 1]);
+            File des = new File("intranet\\Promotions\\" + id + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }

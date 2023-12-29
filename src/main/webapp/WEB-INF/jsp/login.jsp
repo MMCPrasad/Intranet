@@ -83,11 +83,11 @@
                 $('#altarea').html('');
                 loadDiv($('#card-block').parents('.card-block'));
                 $(this).html('<i class="feather icon-radio rotate-refresh"></i>');
-                $.post('login', {username: $('#username').val()}, function (data) {
-//                $.post('login', {username: $('#username').val(), password: $('#password').val()}, function (data) {
+//                $.post('login', {username: $('#username').val()}, function (data) {
+                $.post('login', {username: $('#username').val(), password: $('#password').val()}, function (data) {
                     // var data = JSON.parse(res);
                     if (data === "ok") {
-                        window.location.href = '/Intranet/home/admincontrol';
+                        window.location.href = 'admincontrol';
                     } else if (data === "locked") {
                         var alttemp = '<div class="alert alert-danger alert-dismissible">' +
                                 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +

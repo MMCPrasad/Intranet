@@ -119,7 +119,7 @@ public class DirectorsController {
     @ResponseBody
     public void view(@PathVariable String name, HttpServletResponse resp) throws IOException {
 
-        File file = new File("E:\\chirantha\\intranet\\Directors\\" + name);
+        File file = new File("intranet\\Directors\\" + name);
 
         if (!file.exists()) {
             resp.sendError(404, "file not found");

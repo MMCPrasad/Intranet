@@ -140,7 +140,7 @@ public class PolicyService {
         system = repo.save(system);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Polices\\" + system.getId() + "." + split[split.length - 1]);
+            File des = new File("intranet\\Polices\\" + system.getId() + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }
@@ -154,7 +154,7 @@ public class PolicyService {
         system.setSubtype(subtype);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Polices\\" + id + "." + split[split.length - 1]);
+            File des = new File("intranet\\Polices\\" + id + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }

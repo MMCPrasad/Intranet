@@ -85,7 +85,7 @@ public class AnnouncementService {
         system = repo.save(system);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\news\\123\\" + system.getId() + "." + split[split.length - 1]);
+            File des = new File("intranet\\Announcement\\" + system.getId() + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }
@@ -98,7 +98,7 @@ public class AnnouncementService {
         system.setDate(date);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\news\\123\\" + id + "." + split[split.length - 1]);
+            File des = new File("intranet\\Announcement\\" + id + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }

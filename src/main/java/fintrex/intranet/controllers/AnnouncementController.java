@@ -108,7 +108,7 @@ public class AnnouncementController {
     @ResponseBody
     public void view(@PathVariable String name, HttpServletResponse resp) throws IOException {
 
-        File file = new File("E:\\chirantha\\intranet\\Announcement\\" + name);
+        File file = new File("intranet\\Announcement\\" + name);
 
         if (!file.exists()) {
             resp.sendError(404, "file not found");

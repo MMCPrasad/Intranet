@@ -109,7 +109,7 @@ public class NewsService {
                 newsImage.setNews(system.getId());
                 newsImage = nerepo.save(newsImage);
                 String[] split = file.getOriginalFilename().split("\\.");
-                File des = new File("E:\\chirantha\\intranet\\news\\123\\" + system.getId() + "_" + (newsImage.getId()) + "." + split[split.length - 1]);
+                File des = new File("intranet\\news\\123\\" + system.getId() + "_" + (newsImage.getId()) + "." + split[split.length - 1]);
                 file.transferTo(des);
                 newsImage.setPath(des.getName());
                 nerepo.save(newsImage);
@@ -131,7 +131,7 @@ public class NewsService {
                 newsImage.setNews(system.getId());
                 newsImage = nerepo.save(newsImage);
                 String[] split = file.getOriginalFilename().split("\\.");
-                File des = new File("E:\\chirantha\\intranet\\news\\123\\" + id + "_" + newsImage.getId() + "." + split[split.length - 1]);
+                File des = new File("intranet\\news\\123\\" + id + "_" + newsImage.getId() + "." + split[split.length - 1]);
                 file.transferTo(des);
                 newsImage.setPath(des.getName());
                 nerepo.save(newsImage);

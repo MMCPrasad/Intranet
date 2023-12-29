@@ -81,7 +81,7 @@ public class SystemService {
         system = repo.save(system);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Systems\\" + system.getId() + "." + split[split.length - 1]);
+            File des = new File("intranet\\Systems\\" + system.getId() + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }
@@ -95,7 +95,7 @@ public class SystemService {
         system.setLink(link);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("E:\\chirantha\\intranet\\Systems\\" + id + "." + split[split.length - 1]);
+            File des = new File("intranet\\Systems\\" + id + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }

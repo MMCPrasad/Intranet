@@ -146,7 +146,8 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="card info-card revenue-card admin-edit-card-desing" style="width:100%; padding: 20px !important;">
-
+                                    <select class="form-control-sm pull-right" style="width: 30rem;" id="genpol">
+                                    </select>
 
                                     <!-- Table with stripped rows -->
                                     <div class="table-responsive" id="part21">
@@ -179,7 +180,8 @@
                             <div class="col-md-12">
                                 <div class="card info-card revenue-card admin-edit-card-desing" style="width:100%; padding: 20px !important;">
 
-
+                                    <select class="form-control-sm pull-right" style="width: 30rem;" id="genpro">
+                                    </select>
                                     <!-- Table with stripped rows -->
                                     <div class="table-responsive" id="part21">
                                         <table class="table table-hover cell-border" id="tbl4" style="width:100%;padding-top: 10px;">
@@ -244,7 +246,56 @@
     });
 </script>
 <script>
+    var genpol = new SlimSelect({
+        select: '#genpol',
+        placeholder: "Choose Department",
+        ajax: function (search, callback) {
+            fetch('policy/search-deppolicy', {
+                method: 'POST',
+                body: new URLSearchParams({search: search || ''})
+            }).then(res => res.json()).then((data) => {
+                callback(data);
+            });
+        },
+        allowDeselect: true,
+        deselectLabel: '<span class="red">✖</span>'
+    });
+    $('#genpol').data('select', genpol);
+    var filterx = '';
+    filterx = "2";
+    $('#genpol').change(function () {
+        if ($(this).val()) {
+            filterx = $(this).val();
+            dtable2.ajax.reload();
+        }
+    });
 
+
+
+    var genpro = new SlimSelect({
+        select: '#genpro',
+        placeholder: "Choose Department",
+        ajax: function (search, callback) {
+            fetch('policy/search-deppolicy', {
+                method: 'POST',
+                body: new URLSearchParams({search: search || ''})
+            }).then(res => res.json()).then((data) => {
+                callback(data);
+            });
+        },
+        allowDeselect: true,
+        deselectLabel: '<span class="red">✖</span>'
+    });
+    $('#genpro').data('select', genpro);
+    var filter = '';
+    filter = "2";
+    $('#genpro').change(function () {
+
+        if ($(this).val()) {
+            filter = $(this).val();
+            dtable3.ajax.reload();
+        }
+    });
 
     var dtable2 = $('#tbl3').DataTable({
         "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
@@ -265,7 +316,7 @@
             "contentType": "application/json",
             "type": "POST",
             "data": function (d) {
-//                d.filter = filterx;
+                d.filter = filterx;
                 return JSON.stringify(d);
             },
             error: function (xhr, error, code) {
@@ -303,9 +354,9 @@
             "url": "policy/generel-procedure",
             "contentType": "application/json",
             "type": "POST",
-            "data": function (d) {
-//                d.filter = filterx;
-                return JSON.stringify(d);
+            "data": function (c) {
+                c.filter = filter;
+                return JSON.stringify(c);
             },
             error: function (xhr, error, code) {
                 console.log(xhr);

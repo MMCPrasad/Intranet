@@ -71,12 +71,12 @@ public class PolicyService {
     }
 
     public DataTablesResponse<PolicyDto> getgenPol(DataTableRequest param) throws Exception {
-        return userDt.getData(PolicyDto.class, param, "SELECT `id`, `name`,path FROM `policies` WHERE `type` = '2'");
+        return userDt.getData(PolicyDto.class, param, "SELECT `id`, `name`,path FROM `policies` WHERE `type` = '2' AND `subtype` = " + param.getFilter() + "");
 
     }
 
     public DataTablesResponse<PolicyDto> getgenPro(DataTableRequest param) throws Exception {
-        return userDt.getData(PolicyDto.class, param, "SELECT `id`, `name`,path FROM `policies` WHERE `type` = '3'");
+        return userDt.getData(PolicyDto.class, param, "SELECT `id`, `name`,path FROM `policies` WHERE `type` = '3' AND `subtype` = " + param.getFilter() + "");
 
     }
 

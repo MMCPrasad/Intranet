@@ -136,8 +136,8 @@
                                                                 <select class="form-control-sm pull-right" id="mannual">  </select>                                      
                                                             </div>
                                                         </div>
-                                                        <div class="row mb-1" id="divHides" style="display: none;">
-                                                            <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Department Policies</label>
+                                                        <div class="row mb-1">
+                                                            <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Department </label>
                                                             <div class="col-sm-6">
                                                                 <select class="form-control-sm pull-right" id="department">  </select>                                      
                                                             </div>
@@ -291,45 +291,45 @@
                     deselectLabel: '<span class="red">✖</span>'
                 });
 
-                function onClick()
-                {
-                    var filter = '';
-                    filter = "2";
-                    $('#type').change(function () {
-
-                        if ($(this).val()) {
-                            filter = $(this).val();
-                            dtable.ajax.reload();
-                        }
-                    });
-
-
-                }
-
-
-                var selectElement = document.getElementById("type");
-                var hideDivs = document.getElementById("divHides");
-
-                hideDivs.style.display = "none";
-
-                selectElement.addEventListener("change", function () {
-                    if (selectElement.value === "1") {
-                        hideDivs.style.display = "flex";
-                    } else {
-                        hideDivs.style.display = "none";
-                    }
-                });
-
-                function showHiddenDivs() {
-                    var select = document.getElementById("select_level");
-                    var recruit = document.getElementById("recruit");
-
-                    if (select.selectedIndex === 1) { // Check if the first option is selected
-                        recruit.style.display = "block"; // Show the hidden div
-                    } else {
-                        recruit.style.display = "none"; // Hide the hidden div
-                    }
-                }
+//                function onClick()
+//                {
+//                    var filter = '';
+//                    filter = "2";
+//                    $('#type').change(function () {
+//
+//                        if ($(this).val()) {
+//                            filter = $(this).val();
+//                            dtable.ajax.reload();
+//                        }
+//                    });
+//
+//
+//                }
+//
+//
+//                var selectElement = document.getElementById("type");
+//                var hideDivs = document.getElementById("divHides");
+//
+//                hideDivs.style.display = "none";
+//
+//                selectElement.addEventListener("change", function () {
+//                    if (selectElement.value === "1") {
+//                        hideDivs.style.display = "flex";
+//                    } else {
+//                        hideDivs.style.display = "none";
+//                    }
+//                });
+//
+//                function showHiddenDivs() {
+//                    var select = document.getElementById("select_level");
+//                    var recruit = document.getElementById("recruit");
+//
+//                    if (select.selectedIndex === 1) { // Check if the first option is selected
+//                        recruit.style.display = "block"; // Show the hidden div
+//                    } else {
+//                        recruit.style.display = "none"; // Hide the hidden div
+//                    }
+//                }
 
 
             </script>
@@ -365,9 +365,10 @@
                         fd.append('name', name);
                         let type = document.getElementById('type').value;
                         fd.append('type', type);
-                        if ($('#type').val() === '1') {
-                            fd.append('subtype', $('#department').val());
-                        }
+                        let subtype = document.getElementById('department').value;
+                        fd.append('subtype', subtype);
+
+
 
                         for (var i = 0; i < file.length; i++) {
                             fd.append('file', file[i]);
@@ -400,9 +401,8 @@
                         formData.append('id', id);
                         formData.append('name', name);
                         formData.append('type', type);
-                        if ($('#type').val() === '1') {
-                            formData.append('subtype', $('#department').val());
-                        }
+                        formData.append('subtype', department);
+
                         for (let i = 0; i < files.length; i++) {
                             formData.append('file', files[i]);
                         }
@@ -437,49 +437,6 @@
                         });
                     }
                 });
-
-
-
-
-
-
-
-
-//                document.getElementById('saveBtn').addEventListener('click', function () {
-//                    let fd = new FormData();
-//                    let file = document.getElementById('file').files;
-//                    let name = document.getElementById('name').value;
-//                    fd.append('name', name);
-//                    let type = document.getElementById('type').value;
-//                    fd.append('type', type);
-//                    if ($('#type').val() === '1') {
-//                        fd.append('subtype', $('#department').val());
-//                    }
-//
-//                    for (var i = 0; i < file.length; i++) {
-//                        fd.append('file', file[i]);
-//                    }
-//
-//                    fetch('policy/path/upload', {
-//                        method: 'POST',
-//                        body: fd
-//                    }).then(response => {
-//                        if (!response.ok) {
-//                            throw new Error(response.statusText);
-//                        } else {
-//                            Swal.fire('Successfull!', 'System has been successfully saved');
-//                            clearForm();
-//                            $('#formSection').hide();
-//                            $('#tableSection').fadeIn();
-//                            dtable.ajax.reload();
-//                        }
-//                        return response.json();
-//                    });
-//                });
-//
-
-
-
 
 
                 $(document).on('click', '.delrec', function () {

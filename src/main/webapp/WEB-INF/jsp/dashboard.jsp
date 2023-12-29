@@ -703,7 +703,7 @@
                             </div>
                             <div class="col">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;margin-left: 1.8rem">FD,FS</p>
+                                    <p style="font-size: 1rem;margin-left: 1.1rem">FD,FS</p>
                                 </div>
                             </div>
                         </div>

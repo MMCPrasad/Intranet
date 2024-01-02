@@ -345,7 +345,6 @@
                     });
                 }
 
-                // Existing code...
 
                 $(document).on('click', '.editrec', function () {
                     loadDiv($('#tableSection'));

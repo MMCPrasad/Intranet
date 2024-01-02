@@ -57,6 +57,68 @@
             .news-item {
                 cursor: pointer;
             }
+
+            /* For WebKit browsers (Chrome, Safari) */
+            #newsContainer::-webkit-scrollbar {
+                height: 1px;
+                width: 8px; /* Set the width of the scrollbar */
+            }
+
+            #newsContainer::-webkit-scrollbar-thumb {
+                background-color: #949191; /* Set the color of the scrollbar thumb */
+                border-radius: 6px; /* Set the border radius of the scrollbar thumb */
+            }
+
+            #newsContainer::-webkit-scrollbar-track {
+                background-color: #f1f1f1; /* Set the color of the scrollbar track */
+            }
+
+            /* For Firefox */
+            #newsContainer {
+                scrollbar-width: thin; /* Set the width of the scrollbar */
+                scrollbar-color: #888 #f1f1f1; /* Set the color of the scrollbar thumb and track */
+            }
+
+
+            /* Set the style for the whole scrollbar */
+            #announce ::-webkit-scrollbar {
+                width: 8px; /* You can adjust the width as needed */
+                height: 1px;
+            }
+
+            /* Set the style for the track (the area where the thumb doesn't cover) */
+            #announce ::-webkit-scrollbar-track {
+                background-color: #f1f1f1; /* Change the color as per your design */
+            }
+
+            /* Set the style for the scrollbar thumb (the draggable part) */
+            #announce ::-webkit-scrollbar-thumb {
+                background-color: #949191; /* Change the color as per your design */
+                border-radius: 6px; /* You can adjust the border-radius for a rounded look */
+            }
+
+
+            #bday ::-webkit-scrollbar {
+                height: 1px;
+                width: 8px; /* You can adjust the width as needed */
+            }
+
+            /* Set the style for the track (the area where the thumb doesn't cover) */
+            #bday ::-webkit-scrollbar-track {
+                background-color: #f1f1f1; /* Change the color as per your design */
+            }
+
+            /* Set the style for the scrollbar thumb (the draggable part) */
+            #bday ::-webkit-scrollbar-thumb {
+                background-color: #949191; /* Change the color as per your design */
+                border-radius: 6px; /* You can adjust the border-radius for a rounded look */
+            }
+
+
+
+
+
+
             #details {
                 position: relative;
             }
@@ -72,7 +134,7 @@
             .cards {
                 background-color: #f0f1f5;
                 border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
                 transition: transform 0.3s;
             }
 
@@ -134,7 +196,7 @@
             }
 
             .content {
-                background-color: #DAC0DC; /* Background color with opacity */
+                background-color: #e9d5eb; /* Background color with opacity */
                 padding: 20px;
                 opacity: 1;
                 border-radius: 15px;
@@ -145,7 +207,7 @@
             .content:hover {
                 transform: scale(1.02); /* Increasing the scale on hover */
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Changing the box shadow on hover */
-                background-color: #C09AC7; /* Changing the background color on hover */
+                background-color: #DAC0DC; /* Changing the background color on hover */
             }
 
 
@@ -217,8 +279,17 @@
 
             #tbl3 th, #tbl3 td {
                 text-decoration: none;
+                border: solid #ffffff;
+                border-width: 1px; /* Adjust the value to your desired border size */
                 color: purple;
             }
+            #tbl4 th, #tbl4 td {
+                text-decoration: none;
+                border: solid #ffffff;
+                border-width: 1px; /* Adjust the value to your desired border size */
+
+            }
+
             .placeholder {
                 display: inline-block;
                 min-height: 1em;
@@ -730,7 +801,7 @@
 
             <section id="news" style="flex: 1;" class="news" >
                 <div class="col-md-12 col-sm-12 col-xs-12" >
-                    <div class="content" style="width: 100%; padding-top: 10px; height: 650px;">
+                    <div class="content" style="width: 105%; padding-top: 10px; height: 650px;">
                         <div class="contents" >
                             <div class="section-headline text-center">
                                 <h3 style="color: #662D87!important; opacity: 1">News</h3>
@@ -770,7 +841,7 @@
 
             <section id="announce" style="flex: 1;" class="announce">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="content" style="width: 100%; padding-top: 10px; height: 650px;">
+                    <div class="content" style="width: 105%; padding-top: 10px; height: 650px;">
                         <div class="contents">
                             <div class="section-headline text-center">
                                 <h3 style="color: #662D87 !important; opacity: 1">Announcement</h3>
@@ -797,7 +868,7 @@
 
             <section id="tele" style="flex: 1; " class="tele">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="content"  style="width:100%;padding-top: 10px;height:650px">
+                    <div class="content"  style="width:105%;padding-top: 10px;height:650px">
                         <div class="contents" >
                             <div class="section-headline text-center">
                                 <h3 style="color: #662D87!important;opacity: 1">Telephone</h3>
@@ -978,7 +1049,7 @@
 
             <section id="bday" style="flex: 1; " class="bday">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="content" style="width: 100%; padding-top: 10px; height: 650px; overflow: hidden;">
+                    <div class="content" style="width: 105%; padding-top: 10px; height: 650px; overflow: hidden;">
                         <div class="contents">
                             <div class="section-headline text-center">
                                 <h3 style="color: #662D87!important; opacity: 1">Birthdays</h3>

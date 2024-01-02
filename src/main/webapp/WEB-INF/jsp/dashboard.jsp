@@ -1707,7 +1707,7 @@
         var brnchtable = $('#brnc').DataTable({
             "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
             "pageLength": 5,
-            "ordering": true,
+            "ordering": false,
             "autoWidth": false,
             "bFilter": false,
             "bPaginate": false,
@@ -1749,7 +1749,7 @@
         var emptable = $('#emp').DataTable({
             "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
             "pageLength": 5,
-            "ordering": true,
+            "ordering": false,
             "autoWidth": false,
             "processing": true,
             "serverSide": true,
@@ -1802,7 +1802,7 @@
         var dprtble = $('#dprttable').DataTable({
             "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
             "pageLength": 5,
-            "ordering": true,
+            "ordering": false,
             "autoWidth": false,
             "bFilter": false,
             "bPaginate": false,

@@ -137,14 +137,15 @@
                                     <div class="form-group" style="width: 75rem">
                                         <label for="file">Upload Profile Picture Here<span class="text-danger">*</span></label>
                                         <input id="file" type="file" multiple="">
+                                        <div class="card-footer d-flex justify-content-end">
+                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                        </div>
                                     </div>
 
 
 
                                     <div class="col-lg-6 col-12 ">
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                        </div>
+
                                     </div> 
                                 </div>
                             </div></div>
@@ -228,6 +229,19 @@
 
 
             document.getElementById('saveBtn').addEventListener('click', function () {
+                if ($('#name').val().trim() === '') {
+                    Swal.fire("Empty Name!", "Please Enter a Valid Name!", "warning");
+                    return;
+                }
+                if ($('#designation').val().trim() === '') {
+                    Swal.fire("Empty designation!", "Please Enter a Valid designation!", "warning");
+                    return;
+                }
+                if (!role || !role.selected || role.selected().length === 0) {
+                    Swal.fire("Empty Role!", "Please Choose a Valid Role!", "warning");
+                    return;
+                }
+
                 let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
                 if (mode === 'save') {

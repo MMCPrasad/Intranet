@@ -100,7 +100,7 @@
                                 <div class="card-header">
                                     <div class="card-header-right">
                                         <ul class="list-unstyled card-option">
-                                            <li><i class="feather icon-x cls-card"></i></li>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </ul>
                                     </div>
                                 </div>
@@ -124,16 +124,15 @@
                                     <div class="form-group" style="width: 75rem">
                                         <label for="file">Upload Your File Here<span class="text-danger">*</span></label>
                                         <input id="file" type="file" multiple="">
-
+                                        <div class="card-footer d-flex justify-content-end">
+                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                        </div>
                                     </div>
 
 
 
-                                    <div class="col-lg-6 col-12 ">
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                        </div>
-                                    </div> 
+
+
                                 </div>
                             </div>
                         </div></div>
@@ -158,6 +157,13 @@
 
 
     <script>
+        $(document).ready(function () {
+            // Add click event handler to both close buttons
+            $(' .close').click(function () {
+                $('#formSection').hide();
+                $('#tableSection').fadeIn();
+            });
+        });
         var type = new SlimSelect(
                 {select: '#type',
                     placeholder: "Statement Type",

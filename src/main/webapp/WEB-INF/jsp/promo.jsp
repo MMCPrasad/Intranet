@@ -126,15 +126,15 @@
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group" style="width: 75rem">
                                         <input id="file" type="file" >
-
+                                        <div class="card-footer d-flex justify-content-end">
+                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                        </div>
                                     </div>
 
 
 
                                     <div class="col-lg-6 col-12 ">
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                        </div>
+
                                     </div> 
                                 </div></div>
                         </div>
@@ -346,6 +346,14 @@
 
 
                 document.getElementById('saveBtn').addEventListener('click', function () {
+                    if ($('#heading').val().trim() === '') {
+                        Swal.fire("Empty Heading!", "Please Enter a Valid Heading!", "warning");
+                        return;
+                    }
+                    if ($('#para').val().trim() === '') {
+                        Swal.fire("Empty Paragraph!", "Please Enter a Valid Paragraph!", "warning");
+                        return;
+                    }
                     let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
                     if (mode === 'save') {

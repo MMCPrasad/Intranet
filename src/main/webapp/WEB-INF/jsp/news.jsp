@@ -126,11 +126,11 @@
                                     <div class="form-group" style="width: 75rem">
                                         <label for="para">Upload the other photo here<span class="text-danger">*</span></label>
                                         <input id="other_images" type="file" multiple="">
+                                        <div class="text-right">
+                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                        </div>
+                                    </div>
 
-                                    </div>
-                                    <div class="text-right">
-                                        <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                    </div>
                                 </div> 
                             </div>
                         </div>
@@ -358,7 +358,17 @@
                         });
             });
 
+
+
             document.getElementById('saveBtn').addEventListener('click', function () {
+                if ($('#heading').val().trim() === '') {
+                    Swal.fire("Empty Heading!", "Please Enter a Valid Heading!", "warning");
+                    return;
+                }
+                if ($('#para').val().trim() === '') {
+                    Swal.fire("Empty Paragraph!", "Please Enter a Valid Paragraph!", "warning");
+                    return;
+                }
                 let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
                 if (mode === 'save') {

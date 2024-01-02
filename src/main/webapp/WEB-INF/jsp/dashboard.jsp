@@ -137,9 +137,18 @@
                 background-color: #DAC0DC; /* Background color with opacity */
                 padding: 20px;
                 opacity: 1;
-                border-radius: 10px;
-
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Adding a drop shadow */
+                transition: transform 0.5s ease; /* Adding a smooth transition for the transform property */
             }
+
+            .content:hover {
+                transform: scale(1.02); /* Increasing the scale on hover */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Changing the box shadow on hover */
+                background-color: #C09AC7; /* Changing the background color on hover */
+            }
+
+
             .contents {
                 background-color: #5ba35d; /* Background color with opacity */
                 padding: 10px;

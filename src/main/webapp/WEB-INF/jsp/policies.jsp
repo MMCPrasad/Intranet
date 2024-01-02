@@ -150,14 +150,15 @@
                                                         <div class="form-group" style="width: 75rem">
                                                             <label for="file">Upload PDF Here<span class="text-danger">*</span></label>
                                                             <input id="file" type="file" multiple="">
+                                                            <div class="card-footer d-flex justify-content-end">
+                                                                <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                                            </div>
                                                         </div>
 
 
 
                                                         <div class="col-lg-6 col-12 ">
-                                                            <div class="card-footer d-flex justify-content-end">
-                                                                <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                                            </div>
+
                                                         </div> 
                                                     </div>
 
@@ -291,45 +292,6 @@
                     deselectLabel: '<span class="red">✖</span>'
                 });
 
-//                function onClick()
-//                {
-//                    var filter = '';
-//                    filter = "2";
-//                    $('#type').change(function () {
-//
-//                        if ($(this).val()) {
-//                            filter = $(this).val();
-//                            dtable.ajax.reload();
-//                        }
-//                    });
-//
-//
-//                }
-//
-//
-//                var selectElement = document.getElementById("type");
-//                var hideDivs = document.getElementById("divHides");
-//
-//                hideDivs.style.display = "none";
-//
-//                selectElement.addEventListener("change", function () {
-//                    if (selectElement.value === "1") {
-//                        hideDivs.style.display = "flex";
-//                    } else {
-//                        hideDivs.style.display = "none";
-//                    }
-//                });
-//
-//                function showHiddenDivs() {
-//                    var select = document.getElementById("select_level");
-//                    var recruit = document.getElementById("recruit");
-//
-//                    if (select.selectedIndex === 1) { // Check if the first option is selected
-//                        recruit.style.display = "block"; // Show the hidden div
-//                    } else {
-//                        recruit.style.display = "none"; // Hide the hidden div
-//                    }
-//                }
 
 
             </script>
@@ -355,6 +317,18 @@
                             });
                 });
                 document.getElementById('saveBtn').addEventListener('click', function () {
+                    if ($('#name').val().trim() === '') {
+                        Swal.fire("Empty Name!", "Please Enter a Valid Name!", "warning");
+                        return;
+                    }
+                    if ($('#type').val().trim() === '') {
+                        Swal.fire("Empty type!", "Please Enter a Valid Type!", "warning");
+                        return;
+                    }
+                    if ($('#subtype').val().trim() === '') {
+                        Swal.fire("Empty subtype!", "Please Enter a Valid subtype!", "warning");
+                        return;
+                    }
                     let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
                     if (mode === 'save') {

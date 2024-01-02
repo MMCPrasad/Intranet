@@ -629,16 +629,21 @@
                     }
                 });
             });
-//            function clearForm()
-//            {
-//                $('#dashboard').data('select').set('');
-//                $('#name').val('');
-//                var tree = $('#pages').jstree(true);
-//                var selectedNodes = tree.get_selected();
-//                selectedNodes.forEach(function (nodeId) {
-//                    tree.uncheck_node(nodeId);
-//                });
-//            }
+            function clearForm() {
+                // Clear the value of the input field with id 'name'
+                $('#name').val('');
+
+                // Clear the selected value of the dropdown with id 'dashboard'
+                $('#dashboard').val('').trigger('change');
+
+                // Clear the selected nodes in the jstree with id 'pages'
+                var tree = $('#pages').jstree(true);
+                var selectedNodes = tree.get_selected();
+                selectedNodes.forEach(function (nodeId) {
+                    tree.deselect_node(nodeId);
+                });
+            }
+
 
         </script>
     </body>

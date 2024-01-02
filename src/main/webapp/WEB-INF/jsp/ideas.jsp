@@ -174,6 +174,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 
+
         <script>
             var cid;
 
@@ -231,7 +232,6 @@
                         });
             });
 
-
             var ideaRe = new SlimSelect({
                 select: '#ideaRe',
                 placeholder: "~Select~",
@@ -246,8 +246,6 @@
                 allowDeselect: true,
                 deselectLabel: '<span class="red">✖</span>'
             });
-
-
             var ideaAc = new SlimSelect({
                 select: '#ideaAc',
                 placeholder: "~Select~",
@@ -262,8 +260,6 @@
                 allowDeselect: true,
                 deselectLabel: '<span class="red">✖</span>'
             });
-
-
             $.fn.dataTable.ext.errMode = 'none';
             var dtable = $('#tbll').DataTable({
                 "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
@@ -312,10 +308,7 @@
                     $(row).data('id', data['id']);
                 }
             });
-
             $.fn.dataTable.ext.errMode = 'none';
-
-
             function clearForm() {
                 $('#formSection').find('input[type!=search]').val('');
                 $('#formSection').find('textarea[type!=search]').val('');
@@ -329,6 +322,18 @@
                 });
             }
 
+            $(document).ready(function () {
+                // Add click event handler to both close buttons
+                $('#close_ideas_btn, .close').click(function () {
+                    // Hide the modal with ID "ideaModel"
+                    $('#ideaModel').modal('hide');
+
+                    // Optionally, you can use $('#ideaModel').hide(); if you prefer hiding without using modal('hide')
+
+                    // Fade in the element with ID "tableSection"
+                    $('#tableSection').fadeIn();
+                });
+            });
 
 
 

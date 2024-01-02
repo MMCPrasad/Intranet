@@ -180,7 +180,7 @@ public class PolicyService {
     private DataTableRepo<UserTypeDataTable> userTypeDt;
 
     public DataTablesResponse<UserDataTable> getUsers(DataTableRequest param) throws Exception {
-        return userDts.getData(UserDataTable.class, param, "SELECT `id`,`username`,`name`,(SELECT `name` FROM `user_type_policy` WHERE `id`= u.`userType`) AS `userTypes`,(SELECT d.`name` FROM `users` d WHERE d.`id`=`ent_by`) AS `ent_by`,ent_on,`status` FROM `users_policy` u WHERE TRUE ");
+        return userDts.getData(UserDataTable.class, param, "SELECT `id`,`username`,`name`,(SELECT `name` FROM `user_type_policy` WHERE `id`= u.`userType`) AS `userTypes`,(SELECT d.`name` FROM `users` d WHERE d.`id`=u.`ent_by`) AS `ent_by`,ent_on,`status` FROM `users_policy` u WHERE TRUE ");
     }
 
     public DataTablesResponse<UserTypeDataTable> getUserType(DataTableRequest param) throws Exception {

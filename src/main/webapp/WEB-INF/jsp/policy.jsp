@@ -8,9 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%@include file="jspf/header.jspf" %>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>FFL - Welfare & Sports Club</title>
+        <title>Fintrex - Intranet</title>
+        <%@include file="jspf/header.jspf" %>
         <style>
             html, body {
                 height: 100%;

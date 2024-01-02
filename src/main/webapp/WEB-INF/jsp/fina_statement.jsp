@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Fintrex - Intranet </title>
+        <title>Fintrex - Intranet</title>
         <%@include file="jspf/header.jspf" %>
         <link href="assets/img/pr/images.png" rel="icon">
         <link href="assets/img/pr/images.png" rel="apple-touch-icon">

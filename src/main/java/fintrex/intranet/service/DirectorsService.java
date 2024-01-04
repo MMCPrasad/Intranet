@@ -37,7 +37,7 @@ public class DirectorsService {
     private DirectorRoleRepo repor;
 
     public DataTablesResponse<DirectorDataTable> getDirectors(DataTableRequest param) throws Exception {
-        return userDt.getData(DirectorDataTable.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on` FROM `directors` X WHERE TRUE");
+        return userDt.getData(DirectorDataTable.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`mod_by`) AS `mod_by`,`mod_on` FROM `directors` X WHERE TRUE");
 
     }
 

@@ -31,7 +31,7 @@ public class AnnouncementService {
     private AnnouncementRepo repo;
 
     public DataTablesResponse<AnnouncementDataTable> getAnnoucements(DataTableRequest param) throws Exception {
-        return userDt.getData(AnnouncementDataTable.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on` FROM `announcement` X WHERE TRUE");
+        return userDt.getData(AnnouncementDataTable.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`mod_by`) AS `mod_by`,`mod_on` FROM `announcement` X WHERE TRUE");
 
     }
 

@@ -75,6 +75,8 @@
                                                 <th>Name</th>                                             
                                                 <th>Ent On</th>                                             
                                                 <th>Ent By</th>                                             
+                                                <th>Mod On</th>                                             
+                                                <th>Mod By</th>                                             
                                                 <th style="width:1px;">Status</th>
                                                 <th style="width:1px;">Action</th>
                                             </tr>
@@ -218,6 +220,8 @@
                         {"data": "name"},
                         {"data": "ent_on"},
                         {"data": "ent_by"},
+                        {"data": "mod_on"},
+                        {"data": "mod_by"},
                         {"data": "status"}
                     ], "language": {
                         'loadingRecords': '&nbsp;',
@@ -233,7 +237,7 @@
                         }
 
                         $(row).append(action_td);
-                        setTableStatus($(row).find('td').eq(3));
+                        setTableStatus($(row).find('td').eq(5));
                         $(row).data('id', data['id']);
                     }
                 });

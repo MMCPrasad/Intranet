@@ -74,6 +74,8 @@
                                                 <th>Name</th>                                             
                                                 <th>Ent On</th>                                             
                                                 <th>Ent By</th>                                             
+                                                <th>Mod On</th>                                             
+                                                <th>Mod By</th>                                             
                                                 <th style="width:1px;">Status</th>
                                                 <th style="width:1px;">Action</th>
                                             </tr>
@@ -209,6 +211,8 @@
                         {"data": "name"},
                         {"data": "ent_on"},
                         {"data": "ent_by"},
+                        {"data": "mod_on"},
+                        {"data": "mod_by"},
                         {"data": "status"}
                     ], "language": {
                         'loadingRecords': '&nbsp;',
@@ -224,7 +228,7 @@
                         }
 
                         $(row).append(action_td);
-                        setTableStatus($(row).find('td').eq(3));
+                        setTableStatus($(row).find('td').eq(5));
                         $(row).data('id', data['id']);
                     }
                 });
@@ -371,12 +375,13 @@
                         Swal.fire("Empty Name!", "Please Enter a Valid Name!", "warning");
                         return;
                     }
-                    if ($('#date').val().trim() === '') {
-                        Swal.fire("Empty date!", "Please Enter a Valid Date!", "warning");
-                        return;
-                    }
+
                     if ($('#link').val().trim() === '') {
                         Swal.fire("Empty Link!", "Please Enter a Valid Link!", "warning");
+                        return;
+                    }
+                    if ($('#type').val().trim() === '') {
+                        Swal.fire("Empty type!", "Please Enter a Valid type!", "warning");
                         return;
                     }
                     let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data

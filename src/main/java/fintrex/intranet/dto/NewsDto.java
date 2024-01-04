@@ -28,6 +28,6 @@ public class NewsDto {
     public String ent_by;
     public String ent_on;
     public String mod_by;
-    public Date mod_on;
+    public String mod_on;
 
 }

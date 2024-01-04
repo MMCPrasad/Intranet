@@ -28,6 +28,8 @@ public class DirectorDataTable {
     public String path;
     public String ent_by;
     public String ent_on;
+    public String mod_by;
+    public String mod_on;
     public String status;
 
 }

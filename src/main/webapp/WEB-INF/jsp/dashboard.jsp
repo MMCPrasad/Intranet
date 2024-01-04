@@ -65,7 +65,7 @@
             }
 
             #newsContainer::-webkit-scrollbar-thumb {
-                background-color: #949191; /* Set the color of the scrollbar thumb */
+                background-color: #a6a4a4; /* Set the color of the scrollbar thumb */
                 border-radius: 6px; /* Set the border radius of the scrollbar thumb */
             }
 
@@ -78,6 +78,11 @@
                 scrollbar-width: thin; /* Set the width of the scrollbar */
                 scrollbar-color: #888 #f1f1f1; /* Set the color of the scrollbar thumb and track */
             }
+            #newsContainer ::-webkit-scrollbar-thumb:hover {
+                background-color: #949191; /* Change the color for the hover effect */
+            }
+
+
 
 
             /* Set the style for the whole scrollbar */
@@ -93,8 +98,11 @@
 
             /* Set the style for the scrollbar thumb (the draggable part) */
             #announce ::-webkit-scrollbar-thumb {
-                background-color: #949191; /* Change the color as per your design */
+                background-color: #a6a4a4; /* Change the color as per your design */
                 border-radius: 6px; /* You can adjust the border-radius for a rounded look */
+            }
+            #announce ::-webkit-scrollbar-thumb:hover {
+                background-color: #949191; /* Change the color for the hover effect */
             }
 
 
@@ -110,10 +118,14 @@
 
             /* Set the style for the scrollbar thumb (the draggable part) */
             #bday ::-webkit-scrollbar-thumb {
-                background-color: #949191; /* Change the color as per your design */
+                background-color: #a6a4a4; /* Change the color as per your design */
                 border-radius: 6px; /* You can adjust the border-radius for a rounded look */
             }
 
+            /* Change the color of the scrollbar thumb on hover */
+            #bday ::-webkit-scrollbar-thumb:hover {
+                background-color: #949191; /* Change the color for the hover effect */
+            }
 
 
 

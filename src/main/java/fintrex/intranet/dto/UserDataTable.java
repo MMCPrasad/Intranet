@@ -22,6 +22,8 @@ public class UserDataTable {
 
     public String ent_on;
     public String ent_by;
+    public String mod_by;
+    public String mod_on;
     public String status;
 
 }

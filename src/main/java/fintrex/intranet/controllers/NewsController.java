@@ -138,7 +138,7 @@ public class NewsController {
     @ResponseBody
     public void views(@PathVariable String name, HttpServletResponse resp) throws IOException {
         System.out.println("test");
-        File file = new File("E:\\chirantha\\intranet\\news\\123\\" + name);
+        File file = new File("intranet\\news\\123\\" + name);
 
         if (!file.exists()) {
             resp.sendError(404, "file not found");

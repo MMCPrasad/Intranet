@@ -27,7 +27,7 @@ public class BranchService {
     BranchRepo repo;
 
     public DataTablesResponse<BranchEmpDto> getUsers(DataTableRequest param) throws Exception {
-        return branchdto.getData(BranchEmpDto.class, param, "SELECT e.id, e.callname,(SELECT `name` FROM `hris_new`.`designation` WHERE `id`=e.designation) AS desig,(SELECT `name` FROM `hris_new`.`branch` WHERE `id`=e.branch) AS brnch,e.office_tel_no,e.ext_no,e.email,e.office_mobile_no,g.name FROM `hris_new`.employee e JOIN `hris_new`.emp_grade g ON e.grade=g.id AND e.branch!='3' WHERE e.status ='active' AND e.branch= " + param.getFilter() + "");
+        return branchdto.getData(BranchEmpDto.class, param, "SELECT e.id, e.callname,(SELECT `name` FROM `hris_new`.`designation` WHERE `id`=e.designation) AS desig,(SELECT `name` FROM `hris_new`.`branch` WHERE `id`=e.branch) AS brnch,e.office_tel_no,e.ext_no,e.email,e.office_mobile_no,g.name FROM `hris_new`.employee e JOIN `hris_new`.emp_grade g ON e.grade=g.id AND e.branch!='3' WHERE e.status ='active' AND e.branch= " + param.getFilter() + "ORDER BY g.`odr` ASC");
     }
 
     public DataTablesResponse<BranchEmpDto> getEmps(DataTableRequest param) throws Exception {

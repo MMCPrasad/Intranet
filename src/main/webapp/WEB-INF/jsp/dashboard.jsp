@@ -141,6 +141,40 @@
             }
 
 
+            /* Define a class for the custom scrollbar styles */
+            .custom-scrollbar {
+                scrollbar-width: thin;
+                scrollbar-color: #a6a4a4 #f1f1f1;
+            }
+
+            /* Set the style for the scrollbar thumb (the draggable part) in Firefox */
+            .custom-scrollbar {
+                overflow-y: auto;
+                max-height: 200px;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+
+            /* Set the style for the scrollbar thumb (the draggable part) in Chrome and Safari */
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background-color: #a6a4a4;
+                border-radius: 6px;
+            }
+
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background-color: #f1f1f1;
+            }
+
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background-color: #949191;
+            }
+
+
+
 
 
 
@@ -698,7 +732,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="ceo_msg_div">
-                                            <div id="ceo_msg" class="ceo_msg_div col-lg-12 responsive-img text-left" style="max-height: 200px; overflow-y: auto; padding-left: 10px; padding-top: 10px">
+                                            <div id="ceo_msg" class="ceo_msg_div col-lg-12 responsive-img text-left custom-scrollbar" style="max-height: 200px; overflow-y: auto; padding-left: 10px; padding-top: 10px">
                                                 <h5 style="padding-top: 2px">Dear Fintrex Family,</h5>
                                                 <h6>Hope all of you and your families are safe, take care</h6>
                                                 <h6>I am writing this message to refresh all of you on the importance of discipline, adhering to our company policies, procedures, ethical self-conduct and good governance.</h6>
@@ -721,6 +755,7 @@
                                             </div>
                                         </div>
                                     </div>
+
 
                                 </div>
                                 <div class="col">
@@ -1709,14 +1744,18 @@
             function toggleReadMore() {
                 var readMoreContent = document.getElementById("read_more_content");
                 var ceoMsg = document.getElementById("ceo_msg");
+
                 if (readMoreContent.style.overflowY === "hidden") {
                     readMoreContent.style.overflowY = "auto";
-                    ceoMsg.style.height = "auto";
+                    ceoMsg.classList.add("custom-scrollbar");
                 } else {
                     readMoreContent.style.overflowY = "hidden";
-                    ceoMsg.style.height = "125px"; // Set the initial height
+                    ceoMsg.classList.remove("custom-scrollbar");
+                    ceoMsg.style.height = "125px";
                 }
             }
+
+
 
 
             var ideaResult = new SlimSelect({

@@ -73,6 +73,27 @@
                 text-decoration: none;
             }
 
+            .info-cont ul li a {
+                color: black; /* Set the color to black */
+                text-decoration: none; /* Remove underline */
+            }
+
+            .info-cont ul li a:hover {
+                color: #6c4892;
+                text-decoration: none; /* Keep the same hover effect without underline */
+            }
+
+            .file-download li a {
+                text-decoration: none; /* Remove underline for links inside .file-download */
+            }
+
+            #tbl3 tbody tr a,
+            #tbl4 tbody tr a {
+                text-decoration: none; /* Remove underline for links inside the tables */
+                color: black;
+                font-size: 1.1rem;
+            }
+
         </style>
         <div class="row info-cont" > 
             <h1 class="no-margin-top" style="display: flex;justify-content: center">Financial Statements</h1>

@@ -27,7 +27,7 @@ public class DepartmentService {
     DepartmentRepo repo;
 
     public DataTablesResponse<DepartmentEmpDto> getUser(DataTableRequest param) throws Exception {
-        return departmentdto.getData(DepartmentEmpDto.class, param, "SELECT e.id, e.callname,(SELECT `name` FROM `hris_new`.`designation` WHERE `id`=e.designation) AS desig,(SELECT `name` FROM `hris_new`.`department` WHERE `id`=e.department) AS deprt,e.office_tel_no,e.ext_no,e.email,e.office_mobile_no,e.ext_no,e.email,e.office_mobile_no FROM `hris_new`.employee e JOIN `hris_new`.emp_grade g ON e.grade=g.id AND e.branch='3' WHERE e.status ='active' AND e.department= " + param.getFilter() + "ORDER BY g.`odr` ASC");
+        return departmentdto.getData(DepartmentEmpDto.class, param, "SELECT e.id, e.callname,(SELECT `name` FROM `hris_new`.`designation` WHERE `id`=e.designation) AS desig,(SELECT `name` FROM `hris_new`.`department` WHERE `id`=e.department) AS deprt,e.office_tel_no,e.ext_no,e.email,e.office_mobile_no,e.ext_no,e.email,e.office_mobile_no FROM `hris_new`.employee e JOIN `hris_new`.emp_grade g ON e.grade=g.id AND e.branch='3' WHERE e.status ='active' AND e.`department`= " + param.getFilter() + " ORDER BY g.`odr` ASC");
     }
 
     public Iterable<SlimSelectDTO> getDepartment(String search) {

@@ -10,7 +10,7 @@
     .bg-light {
         background-color: #6c4892!important;
         font-family: Jost;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: bold;
         color: white;
     }

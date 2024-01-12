@@ -370,7 +370,7 @@
                 transition: color 0.1s, font-weight 0.1s;
                 font-family: 'Exo 2';
                 font-weight: 700;
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             #announce a:hover {
@@ -656,28 +656,34 @@
             /* Custom styles for the DataTable with the ID "emp" */
             /* Custom styles for odd rows in the DataTable with the ID "emp" */
             #emp tr.odd {
-                background-color: #e3f3fc; /* Light gray color for odd rows */
+                background-color: #e3f3fc;
+                font-size: 0.9rem;
             }
 
             /* Custom styles for even rows in the DataTable with the ID "emp" */
             #emp tr.even {
-                background-color: #f2f7fa; /* White color for even rows */
+                background-color: #f2f7fa;
+                font-size: 0.9rem;
             }
             #dprttable tr.odd {
-                background-color: #e3f3fc; /* Light gray color for odd rows */
+                background-color: #e3f3fc;
+                font-size: 0.9rem;
             }
 
             /* Custom styles for even rows in the DataTable with the ID "emp" */
             #dprttable tr.even {
-                background-color: #f2f7fa; /* White color for even rows */
+                background-color: #f2f7fa;
+                font-size: 0.9rem;
             }
             #brnc tr.odd {
-                background-color: #e3f3fc; /* Light gray color for odd rows */
+                background-color: #e3f3fc;
+                font-size: 0.9rem;
             }
 
             /* Custom styles for even rows in the DataTable with the ID "emp" */
             #brnc tr.even {
-                background-color: #f2f7fa; /* White color for even rows */
+                background-color: #f2f7fa;
+                font-size: 0.9rem;
             }
 
 
@@ -893,7 +899,7 @@
                     <div class="content" style="width: 105%; padding-top: 10px; height: 650px;">
                         <div class="contents" >
                             <div class="section-headline text-center">
-                                <h3 style="color: #662D87!important; opacity: 1">News</h3>
+                                <h4 style="color: #662D87!important; opacity: 1">News</h4>
                             </div>
                         </div>
                         <div class="cardss" >
@@ -933,7 +939,7 @@
                     <div class="content" style="width: 105%; padding-top: 10px; height: 650px;">
                         <div class="contents">
                             <div class="section-headline text-center">
-                                <h3 style="color: #662D87 !important; opacity: 1">Announcement</h3>
+                                <h4 style="color: #662D87 !important; opacity: 1">Announcement</h4>
                             </div>
                         </div>
                         <div style="max-height: 35rem; overflow-y: scroll;">
@@ -960,7 +966,7 @@
                     <div class="content"  style="width:105%;padding-top: 10px;height:650px">
                         <div class="contents" >
                             <div class="section-headline text-center">
-                                <h3 style="color: #662D87!important;opacity: 1">Telephone</h3>
+                                <h4 style="color: #662D87!important;opacity: 1">Telephone</h4>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center" style="margin-top: 1rem;">
@@ -1141,7 +1147,7 @@
                     <div class="content" style="width: 105%; padding-top: 10px; height: 650px; overflow: hidden;">
                         <div class="contents">
                             <div class="section-headline text-center">
-                                <h3 style="color: #662D87!important; opacity: 1">Birthdays</h3>
+                                <h4 style="color: #662D87!important; opacity: 1">Birthdays</h4>
                             </div>
                         </div>
                         <div style="max-height: 35rem; overflow-y: scroll;">
@@ -2113,7 +2119,7 @@
                                 txtDiv.style.marginLeft = '5px';
                                 txtDiv.style.fontFamily = "'Exo 2', sans-serif";
                                 const h4 = document.createElement('h4');
-                                h4.style.fontSize = '1rem';
+                                h4.style.fontSize = '0.9rem';
                                 h4.style.fontWeight = '700';
                                 h4.textContent = newsItem.heading; // Set the heading to the newsItem's heading
 

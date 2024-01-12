@@ -29,6 +29,7 @@ import fintrex.intranet.repo.UserPolicyRepo;
 import fintrex.intranet.repo.UserRepo;
 import fintrex.intranet.repo.UserTypePolicyRepo;
 import fintrex.intranet.repo.UserTypeRepo;
+import jakarta.servlet.http.HttpSession;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
@@ -55,8 +56,8 @@ public class PolicyService {
     @Autowired
     private PolicyTypeRepo rep;
 
-    public DataTablesResponse<PolicyDto> getPolicies(DataTableRequest param) throws Exception {
-        return userDt.getData(PolicyDto.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`mod_by`) AS `mod_by`,`mod_on` FROM `policies` X WHERE TRUE");
+    public DataTablesResponse<PolicyDto> getPolicies(DataTableRequest param, Integer userId) throws Exception {
+        return userDt.getData(PolicyDto.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`mod_by`) AS `mod_by`,`mod_on` FROM `policies` X WHERE subtype=(SELECT `department` FROM `users` WHERE `id`=?)", userId);
 
     }
 
@@ -65,8 +66,8 @@ public class PolicyService {
 
     }
 
-    public DataTablesResponse<PolicyDto> getDepartment(DataTableRequest param) throws Exception {
-        return userDt.getData(PolicyDto.class, param, "SELECT `id`, `name`,path FROM `policies` WHERE `type` = '1' AND `subtype` = " + param.getFilter() + "");
+    public DataTablesResponse<PolicyDto> getDepartment(DataTableRequest param, Integer userId) throws Exception {
+        return userDt.getData(PolicyDto.class, param, "SELECT p.id,p.name,p.path FROM `policies` p JOIN hris_new.employee e ON p.subtype=e.department JOIN  hris_new.user u  ON u.employee_id=e.id WHERE u.id=? ", userId);
 
     }
 
@@ -131,11 +132,12 @@ public class PolicyService {
         return systems;
     }
 
-    public Policy save(String name, String type, String subtype, MultipartFile file) throws Exception {
+    public Policy save(String name, String type, HttpSession session, MultipartFile file) throws Exception {
         Policy system = new Policy();
         system.setName(name);
         system.setType(type);
-        system.setSubtype(subtype);
+        String departmentFromSession = (String) session.getAttribute("department");
+        system.setSubtype(departmentFromSession);
         system.setStatus("active");
         system = repo.save(system);
         if (file != null) {
@@ -147,11 +149,12 @@ public class PolicyService {
         return repo.save(system);
     }
 
-    public Policy update(Integer id, String name, String type, String subtype, MultipartFile file) throws Exception {
+    public Policy update(Integer id, String name, String type, HttpSession session, MultipartFile file) throws Exception {
         Policy system = repo.findById(id).get();
         system.setName(name);
         system.setType(type);
-        system.setSubtype(subtype);
+        String departmentFromSession = (String) session.getAttribute("department");
+        system.setSubtype(departmentFromSession);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Polices\\" + id + "." + split[split.length - 1]);

@@ -35,7 +35,7 @@ public class BirthdayService {
     WishRepo repor;
 
     public DataTablesResponse<BirthdayEmpDto> getDobs(DataTableRequest param) throws Exception {
-        return dobdob.getData(BirthdayEmpDto.class, param, "SELECT e.`id`,e.`callname`,SUBSTR(CONCAT(SUBSTRING(CURDATE(), 1, 5), SUBSTR(e.`dob`, 6)), 6) AS `dob`,(SELECT d.`name` FROM `hris_new`.`department` d WHERE d.`id` = e.`department`) AS `branch`FROM `hris_new`.`employee` e WHERE STR_TO_DATE(CONCAT(SUBSTRING(CURDATE(), 1, 5), SUBSTR(e.`dob`, 6)), '%Y-%m-%d') BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 10 DAY) AND e.`status` = 'active'");
+        return dobdob.getData(BirthdayEmpDto.class, param, "SELECT e.`id`,e.`callname`,SUBSTR(CONCAT(SUBSTRING(CURDATE(), 1, 5), SUBSTR(e.`dob`, 6)), 6) AS `dob`,(SELECT d.`name` FROM `hris_new`.`department` d WHERE d.`id` = e.`department`) AS `branch`FROM `hris_new`.`employee` e WHERE STR_TO_DATE(CONCAT(SUBSTRING(CURDATE(), 1, 5), SUBSTR(e.`dob`, 6)), '%Y-%m-%d') BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 15 DAY) AND e.`status` = 'active'");
     }
 
     public Iterable<SlimSelectDTO> getDob(String search) {

@@ -87,9 +87,12 @@
                                                                             <th>Id</th>
                                                                             <th>Username</th>
                                                                             <th>User</th>
-                                                                            <th>User Type</th>  
+
+
                                                                             <th>Ent On</th>  
-                                                                            <th>Ent By</th>  
+                                                                            <th>Ent By</th>
+                                                                            <th>User Type</th> 
+                                                                            <th>Department</th>  
                                                                             <th>Mod On</th>  
                                                                             <th>Mod By</th>  
                                                                             <th style="width:1px;">Status</th>
@@ -147,6 +150,13 @@
                                                                                 </select>
                                                                             </div>
                                                                         </div>  
+                                                                        <div class="col-lg-6 col-12">
+                                                                            <div class="form-group">
+                                                                                <label for="department">Department<span class="text-danger">*</span></label>
+                                                                                <select id="department" name="department" class="" required autocomplete="off">
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>  
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -180,6 +190,22 @@
         <script type="text/javascript" src="files/js/dataTables.searchHighlight.min.js"></script>
         <script>
 
+            var dptmnt = new SlimSelect({
+                select: '#department',
+                placeholder: "Department",
+                ajax: function (search, callback) {
+                    fetch('department/search-department', {
+                        method: 'POST',
+                        body: new URLSearchParams({search: search || ''})
+                    }).then(res => res.json()).then((data) => {
+                        callback(data);
+                    });
+                },
+                allowDeselect: true,
+                deselectLabel: '<span class="red">✖</span>'
+            });
+
+
             $.fn.dataTable.ext.errMode = 'none';
 
             var dtable = $('#tbll').DataTable({
@@ -208,9 +234,11 @@
                     {"data": "id", className: "text-right", "visible": false},
                     {"data": "username"},
                     {"data": "name"},
+
                     {"data": "ent_on"},
                     {"data": "ent_by"},
                     {"data": "userTypes"},
+                    {"data": "department"},
                     {"data": "mod_on"},
                     {"data": "mod_by"},
                     {"data": "status"}
@@ -227,7 +255,7 @@
                     }
                     $(row).append(action_td);
 
-                    setTableStatus($(row).find('td').eq(7));
+                    setTableStatus($(row).find('td').eq(8));
                     $(row).data('id', data['id']);
                 }
             });
@@ -319,6 +347,10 @@
                     Swal.fire("UserType not Selected!", "Please Select a UserType!", "warning");
                     return;
                 }
+                if ($('#department').val() === null) {
+                    Swal.fire("Department not Selected!", "Please Select a Department!", "warning");
+                    return;
+                }
 
                 let mode = $('#saveBtn').data('mode');
 
@@ -329,6 +361,7 @@
                 formData.append('name', $('#name').val().trim());
                 formData.append('username', $('#username').val().trim());
                 formData.append('userType', $('#user_type').val());
+                formData.append('department', $('#department').val());
 
                 Swal.fire({
                     title: 'Are you sure?',

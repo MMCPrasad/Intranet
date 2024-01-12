@@ -138,12 +138,12 @@
                                                                 <select class="form-control-sm pull-right" id="mannual">  </select>                                      
                                                             </div>
                                                         </div>
-                                                        <div class="row mb-1">
-                                                            <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Department </label>
-                                                            <div class="col-sm-6">
-                                                                <select class="form-control-sm pull-right" id="department">  </select>                                      
-                                                            </div>
-                                                        </div>
+                                                        <!--                                                        <div class="row mb-1">
+                                                                                                                    <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Department </label>
+                                                                                                                    <div class="col-sm-6">
+                                                                                                                        <select class="form-control-sm pull-right" id="subtype">  </select>                                      
+                                                                                                                    </div>
+                                                                                                                </div>-->
 
                                                     </div>
 
@@ -177,6 +177,17 @@
                     </div></div>
 
             </div>
+
+
+
+
+
+
+
+
+
+
+
             <%@include file="jspf/scripts.jspf" %>
             <script type="text/javascript" src="files/js/slimselect.js"></script>
             <script type="text/javascript" src="files/js/datatables.min.js"></script>
@@ -281,20 +292,20 @@
                     allowDeselect: true,
                     deselectLabel: '<span class="red">✖</span>'
                 });
-                var department = new SlimSelect({
-                    select: '#department',
-                    placeholder: "Department Policy",
-                    ajax: function (search, callback) {
-                        fetch('policy/search-deppolicy', {
-                            method: 'POST',
-                            body: new URLSearchParams({search: search || ''})
-                        }).then(res => res.json()).then((data) => {
-                            callback(data);
-                        });
-                    },
-                    allowDeselect: true,
-                    deselectLabel: '<span class="red">✖</span>'
-                });
+//                var department = new SlimSelect({
+//                    select: '#subtype',
+//                    placeholder: "Department Policy",
+//                    ajax: function (search, callback) {
+//                        fetch('department/search-department', {
+//                            method: 'POST',
+//                            body: new URLSearchParams({search: search || ''})
+//                        }).then(res => res.json()).then((data) => {
+//                            callback(data);
+//                        });
+//                    },
+//                    allowDeselect: true,
+//                    deselectLabel: '<span class="red">✖</span>'
+//                });
 
 
 
@@ -329,10 +340,8 @@
                         Swal.fire("Empty type!", "Please Enter a Valid Type!", "warning");
                         return;
                     }
-                    if ($('#subtype').val().trim() === '') {
-                        Swal.fire("Empty subtype!", "Please Enter a Valid subtype!", "warning");
-                        return;
-                    }
+
+
                     let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
                     if (mode === 'save') {
@@ -343,8 +352,8 @@
                         fd.append('name', name);
                         let type = document.getElementById('type').value;
                         fd.append('type', type);
-                        let subtype = document.getElementById('department').value;
-                        fd.append('subtype', subtype);
+//                        let subtype = document.getElementById('subtype').value;
+//                        fd.append('subtype', subtype);
 
 
 
@@ -371,7 +380,7 @@
                         let id = $('#saveBtn').data('id');
                         let name = $('#name').val();
                         let type = $('#type').val();
-                        let subtype = $('#department').val();
+//                        let subtype = $('#subtype').val();
                         let fileInput = document.getElementById('file');
                         let files = fileInput.files;
 
@@ -379,7 +388,7 @@
                         formData.append('id', id);
                         formData.append('name', name);
                         formData.append('type', type);
-                        formData.append('subtype', department);
+//                        formData.append('subtype', subtype);
 
                         for (let i = 0; i < files.length; i++) {
                             formData.append('file', files[i]);

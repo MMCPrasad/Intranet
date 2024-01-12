@@ -103,6 +103,7 @@ public class DirectorsService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Directors\\" + id + "." + split[split.length - 1]);
+            System.out.println(des.getName());
             file.transferTo(des);
             system.setPath(des.getName());
         }

@@ -34,6 +34,7 @@ public class User {
     private AggregateReference<UserType, Integer> usertype;
     @Transient
     private String userTypeName;
+    private String department;
     private String username;
     private String password;
     private String status;

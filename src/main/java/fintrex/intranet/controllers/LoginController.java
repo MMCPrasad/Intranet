@@ -37,7 +37,9 @@ public class LoginController {
             try {
                 InitialLdapContext c = new InitialLdapContext(props, null);
                 session.setAttribute("uid", user.getId());
+                session.setAttribute("department", user.getDepartment());
                 session.setAttribute("username", username);
+//                session.setAttribute("department", department);
 //            session.setAttribute("type", user.getUserType().getId());
 //            String dashboard = servr.getDashboard(user.getUserType().getId());
 //            session.setAttribute("dashboard", dashboard);

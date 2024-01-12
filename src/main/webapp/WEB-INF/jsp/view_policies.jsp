@@ -250,7 +250,7 @@
         select: '#genpol',
         placeholder: "Choose Department",
         ajax: function (search, callback) {
-            fetch('policy/search-deppolicy', {
+            fetch('department/search-department', {
                 method: 'POST',
                 body: new URLSearchParams({search: search || ''})
             }).then(res => res.json()).then((data) => {
@@ -276,7 +276,7 @@
         select: '#genpro',
         placeholder: "Choose Department",
         ajax: function (search, callback) {
-            fetch('policy/search-deppolicy', {
+            fetch('department/search-department', {
                 method: 'POST',
                 body: new URLSearchParams({search: search || ''})
             }).then(res => res.json()).then((data) => {

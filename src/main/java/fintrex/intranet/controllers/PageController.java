@@ -224,6 +224,11 @@ public class PageController {
         return "wishes";
     }
 
+    @GetMapping("/coverimage")
+    public String coverimage() {
+        return "coverimage";
+    }
+
     @Autowired
     PageService ser;
 

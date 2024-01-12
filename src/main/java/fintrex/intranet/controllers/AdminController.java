@@ -62,15 +62,15 @@ public class AdminController {
     }
 
     @PostMapping("/save-user")
-    public ResponseEntity<CommonResponse> saveUser(@RequestParam String username, @RequestParam String name, @RequestParam Integer userType) throws Exception {
-        service.saveUser(name, username, userType);
+    public ResponseEntity<CommonResponse> saveUser(@RequestParam String username, @RequestParam String name, @RequestParam Integer userType, @RequestParam String department) throws Exception {
+        service.saveUser(name, username, userType, department);
         CommonResponse response = new CommonResponse("Success!", 200);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PostMapping("/update-user")
-    public ResponseEntity<CommonResponse> saveUser(@RequestParam Integer id, @RequestParam String username, @RequestParam String name, @RequestParam Integer userType) throws Exception {
-        service.updateUser(id, name, username, userType);
+    public ResponseEntity<CommonResponse> saveUser(@RequestParam Integer id, @RequestParam String username, @RequestParam String name, @RequestParam Integer userType, @RequestParam String department) throws Exception {
+        service.updateUser(id, name, username, userType, department);
         CommonResponse response = new CommonResponse("Success!", 200);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

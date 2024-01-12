@@ -42,7 +42,7 @@ public class AdminService {
     private DataTableRepo<UserTypeDataTable> userTypeDt;
 
     public DataTablesResponse<UserDataTable> getUsers(DataTableRequest param) throws Exception {
-        return userDt.getData(UserDataTable.class, param, "SELECT `id`,`username`,`name`,(SELECT `name` FROM `user_type` WHERE `id`= u.`userType`) AS `userTypes`,(SELECT d.`name` FROM `users` d WHERE d.`id`=u.`ent_by`) AS `ent_by`,`ent_on`,(SELECT d.`name` FROM `users` d WHERE d.`id`=u.`mod_by`) AS `mod_by`,`mod_on`,`status` FROM `users` u WHERE TRUE ");
+        return userDt.getData(UserDataTable.class, param, "SELECT `id`,`username`,`name`,(SELECT `name` FROM `user_type` WHERE `id`= u.`userType`) AS `userTypes`,(SELECT d.`name` FROM `users` d WHERE d.`id`=u.`ent_by`) AS `ent_by`,`ent_on`,(SELECT d.`name` FROM `users` d WHERE d.`id`=u.`mod_by`) AS `mod_by`,`mod_on`,(SELECT `name` FROM `hris_new`.`department` WHERE `id` = `department`) AS department,`status` FROM `users` u WHERE TRUE ");
     }
 
     public DataTablesResponse<UserTypeDataTable> getUserType(DataTableRequest param) throws Exception {
@@ -90,21 +90,23 @@ public class AdminService {
 
     }
 
-    public User saveUser(String name, String username, Integer userType) throws Exception {
+    public User saveUser(String name, String username, Integer userType, String department) throws Exception {
         User user = new User();
         user.setUsername(username);
         user.setName(name);
         user.setUsertype(AggregateReference.to(userType));
+        user.setDepartment(department);
         user.setStatus("active");
         user = userRepo.save(user);
         return user;
     }
 
-    public User updateUser(Integer id, String name, String username, Integer userType) throws Exception {
+    public User updateUser(Integer id, String name, String username, Integer userType, String department) throws Exception {
         User user = userRepo.findById(id).get();
         user.setUsername(username);
         user.setName(name);
         user.setUsertype(AggregateReference.to(userType));
+        user.setDepartment(department);
         user = userRepo.save(user);
         return user;
     }

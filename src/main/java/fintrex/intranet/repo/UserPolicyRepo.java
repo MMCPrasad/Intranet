@@ -30,6 +30,7 @@ public interface UserPolicyRepo extends CrudRepository<UserPolicy, Integer> {
     @Query("SELECT `id` FROM `user` WHERE `username`=:username")
     Integer getUserDetailsByUsername(@Param("username") String username);
 
-    Optional<UserPolicy> findByUsername(String username);
+    @Query("SELECT * FROM `hris_new`.`user` WHERE STATUS='active' AND `username` =:usernane")
+    Optional<UserPolicy> findByUsername(@Param("usernane") String username);
 
 }

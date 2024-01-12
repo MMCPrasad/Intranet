@@ -49,8 +49,8 @@ public class PolicyController {
     PolicyService service;
 
     @PostMapping("/policies")
-    public DataTablesResponse<PolicyDto> getPolicies(@RequestBody DataTableRequest param) throws Exception {
-        return service.getPolicies(param);
+    public DataTablesResponse<PolicyDto> getPolicies(@RequestBody DataTableRequest param, HttpSession session) throws Exception {
+        return service.getPolicies(param, (Integer) session.getAttribute("uid"));
     }
 
     @PostMapping("/manuals")
@@ -59,8 +59,8 @@ public class PolicyController {
     }
 
     @PostMapping("/department")
-    public DataTablesResponse<PolicyDto> getDepartment(@RequestBody DataTableRequest param) throws Exception {
-        return service.getDepartment(param);
+    public DataTablesResponse<PolicyDto> getDepartment(@RequestBody DataTableRequest param, HttpSession session) throws Exception {
+        return service.getDepartment(param, (Integer) session.getAttribute("uid"));
     }
 
     @PostMapping("/generel-policy")
@@ -138,23 +138,23 @@ public class PolicyController {
 
     @PostMapping("/save")
     @ResponseBody
-    public Policy upload(MultipartHttpServletRequest req) throws Exception {
+    public Policy upload(MultipartHttpServletRequest req, HttpSession session) throws Exception {
         String name = req.getParameter("name");
         String type = req.getParameter("type");
-        String subtype = req.getParameter("subtype");
+
         MultipartFile file = req.getFile("file");
-        return service.save(name, type, subtype, file);
+        return service.save(name, type, session, file);
     }
 
     @PostMapping("/update")
     @ResponseBody
-    public Policy update(MultipartHttpServletRequest req) throws Exception {
+    public Policy update(MultipartHttpServletRequest req, HttpSession session) throws Exception {
         Integer id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
         String type = req.getParameter("type");
-        String subtype = req.getParameter("subtype");
+
         MultipartFile file = req.getFile("file");
-        return service.update(id, name, type, subtype, file);
+        return service.update(id, name, type, session, file);
     }
 
     @GetMapping("/path/view/{name}")

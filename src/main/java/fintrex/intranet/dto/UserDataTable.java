@@ -19,6 +19,7 @@ public class UserDataTable {
     public String username;
     public String name;
     public String userTypes;
+    public String department;
 
     public String ent_on;
     public String ent_by;

@@ -94,12 +94,25 @@ public class DepartmentService {
         system.setSubtype(departmentFromSession);
         system.setStatus("active");
         system = repor.save(system);
+
+        String directoryPath = "intranet\\teammembers\\";
+
+        File directory = new File(directoryPath);
+        if (!directory.exists()) {
+            if (directory.mkdirs()) {
+                System.out.println("Directory created successfully");
+            } else {
+                throw new Exception("Failed to create directory");
+            }
+        }
+
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("intranet\\teammembers\\" + system.getId() + "." + split[split.length - 1]);
+            File des = new File(directoryPath + system.getId() + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }
+
         return repor.save(system);
     }
 
@@ -157,12 +170,27 @@ public class DepartmentService {
         system.setSubtype(departmentFromSession);
         system.setStatus("active");
         system = reporr.save(system);
+
+        // Specify the directory path
+        String directoryPath = "intranet\\AboutUs\\";
+
+        // Create the directory if it doesn't exist
+        File directory = new File(directoryPath);
+        if (!directory.exists()) {
+            if (directory.mkdirs()) {
+                System.out.println("Directory created successfully");
+            } else {
+                throw new Exception("Failed to create directory");
+            }
+        }
+
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("intranet\\AboutUs\\" + system.getId() + "." + split[split.length - 1]);
+            File des = new File(directoryPath + system.getId() + "." + split[split.length - 1]);
             file.transferTo(des);
             system.setPath(des.getName());
         }
+
         return reporr.save(system);
     }
 

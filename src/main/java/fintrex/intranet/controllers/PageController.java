@@ -229,6 +229,16 @@ public class PageController {
         return "coverimage";
     }
 
+    @GetMapping("/form_mandates")
+    public String form_mandates() {
+        return "form_mandates";
+    }
+
+    @GetMapping("/forms")
+    public String forms() {
+        return "forms";
+    }
+
     @Autowired
     PageService ser;
 

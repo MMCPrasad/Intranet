@@ -23,7 +23,7 @@
         <%@include file="jspf/header.jspf" %>
         <link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="files/css/style11.css">
+        <!--        <link rel="stylesheet" href="files/css/style11.css">-->
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -403,10 +403,10 @@
                 padding: 5px 1em;
             }
 
-            .fh5co-cover, .fh5co-hero {
-                position: relative;
-
-            }
+            /*            .fh5co-cover, .fh5co-hero {
+                            position: relative;
+            
+                        }*/
 
 
 
@@ -905,11 +905,12 @@
                 <div class="fh5co-hero">
                     <div class="fh5co-overlay"></div>
                     <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" id="backgroundImage" style="position: relative;">
-                        <div class="desc animate-box" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
+                        <div class="desc animate-box" style="position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);">
                             <p style="font-size: 3rem; color: #fff; font-family: 'Cinzel', serif; letter-spacing: 0.1em; text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); display: inline-block;"><strong>Fintrex</strong> Finance LTD <strong></strong></p>
                         </div>
                     </div>
                 </div>
+
 
                 <div id="fh5co-feature-product" class="fh5co-section-gray" style="padding-bottom: 1em;">
                     <div class="container">

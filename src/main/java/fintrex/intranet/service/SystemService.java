@@ -13,6 +13,7 @@ import fintrex.intranet.repo.SystemRepo;
 import fintrex.intranet.model.Systems;
 import fintrex.intranet.repo.SystemTypeRepo;
 import java.io.File;
+import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -79,10 +80,22 @@ public class SystemService {
         system.setLink(link);
         system.setStatus("active");
         system = repo.save(system);
+
+        String directoryPath = "intranet\\Systems";
+
+        File directory = new File(directoryPath);
+        if (!directory.exists()) {
+            if (directory.mkdirs()) {
+                System.out.println("Directory created successfully");
+            } else {
+                throw new Exception("Failed to create directory");
+            }
+        }
+
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File("intranet\\Systems\\" + system.getId() + "." + split[split.length - 1]);
-            file.transferTo(des);
+            File des = new File(directory, system.getId() + "." + split[split.length - 1]);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);

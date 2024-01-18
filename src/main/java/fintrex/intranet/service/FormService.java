@@ -13,6 +13,7 @@ import fintrex.intranet.repo.AnnouncementRepo;
 import fintrex.intranet.model.Form;
 import fintrex.intranet.repo.FormRepo;
 import java.io.File;
+import java.nio.file.Path;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,27 +84,23 @@ public class FormService {
         Form system = new Form();
         system.setName(name);
         system.setStatus("active");
-
         system = repo.save(system);
+
+        String directoryPath = "intranet\\Forms";
+
+        File directory = new File(directoryPath);
+        if (!directory.exists()) {
+            if (directory.mkdirs()) {
+                System.out.println("Directory created successfully");
+            } else {
+                throw new Exception("Failed to create directory");
+            }
+        }
 
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-
-            // Define the folder path
-            String folderPath = "intranet\\Forms\\";
-
-            // Create the folder if it doesn't exist
-            File folder = new File(folderPath);
-            if (!folder.exists()) {
-                folder.mkdirs(); // Creates the necessary directories
-            }
-
-            // Define the destination file
-            File des = new File(folderPath + system.getId() + "." + split[split.length - 1]);
-
-            // Copy the file to the destination
-            FileCopyUtils.copy(file.getBytes(), des);
-
+            File des = new File(directory, system.getId() + "." + split[split.length - 1]);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
 

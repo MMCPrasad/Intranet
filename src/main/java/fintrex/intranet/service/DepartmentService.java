@@ -18,6 +18,7 @@ import fintrex.intranet.repo.DepartmentRepo;
 import fintrex.intranet.repo.MemberRepo;
 import jakarta.servlet.http.HttpSession;
 import java.io.File;
+import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -95,7 +96,7 @@ public class DepartmentService {
         system.setStatus("active");
         system = repor.save(system);
 
-        String directoryPath = "intranet\\teammembers\\";
+        String directoryPath = "intranet\\teammembers";
 
         File directory = new File(directoryPath);
         if (!directory.exists()) {
@@ -108,8 +109,8 @@ public class DepartmentService {
 
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File(directoryPath + system.getId() + "." + split[split.length - 1]);
-            file.transferTo(des);
+            File des = new File(directory, system.getId() + "." + split[split.length - 1]);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
 
@@ -172,7 +173,8 @@ public class DepartmentService {
         system = reporr.save(system);
 
         // Specify the directory path
-        String directoryPath = "intranet\\AboutUs\\";
+        String directoryPath = "intranet\\AboutUs";
+        System.out.println("Directory Path: " + directoryPath);
 
         // Create the directory if it doesn't exist
         File directory = new File(directoryPath);
@@ -186,8 +188,8 @@ public class DepartmentService {
 
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
-            File des = new File(directoryPath + system.getId() + "." + split[split.length - 1]);
-            file.transferTo(des);
+            File des = new File(directory, system.getId() + "." + split[split.length - 1]);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
 

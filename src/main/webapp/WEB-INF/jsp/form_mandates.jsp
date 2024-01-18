@@ -166,10 +166,9 @@
                 "bAutoWidth": false,
                 "processing": true,
                 "serverSide": true,
-                //"order": [[0, "desc"]],
                 "searchHighlight": true,
                 "searchDelay": 350,
-                "info": false, // Hide the "Showing 1 to 1 of 1 entries" message
+                "info": false,
                 "ajax": {
                     "url": "form/form-table",
                     "contentType": "application/json",
@@ -192,7 +191,7 @@
                 "createdRow": function (row, data) {
                     var link = '<a target="_blank" href="form/path/view/' + data['path'] + '">' + data['name'] + '</a>';
                     $(row).find('td').first().html(link);
-                    $(row).find('td').first().css('text-decoration', 'none'); // Remove underline
+                    $(row).find('td').first().css('text-decoration', 'none');
                 }
 
             });

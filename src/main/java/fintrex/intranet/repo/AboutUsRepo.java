@@ -17,6 +17,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AboutUsRepo extends CrudRepository<AboutUs, Integer> {
 
-    @Query("SELECT p.id,(SELECT `name` FROM `hris_new`.`department` WHERE `id` = p.`subtype`) as `subtype`,p.`about_us`,p.`path` FROM `department` p JOIN `hris_new`.`employee` e ON p.`subtype`=e.`department` JOIN  `hris_new`.`user` u  ON u.`employee_id`=e.id WHERE u.id=:userId")
+    @Query("SELECT p.id,(SELECT `name` FROM `hris_new`.`department` WHERE `id` = p.`subtype`) as `subtype`,p.`about_us`,p.`path` FROM `department` p JOIN `hris_new`.`employee` e ON p.`subtype`=e.`department` JOIN  `hris_new`.`user` u  ON u.`employee_id`=e.id WHERE u.id=:userId AND p.`status`='active'")
     Iterable<AboutUs> findByStatus(@Param("userId") Integer userId);
 }

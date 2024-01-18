@@ -15,6 +15,7 @@ import fintrex.intranet.model.Promotions;
 import fintrex.intranet.repo.PromotionRepo;
 import fintrex.intranet.repo.SystemTypeRepo;
 import java.io.File;
+import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -74,7 +75,7 @@ public class PromotionService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Promotions\\" + system.getId() + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);
@@ -87,7 +88,7 @@ public class PromotionService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Promotions\\" + id + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);

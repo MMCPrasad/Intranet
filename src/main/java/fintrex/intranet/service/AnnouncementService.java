@@ -11,6 +11,7 @@ import fintrex.intranet.dto.AnnouncementDataTable;
 import fintrex.intranet.repo.AnnouncementRepo;
 import fintrex.intranet.model.Annoucement;
 import java.io.File;
+import java.nio.file.Path;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +87,7 @@ public class AnnouncementService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Announcement\\" + system.getId() + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);
@@ -99,7 +100,7 @@ public class AnnouncementService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Announcement\\" + id + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);

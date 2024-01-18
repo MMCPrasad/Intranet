@@ -13,6 +13,7 @@ import fintrex.intranet.model.Statement;
 import fintrex.intranet.repo.StateTypeRepo;
 import fintrex.intranet.repo.StatementRepo;
 import java.io.File;
+import java.nio.file.Path;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,7 +93,7 @@ public class StatementService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Statements\\" + system.getId() + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);
@@ -105,7 +106,7 @@ public class StatementService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Statements\\" + id + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);

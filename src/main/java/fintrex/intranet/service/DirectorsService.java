@@ -15,6 +15,7 @@ import fintrex.intranet.model.Directors;
 import fintrex.intranet.repo.DirectorRepo;
 import fintrex.intranet.repo.DirectorRoleRepo;
 import java.io.File;
+import java.nio.file.Path;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,7 +89,7 @@ public class DirectorsService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Directors\\" + system.getId() + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);
@@ -104,7 +105,7 @@ public class DirectorsService {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Directors\\" + id + "." + split[split.length - 1]);
             System.out.println(des.getName());
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);

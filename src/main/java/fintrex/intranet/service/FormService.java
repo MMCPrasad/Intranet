@@ -113,7 +113,7 @@ public class FormService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\Forms\\" + id + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repo.save(system);

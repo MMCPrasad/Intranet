@@ -16,8 +16,11 @@ import fintrex.intranet.model.AboutUs;
 import fintrex.intranet.repo.AboutUsRepo;
 import fintrex.intranet.repo.DepartmentRepo;
 import fintrex.intranet.repo.MemberRepo;
+import jakarta.faces.component.UpdateModelException;
 import jakarta.servlet.http.HttpSession;
+import jakarta.ws.rs.NotFoundException;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -126,7 +129,7 @@ public class DepartmentService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\teammembers\\" + id + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return repor.save(system);
@@ -204,7 +207,7 @@ public class DepartmentService {
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
             File des = new File("intranet\\AboutUs\\" + id + "." + split[split.length - 1]);
-            file.transferTo(des);
+            file.transferTo(Path.of(des.getAbsolutePath()));
             system.setPath(des.getName());
         }
         return reporr.save(system);

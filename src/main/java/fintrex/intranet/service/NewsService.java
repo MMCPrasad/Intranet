@@ -17,6 +17,7 @@ import fintrex.intranet.repo.NewsImageRepo;
 import fintrex.intranet.model.Systems;
 import fintrex.intranet.repo.NewsRepo;
 import java.io.File;
+import java.nio.file.Path;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -110,7 +111,7 @@ public class NewsService {
                 newsImage = nerepo.save(newsImage);
                 String[] split = file.getOriginalFilename().split("\\.");
                 File des = new File("intranet\\news\\123\\" + system.getId() + "_" + (newsImage.getId()) + "." + split[split.length - 1]);
-                file.transferTo(des);
+                file.transferTo(Path.of(des.getAbsolutePath()));
                 newsImage.setPath(des.getName());
                 nerepo.save(newsImage);
 
@@ -132,7 +133,7 @@ public class NewsService {
                 newsImage = nerepo.save(newsImage);
                 String[] split = file.getOriginalFilename().split("\\.");
                 File des = new File("intranet\\news\\123\\" + id + "_" + newsImage.getId() + "." + split[split.length - 1]);
-                file.transferTo(des);
+                file.transferTo(Path.of(des.getAbsolutePath()));
                 newsImage.setPath(des.getName());
                 nerepo.save(newsImage);
 

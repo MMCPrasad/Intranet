@@ -19,6 +19,9 @@ import org.springframework.stereotype.Repository;
 public interface MemberRepo extends CrudRepository<Members, Integer> {
 
 //    Iterable<Members> findByStatus(String status);
-    @Query("SELECT p.id,p.`subtype`,p.`name`,p.`path`,p.`designation` FROM `team_members` p JOIN `hris_new`.`employee` e ON p.`subtype`=e.`department` JOIN  `hris_new`.`user` u  ON u.`employee_id`=e.id WHERE u.id=:userId")
+    @Query("SELECT p.id,p.`subtype`,p.`name`,p.`path`,p.`designation` FROM `team_members` p JOIN `hris_new`.`employee` e ON p.`subtype`=e.`department` JOIN  `hris_new`.`user` u  ON u.`employee_id`=e.id WHERE u.id=:userId AND p.`status`='active' ")
     Iterable<Members> findByStatus(@Param("userId") Integer userId);
+//    @Query("SELECT p.id, p.`subtype`, p.`name`, p.`path`, p.`designation` FROM `team_members` p JOIN `hris_new`.`employee` e ON p.`subtype` = e.`department` JOIN `hris_new`.`user` u ON u.`employee_id` = e.id WHERE u.id = :userId AND p.status = :status")
+//    Iterable<Members> findByStatus(@Param("userId") Integer userId, @Param("status") String status);
+
 }

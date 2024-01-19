@@ -886,6 +886,24 @@
                 </a>
 
             </div>
+            <div class="col">
+                <a href="#" id="incident-link" style="text-decoration: none; color: black;">
+
+                    <div class="cards"style="background-color: #f0f1f5;height: 5rem">
+                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
+                            <div class="col">
+                                <img src="assets/img/system/carousel/whis.png" width="40px" height="40px" alt="alt" />
+                            </div>
+                            <div class="col">
+                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                    <p style="font-size: 1rem;">Incident</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
 
 
         </div>
@@ -1425,6 +1443,52 @@
 
             </div>
         </div>
+        <div class="modal fade" id="add_inc_modal" tabindex="-1" role="document">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">    
+                        <div class="col-sm-12">
+                            <h5 class="text-center col-md-11" style="font-weight: 600; font-family: myFontB; padding-left: 60px">Incident</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
+                        </div>
+                    </div>
+                    <div class="modal-body table-responsive" style="font-size: 12px;  font-family: myFont">
+                        <div class="row" style="font-family: myFont">
+                            <div class="col-lg-3" style="font-size: 12px;">
+                                <input id="idea_epfi" onkeyup=""  class="form-control" type="number" placeholder="Enter your EPF" style="font-size: 12px;">
+                                <div class="bbb"style="margin-top:0.5rem;margin-bottom: 0.5rem;"><button id="savei" type="button" class="btn btn-outline-secondary">Search</button></div>
+                            </div>
+                            <div class="col-lg-4">
+                                <h4 id="emp_namei" style="font-size: 12px; font-weight: 600; font-family: myFont"></h4>
+                            </div>
+                            <div class="col-lg-4">
+                                <h4 id="departmenti" style="font-size: 12px; font-weight: 600; font-family: myFont"></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                &nbsp;
+                                <!--<h4 style="font-size: small; font-weight: 600; font-family: myFontB">Describe Your Idea Here</h4>-->
+                                <textarea id="inc_field" class="form-control" placeholder="Describe Here" style="height: 100px; font-size: 12px;">
+                                    
+                                </textarea>
+                            </div>
+
+                        </div>
+
+
+
+                        <h4 id="saveinc" class="text-center" style="font-weight: 600; font-size: medium"></h4>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button id="save_inc_btn" type="submit" name="save_policy_btn" class="btn btn-primary btn-sm">Submit</button>
+                        <button type="button" id="close_btnp" class="btn btn-warning btn-sm" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <div class="modal fade" id="select_modal" tabindex="-1" role="document">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -1666,6 +1730,21 @@
                     }
                 });
             });
+            document.getElementById('savei').addEventListener('click', function () {
+                var epf = document.getElementById('idea_epfi').value;
+
+                $.post('idea/get-epf', {epf: epf}, function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        // Assign name and department
+                        var employeeName = data[i].callname;
+                        var department = data[i].department;
+
+                        // Update UI with name and department
+                        document.getElementById("emp_namei").innerHTML = employeeName;
+                        document.getElementById("departmenti").innerHTML = department;
+                    }
+                });
+            });
 
             document.getElementById('save_whistle_btn').addEventListener('click', function () {
                 // Retrieve whistle description
@@ -1684,6 +1763,29 @@
                         employeeName: employeeName,
                         department: department,
                         whistleDescription: whistleDescription
+                    }),
+                    success: function (response) {
+                        alert(response);
+                    }
+                });
+            });
+            document.getElementById('save_inc_btn').addEventListener('click', function () {
+                // Retrieve whistle description
+                var incDescription = document.getElementById('inc_field').value;
+
+                // Retrieve employee name and department from UI
+                var employeeName = document.getElementById('emp_namei').innerText;
+                var department = document.getElementById('departmenti').innerText;
+
+                // Send data to server
+                $.ajax({
+                    type: 'POST',
+                    url: 'incident/submitInc',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        employeeName: employeeName,
+                        department: department,
+                        incDescription: incDescription
                     }),
                     success: function (response) {
                         alert(response);
@@ -1963,6 +2065,19 @@
                 var link = $('#whistleblowing-link');
                 // Select the modal by its ID
                 var modal = $('#add_pol_modal');
+                // Add a click event handler to the link
+                link.click(function (event) {
+                    event.preventDefault(); // Prevent the default link behavior
+
+                    // Show the modal
+                    modal.modal('show');
+                });
+            });
+            $(document).ready(function () {
+                // Select the link by its ID
+                var link = $('#incident-link');
+                // Select the modal by its ID
+                var modal = $('#add_inc_modal');
                 // Add a click event handler to the link
                 link.click(function (event) {
                     event.preventDefault(); // Prevent the default link behavior

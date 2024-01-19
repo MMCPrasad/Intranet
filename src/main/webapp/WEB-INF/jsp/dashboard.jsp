@@ -892,7 +892,7 @@
                     <div class="cards"style="background-color: #f0f1f5;height: 5rem">
                         <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
                             <div class="col">
-                                <img src="assets/img/system/carousel/whis.png" width="40px" height="40px" alt="alt" />
+                                <img src="assets/img/system/carousel/inci.png" width="40px" height="40px" alt="alt" />
                             </div>
                             <div class="col">
                                 <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">

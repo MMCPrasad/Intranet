@@ -215,26 +215,6 @@
                 }
             }
 
-
-//            $(document).on('click', '.editrec', function () {
-//
-//                loadDiv($('#tableSection'));
-//                let id = $(this).parents('tr').data('id');
-//                fetch('news/update-news/' + id).then(resp => resp.json())
-//                        .then((data) => {
-//                            clearForm();
-//                            console.log(data.name);
-//                            $('#heading').val(data.heading);
-//                            $('#para').val(data.para);
-//                            $('#saveBtn').data('mode', 'update');
-//                            $('#saveBtn').html('<i class="icon feather icon-save"></i>Update');
-//                            $('#saveBtn').data('id', id);
-//                            $('#formSection').fadeIn();
-//                            $('#tableSection').hide();
-//                            finishLoadDiv($('#tableSection'));
-//                        });
-//            });
-
             $(document).on('click', '.delrec', function () {
                 let id = $(this).parents('tr').data('id');
                 Swal.fire({

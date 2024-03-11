@@ -32,13 +32,13 @@ public class DbConfig extends AbstractJdbcConfiguration {
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//        dataSource.setUrl("jdbc:mysql://localhost:3306/fintrex_intranet?useUnicode=true&characterEncoding=UTF-8");
-        dataSource.setUrl("jdbc:mysql://intdb.fintrex.lk:3306/fintrex_intranet?useUnicode=true&characterEncoding=UTF-8");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/fintrex_intranet?useUnicode=true&characterEncoding=UTF-8");
+//        dataSource.setUrl("jdbc:mysql://intdb.fintrex.lk:3306/fintrex_intranet?useUnicode=true&characterEncoding=UTF-8");
 //        dataSource.setUrl("jdbc:mysql://192.168.40.7:3306/fintrex_intranet?useUnicode=true&characterEncoding=UTF-8");
         dataSource.setUsername("root");
-//        dataSource.setPassword("1234");
+        dataSource.setPassword("1234");
 
-        dataSource.setPassword("Mis@-123");
+//        dataSource.setPassword("Mis@-123");
 //      
 //        dataSource.setPassword("Test@-123");
         return dataSource;

@@ -40,7 +40,7 @@ public class MailIncident {
 
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("system.notifications@fintrexfinance.com"));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("chirantha@fintrexfinance.com"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("incident@fintrexfinance.com"));
             //message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(""));
             //message.setRecipients(Message.RecipientType.BCC, InternetAddress.parse(""));
             message.setSubject(subject);

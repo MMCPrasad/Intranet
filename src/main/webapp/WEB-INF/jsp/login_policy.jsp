@@ -74,26 +74,22 @@
             }
 
             $('#loginbtn').click(function () {
-
                 if ($(this).text() !== 'LOGIN') {
                     return;
                 }
-
-
-
 
                 $('#altarea').html('');
                 loadDiv($('#card-block').parents('.card-block'));
                 $(this).html('<i class="feather icon-radio rotate-refresh"></i>');
                 $.post('login_policy', {username: $('#username').val(), password: $('#password').val()}, function (data) {
-//                $.post('login_policy', {username: $('#username').val()}, function (data) {
-                    // var data = JSON.parse(res);
                     if (data === "ok") {
-                        window.location.href = 'view_dep_policies';
+
+                        window.location.href = 'view_policy';
+
                     } else if (data === "locked") {
                         var alttemp = '<div class="alert alert-danger alert-dismissible">' +
                                 '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
-                                '<strong></strong> Your Account is Locked !, Please Contact IT Department' +
+                                '<strong></strong> Your Account is Locked!, Please Contact IT Department' +
                                 '</div>';
                         $('#altarea').append(alttemp);
                     } else {
@@ -107,17 +103,22 @@
                 }).fail(function () {
                     var alttemp = '<div class="alert alert-danger alert-dismissible">' +
                             '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>' +
-                            '<strong>Error!</strong> Someting Went Wrong !' +
+                            '<strong>Error!</strong> Something Went Wrong!' +
                             '</div>';
                     $('#altarea').append(alttemp);
+                    $('#loginbtn').html('LOGIN');
                 });
-            }
-            );
+
+            });
+
+
+
             $('#password').on('keypress', function (e) {
                 if (e.which === 13) {
                     $('#loginbtn').click();
                 }
             });
+
         </script>
     </body>
 </html>

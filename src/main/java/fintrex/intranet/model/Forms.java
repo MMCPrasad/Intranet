@@ -27,23 +27,25 @@ import org.springframework.data.relational.core.mapping.Table;
 @Setter
 @Getter
 @ToString
-@Table("forms_mandates")
-public class Form {
+@Table("forms")
+public class Forms {
 
     @Id
     private Integer id;
+    private String subtype;
     private String name;
-    private String path;
+    private String link;
+    private String status;
+
+    @CreatedBy
+    private Integer ent_by;
     @CreatedDate
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
     private Date ent_on;
-    @CreatedBy
-    private Integer ent_by;
     @LastModifiedBy
     private Integer mod_by;
     @LastModifiedDate
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
     private Date mod_on;
-    private String status;
 
 }

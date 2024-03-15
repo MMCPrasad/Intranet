@@ -55,7 +55,7 @@
                                         <a href="admincontrol">Admin</a> 
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a >Policies</a> 
+                                        <a >Forms</a> 
                                     </li>
 
                                 </ol>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="card" >
                             <div class="card-header">
-                                <h4>Policies</h4>
+                                <h4>Forms</h4>
 
                             </div>
                             <div class="card-block p-b-0">
@@ -72,7 +72,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Name</th>                                             
+                                                <th>Form Name</th>                                             
                                                 <th>Ent On</th>                                             
                                                 <th>Ent By</th>                                             
                                                 <th>Mod On</th>                                             
@@ -89,7 +89,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="text-right">
-                                    <button id="addUserBtn" class="btn btn-sm waves-effect waves-light btn-danger"><i class="icon feather icon-plus"></i>Add Policy</button>
+                                    <button id="addFormBtn" class="btn btn-sm waves-effect waves-light btn-danger"><i class="icon feather icon-plus"></i>Add Forms</button>
                                 </div>
                             </div>
                         </div>
@@ -106,57 +106,32 @@
                                     </div>
                                 </div>
                                 <div class="card-body" style=" padding-bottom: 0px;" >
-                                    <h5 class="card-title">Policies </h5>
+                                    <h5 class="card-title">Forms </h5>
 
                                     <div class="row g-3 d-flex">
                                         <div class=" col-md-12" id="part1">
                                             <div class="">
                                                 <div class="card-body">
-                                                    <div id="showemployeeDetailsNew">
-                                                        <div class="col-md-12" hidden>
-                                                            <label class="col-sm-3 col-form-label allFontByCustomerEdit">Customer id</label>
-                                                            <input type="text" class="form-control" required id="cusidForSearchNewUserPage" value=0 >
+
+                                                    <div class="row mb-1">
+                                                        <label for="inputTime" class="col-sm-4 col-form-label allFontByCustomerEdit">Form Name</label>
+                                                        <div class="col-sm-6">
+                                                            <input link="text" class="form-control" id="name">
                                                         </div>
-
-                                                        <div class="row mb-1">
-                                                            <label for="inputTime" class="col-sm-4 col-form-label allFontByCustomerEdit">Policy File Name</label>
-                                                            <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="name">
-                                                            </div>
+                                                    </div>
+                                                    <div class="row mb-1">
+                                                        <label for="inputTime" class="col-sm-4 col-form-label allFontByCustomerEdit">Form Link (Please Enter Your Form Link Here)</label>
+                                                        <div class="col-sm-6">
+                                                            <input link="text" class="form-control" id="link">
                                                         </div>
-
-
-                                                        <div class="row mb-1">
-                                                            <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Policy Type</label>
-                                                            <div class="col-sm-6">
-                                                                <select class="form-control-sm pull-right" id="type">  </select>                                      
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-1" id="divHide" style="display: none;">
-                                                            <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Policies & Procedure Manuals</label>
-                                                            <div class="col-sm-6">
-                                                                <select class="form-control-sm pull-right" id="mannual">  </select>                                      
-                                                            </div>
-                                                        </div>
-
-
                                                     </div>
 
-
                                                     <div class="col-lg-6 col-12">
-                                                        <div class="form-group" style="width: 75rem">
-                                                            <label for="file">Upload PDF Here<span class="text-danger">*</span></label>
-                                                            <input id="file" type="file" multiple="">
+                                                        <div class="form-group" style="width: 75rem">                                                            
                                                             <div class="card-footer d-flex justify-content-end">
                                                                 <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
                                                             </div>
-                                                        </div>
-
-
-
-                                                        <div class="col-lg-6 col-12 ">
-
-                                                        </div> 
+                                                        </div>                                                         
                                                     </div>
 
                                                 </div>
@@ -184,14 +159,14 @@
 
 
             <%@include file="jspf/scripts.jspf" %>
-            <script type="text/javascript" src="files/js/slimselect.js"></script>
-            <script type="text/javascript" src="files/js/datatables.min.js"></script>
-            <script type="text/javascript" src="files/js/sweetalert2.js"></script>
-            <script type="text/javascript" src="files/js/func.js"></script>
-            <script type="text/javascript" src="files/js/autoNumeric.js"></script>
-            <script type="text/javascript" src="files/js/dataTables.responsive.min.js"></script>
-            <script type="text/javascript" src="files/js/jquery.highlight.js"></script>
-            <script type="text/javascript" src="files/js/dataTables.searchHighlight.min.js"></script>
+            <script link="text/javascript" src="files/js/slimselect.js"></script>
+            <script link="text/javascript" src="files/js/datatables.min.js"></script>
+            <script link="text/javascript" src="files/js/sweetalert2.js"></script>
+            <script link="text/javascript" src="files/js/func.js"></script>
+            <script link="text/javascript" src="files/js/autoNumeric.js"></script>
+            <script link="text/javascript" src="files/js/dataTables.responsive.min.js"></script>
+            <script link="text/javascript" src="files/js/jquery.highlight.js"></script>
+            <script link="text/javascript" src="files/js/dataTables.searchHighlight.min.js"></script>
 
 
 
@@ -209,9 +184,9 @@
                     "searchHighlight": true,
                     "searchDelay": 350,
                     "ajax": {
-                        "url": "policy/policies",
-                        "contentType": "application/json",
+                        "url": "form/forms",
                         "type": "POST",
+                        "contentType": "application/json",
                         "data": function (d) {
                             return JSON.stringify(d);
                         },
@@ -219,17 +194,17 @@
                             console.log(xhr);
                             console.log(code);
                         }
-
                     },
                     "columns": [
-                        {"data": "id", className: "text-right", "visible": false},
+                        {"data": "id", "className": "text-right", "visible": false},
                         {"data": "name"},
                         {"data": "ent_on"},
                         {"data": "ent_by"},
                         {"data": "mod_on"},
                         {"data": "mod_by"},
                         {"data": "status"}
-                    ], "language": {
+                    ],
+                    "language": {
                         'loadingRecords': '&nbsp;',
                         'processing': '<div class="loader2"></div>'
                     },
@@ -241,12 +216,13 @@
                         } else {
                             $(action_td).append('<a href="javascript:void(0)" id="update" class="editrec"><i class="icon feather icon-edit f-w-600 f-16 m-r-10 text-c-green"></i></a><a href="javascript:void(0)" class="delrec"><i class="feather icon-trash-2 f-w-600 f-16 text-danger"></i></a>');
                         }
-
                         $(row).append(action_td);
+                        // Assuming setTableStatus is defined elsewhere
                         setTableStatus($(row).find('td').eq(5));
                         $(row).data('id', data['id']);
                     }
                 });
+
                 function setTableStatus(td) {
                     if ($(td).html().trim().startsWith('active')) {
                         $(td).html('<label class="label label-success" style="white-space: nowrap">Active</label>');
@@ -255,38 +231,6 @@
                     }
                 }
 
-
-                var type = new SlimSelect(
-                        {select: '#type',
-                            placeholder: "Policy Type",
-                            ajax: function (search, callback) {
-                                fetch('policy/search-type', {
-                                    method: 'POST',
-                                    body: new URLSearchParams({search: search || ''})
-                                }).then(res => res.json()).then((data) => {
-                                    callback(data);
-                                });
-                            },
-                            allowDeselect: true,
-                            deselectLabel: '<span class="red">✖</span>'
-                        });
-                //            $('#time_table').data('select', time_table);
-
-
-                var mannual = new SlimSelect({
-                    select: '#mannual',
-                    placeholder: "Procedure Mannuals",
-                    ajax: function (search, callback) {
-                        fetch('policy/search-manual', {
-                            method: 'POST',
-                            body: new URLSearchParams({search: search || ''})
-                        }).then(res => res.json()).then((data) => {
-                            callback(data);
-                        });
-                    },
-                    allowDeselect: true,
-                    deselectLabel: '<span class="red">✖</span>'
-                });
 
 
 
@@ -297,13 +241,12 @@
 
                     loadDiv($('#tableSection'));
                     let id = $(this).parents('tr').data('id');
-                    fetch('policy/details/' + id)
+                    fetch('form/details/' + id)
                             .then(resp => resp.json())
-                            .then((resp) => {
-                                let data = resp.data;
+                            .then((data) => {
 
                                 $('#name').val(data.name);
-
+                                $('#link').val(data.link);
                                 $('#saveBtn').data('mode', 'update'); // Set the mode to 'update'
                                 $('#saveBtn').data('id', id);
                                 $('#saveBtn').html('<i class="icon feather icon-save"></i>Update'); // Change button text to 'Update'
@@ -317,8 +260,8 @@
                         Swal.fire("Empty Name!", "Please Enter a Valid Name!", "warning");
                         return;
                     }
-                    if ($('#type').val().trim() === '') {
-                        Swal.fire("Empty type!", "Please Enter a Valid Type!", "warning");
+                    if ($('#link').val().trim() === '') {
+                        Swal.fire("Empty Link!", "Please Enter a Valid Link!", "warning");
                         return;
                     }
 
@@ -328,26 +271,19 @@
                     if (mode === 'save') {
                         // Handle the 'save' action
                         let fd = new FormData();
-                        let file = document.getElementById('file').files;
                         let name = document.getElementById('name').value;
                         fd.append('name', name);
-                        let type = document.getElementById('type').value;
-                        fd.append('type', type);
+                        let link = document.getElementById('link').value;
+                        fd.append('link', link);
 
-
-
-
-                        for (var i = 0; i < file.length; i++) {
-                            fd.append('file', file[i]);
-                        }
-                        fetch('policy/save', {
+                        fetch('form/saves', {
                             method: 'POST',
                             body: fd
                         }).then(response => {
                             if (!response.ok) {
                                 throw new Error(response.statusText);
                             } else {
-                                Swal.fire('Successful!', 'Policy has been successfully saved', 'success');
+                                Swal.fire('Successful!', 'Form has been successfully saved', 'success');
                                 clearForm();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();
@@ -359,36 +295,30 @@
                         // Handle the 'update' action
                         let id = $('#saveBtn').data('id');
                         let name = $('#name').val();
-                        let type = $('#type').val();
-//                        let subtype = $('#subtype').val();
-                        let fileInput = document.getElementById('file');
-                        let files = fileInput.files;
+                        let link = $('#link').val();
 
                         let formData = new FormData();
                         formData.append('id', id);
                         formData.append('name', name);
-                        formData.append('type', type);
-//                        formData.append('subtype', subtype);
+                        formData.append('link', link);
 
-                        for (let i = 0; i < files.length; i++) {
-                            formData.append('file', files[i]);
-                        }
+
 
                         $.ajax({
-                            url: 'policy/update', // Replace with the actual update endpoint
-                            type: 'POST',
+                            url: 'form/updates', // Replace with the actual update endpoint
+                            method: 'POST',
                             data: formData,
                             processData: false,
                             contentType: false,
                             success: function (response) {
                                 if (response.status === 200) {
-                                    Swal.fire('Successful!', 'Policy details updated successfully', 'success');
+                                    Swal.fire('Successful!', 'Form details updated successfully', 'success');
                                     clearForm();
                                     $('#formSection').hide();
                                     $('#tableSection').fadeIn();
                                     dtable.ajax.reload();
                                 } else {
-                                    Swal.fire('Successful!', 'Policy details updated successfully', 'success');
+                                    Swal.fire('Successful!', 'Form details updated successfully', 'success');
                                     clearForm();
                                     $('#formSection').hide();
                                     $('#tableSection').fadeIn();
@@ -410,7 +340,7 @@
                     let id = $(this).parents('tr').data('id');
                     Swal.fire({
                         title: 'Are you sure?',
-                        text: "This Policy Will be Deleted!",
+                        text: "This Form Will be Deleted!",
                         icon: 'warning',
                         showCancelButton: true,
                         confirmButtonColor: '#3085d6',
@@ -418,7 +348,7 @@
                         confirmButtonText: 'Yes, Proceed!',
                         showLoaderOnConfirm: true,
                         preConfirm: () => {
-                            return fetch('policy/deactivate-policy', {
+                            return fetch('form/deactivate-form', {
                                 method: 'POST',
                                 body: new URLSearchParams({
                                     id: id
@@ -439,7 +369,7 @@
                             if (result.value.status !== 200) {
                                 Swal.fire('Error!', result.value.msg, 'error');
                             } else {
-                                Swal.fire('Successfull!', 'Policy has been Deactivated !', 'success');
+                                Swal.fire('Successfull!', 'Form has been Deactivated !', 'success');
                                 dtable.ajax.reload();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();
@@ -451,7 +381,7 @@
                     let id = $(this).parents('tr').data('id');
                     Swal.fire({
                         title: 'Are you sure?',
-                        text: "Policy Will be Activated!",
+                        text: "Form Will be Activated!",
                         icon: 'warning',
                         showCancelButton: true,
                         confirmButtonColor: '#3085d6',
@@ -459,7 +389,7 @@
                         confirmButtonText: 'Yes, Proceed!',
                         showLoaderOnConfirm: true,
                         preConfirm: () => {
-                            return fetch('policy/reactivate-policy', {
+                            return fetch('form/reactivate-form', {
                                 method: 'POST',
                                 body: new URLSearchParams({
                                     id: id
@@ -480,7 +410,7 @@
                             if (result.value.status !== 200) {
                                 Swal.fire('Error!', result.value.msg, 'error');
                             } else {
-                                Swal.fire('Successfull!', 'Policy has been Activated !', 'success');
+                                Swal.fire('Successfull!', 'Form has been Activated !', 'success');
                                 dtable.ajax.reload();
                                 $('#formSection').hide();
                                 $('#tableSection').fadeIn();
@@ -488,7 +418,7 @@
                         }
                     });
                 });
-                $('#addUserBtn').click(function () {
+                $('#addFormBtn').click(function () {
                     $('#saveBtn').data('mode', 'save');
                     $('#saveBtn').html('<i class="icon feather icon-save"></i>Save');
                     clearForm();
@@ -500,8 +430,8 @@
                     $('#tableSection').fadeIn();
                 });
                 function clearForm() {
-                    $('#formSection').find('input[type!=search]').val('');
-                    $('#formSection').find('input[type!=search]').val('');
+                    $('#formSection').find('input[link!=search]').val('');
+                    $('#formSection').find('input[link!=search]').val('');
                     $('#formSection').find('select').each(function () {
                         if ($(this).data('select')) {
                             if ($(this).data('select').ajax) {

@@ -8,10 +8,10 @@ import fintrex.intranet.datatable.DataTableRepo;
 import fintrex.intranet.datatable.DataTableRequest;
 import fintrex.intranet.datatable.DataTablesResponse;
 import fintrex.intranet.dto.AnnouncementDataTable;
-import fintrex.intranet.dto.FormDto;
+import fintrex.intranet.dto.MandateDto;
 import fintrex.intranet.repo.AnnouncementRepo;
-import fintrex.intranet.model.Form;
-import fintrex.intranet.repo.FormRepo;
+import fintrex.intranet.model.Mandate;
+import fintrex.intranet.repo.MandateRepo;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.Date;
@@ -27,61 +27,61 @@ import org.springframework.web.multipart.MultipartFile;
  * @author L580
  */
 @Service
-public class FormService {
+public class MandateService {
 
     @Autowired
-    private DataTableRepo<FormDto> userDt;
+    private DataTableRepo<MandateDto> userDt;
     @Autowired
-    private FormRepo repo;
+    private MandateRepo repo;
 
-    public DataTablesResponse<FormDto> getForms(DataTableRequest param) throws Exception {
-        return userDt.getData(FormDto.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`mod_by`) AS `mod_by`,`mod_on` FROM `forms_mandates` X WHERE TRUE");
+    public DataTablesResponse<MandateDto> getForms(DataTableRequest param) throws Exception {
+        return userDt.getData(MandateDto.class, param, "SELECT x.`id`,x.`name`,x.`status`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`ent_by`) AS `ent_by`,`ent_on`,(SELECT d.`name` FROM `users` d WHERE d.`id`=x.`mod_by`) AS `mod_by`,`mod_on` FROM `forms_mandates` X WHERE TRUE");
 
     }
 
-    public DataTablesResponse<FormDto> getFormTable(DataTableRequest param) throws Exception {
-        return userDt.getData(FormDto.class, param, "SELECT `id`,`name`,`path` FROM `forms_mandates` WHERE `status`='active'");
+    public DataTablesResponse<MandateDto> getFormTable(DataTableRequest param) throws Exception {
+        return userDt.getData(MandateDto.class, param, "SELECT `id`,`name`,`path` FROM `forms_mandates` WHERE `status`='active'");
 
     }
 
-    public Form getNewses(Integer id) throws Exception {
-        Form sys = repo.findById(id).get();
+    public Mandate getNewses(Integer id) throws Exception {
+        Mandate sys = repo.findById(id).get();
 //        UserType utype = userTypeRepo.findById(user.getUserType().getId()).get();
 //        user.setUserTypeName(utype.getName());
         return sys;
     }
 
-    public Form updateForm(Integer id, String name, String date, String path) throws Exception {
-        Form user = repo.findById(id).get();
+    public Mandate updateForm(Integer id, String name, String date, String path) throws Exception {
+        Mandate user = repo.findById(id).get();
         user.setName(name);
         user.setPath(path);
         user = repo.save(user);
         return user;
     }
 
-    public Form getForm(Integer id) throws Exception {
-        Form sys = repo.findById(id).get();
+    public Mandate getForm(Integer id) throws Exception {
+        Mandate sys = repo.findById(id).get();
 //        UserType utype = userTypeRepo.findById(user.getUserType().getId()).get();
 //        user.setUserTypeName(utype.getName());
         return sys;
     }
 
-    public Form deactivateForm(Integer id) throws Exception {
-        Form syst = repo.findById(id).get();
+    public Mandate deactivateForm(Integer id) throws Exception {
+        Mandate syst = repo.findById(id).get();
         syst.setStatus("deactivate");
         syst = repo.save(syst);
         return syst;
     }
 
-    public Form reactivateForm(Integer id) throws Exception {
-        Form systems = repo.findById(id).get();
+    public Mandate reactivateForm(Integer id) throws Exception {
+        Mandate systems = repo.findById(id).get();
         systems.setStatus("active");
         systems = repo.save(systems);
         return systems;
     }
 
-    public Form save(String name, MultipartFile file) throws Exception {
-        Form system = new Form();
+    public Mandate save(String name, MultipartFile file) throws Exception {
+        Mandate system = new Mandate();
         system.setName(name);
         system.setStatus("active");
         system = repo.save(system);
@@ -107,8 +107,8 @@ public class FormService {
         return repo.save(system);
     }
 
-    public Form update(Integer id, String name, MultipartFile file) throws Exception {
-        Form system = repo.findById(id).get();
+    public Mandate update(Integer id, String name, MultipartFile file) throws Exception {
+        Mandate system = repo.findById(id).get();
         system.setName(name);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");
@@ -119,7 +119,7 @@ public class FormService {
         return repo.save(system);
     }
 
-    public Iterable<Form> findAllActiveImages() {
+    public Iterable<Mandate> findAllActiveImages() {
         return repo.findByStatus("active");
     }
 

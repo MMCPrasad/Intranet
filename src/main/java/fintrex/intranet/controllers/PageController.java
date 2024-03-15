@@ -189,9 +189,15 @@ public class PageController {
         return "user_type_policy";
     }
 
-    @GetMapping("/view_dep_policies")
-    public String view_dep_policies() {
-        return "view_dep_policies";
+    @GetMapping("/view_policy")
+    public String view_dep_policies(HttpSession session) {
+        System.out.println(session.getAttribute("branch"));
+        if (session.getAttribute("branch").toString().equals("3")) {
+            return "view_dep_policies";
+        } else {
+            return "branch_policy";
+        }
+
     }
 
     @GetMapping("/login_policy")
@@ -234,9 +240,19 @@ public class PageController {
         return "form_mandates";
     }
 
+    @GetMapping("/mandates")
+    public String mandates() {
+        return "mandates";
+    }
+
     @GetMapping("/forms")
     public String forms() {
-        return "forms";
+        return "form";
+    }
+
+    @GetMapping("/branch-policy")
+    public String branchPolicy() {
+        return "branch_policy";
     }
 
     @Autowired

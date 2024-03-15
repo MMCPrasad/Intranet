@@ -5,6 +5,7 @@ import fintrex.intranet.model.UserPolicy;
 import fintrex.intranet.service.LoginService;
 import jakarta.servlet.http.HttpSession;
 import java.util.Hashtable;
+import java.util.Map;
 import javax.naming.Context;
 import javax.naming.NamingException;
 import javax.naming.ldap.InitialLdapContext;
@@ -39,10 +40,6 @@ public class LoginController {
                 session.setAttribute("uid", user.getId());
                 session.setAttribute("department", user.getDepartment());
                 session.setAttribute("username", username);
-//                session.setAttribute("department", department);
-//            session.setAttribute("type", user.getUserType().getId());
-//            String dashboard = servr.getDashboard(user.getUserType().getId());
-//            session.setAttribute("dashboard", dashboard);
 
                 return "ok";
 
@@ -60,25 +57,25 @@ public class LoginController {
     @PostMapping("/login_policy")
     public String checkLogins(@RequestParam String username, @RequestParam String password, HttpSession session) {
 
-        UserPolicy userr = servr.checkLogins(username);
+        Map<String, Object> user = servr.checkLogins(username);
 
-        if (userr == null) {
+        if (user == null) {
             return "error";
         } else {
 
-            Hashtable props = new Hashtable();
+            Hashtable<String, Object> props = new Hashtable<>();
             props.put(Context.SECURITY_PRINCIPAL, username + "@fintrexfinance.com");
             props.put(Context.SECURITY_CREDENTIALS, password);
+
+//            props.put("department", department);
             props.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
             props.put(Context.PROVIDER_URL, "ldap://ad1.fintrex.lk:389");
 
             try {
                 InitialLdapContext c = new InitialLdapContext(props, null);
-                session.setAttribute("uid", userr.getId());
-                session.setAttribute("username", username);
-//            session.setAttribute("type", user.getUserType().getId());
-//            String dashboard = servr.getDashboard(user.getUserType().getId());
-//            session.setAttribute("dashboard", dashboard);
+                session.setAttribute("uid", user.get("id"));
+                session.setAttribute("username", user.get("username"));
+                session.setAttribute("branch", user.get("branch"));
 
                 return "ok";
 
@@ -89,7 +86,6 @@ public class LoginController {
                 e.printStackTrace();
                 return "error";
             }
-
         }
     }
 

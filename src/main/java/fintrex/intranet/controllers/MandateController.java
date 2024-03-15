@@ -7,9 +7,9 @@ package fintrex.intranet.controllers;
 import fintrex.intranet.datatable.DataTableRequest;
 import fintrex.intranet.datatable.DataTablesResponse;
 import fintrex.intranet.dto.AnnouncementDataTable;
-import fintrex.intranet.dto.FormDto;
-import fintrex.intranet.model.Form;
-import fintrex.intranet.service.FormService;
+import fintrex.intranet.dto.MandateDto;
+import fintrex.intranet.model.Mandate;
+import fintrex.intranet.service.MandateService;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,24 +30,24 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @RestController
-@RequestMapping("/form")
-public class FormController {
+@RequestMapping("/mandate")
+public class MandateController {
 
     @Autowired
-    FormService service;
+    MandateService service;
 
-    @PostMapping("/forms")
-    public DataTablesResponse<FormDto> getForms(@RequestBody DataTableRequest param) throws Exception {
+    @PostMapping("/mandates")
+    public DataTablesResponse<MandateDto> getForms(@RequestBody DataTableRequest param) throws Exception {
         return service.getForms(param);
     }
 
-    @PostMapping("/form-table")
-    public DataTablesResponse<FormDto> getFormTable(@RequestBody DataTableRequest param) throws Exception {
+    @PostMapping("/mandate-table")
+    public DataTablesResponse<MandateDto> getFormTable(@RequestBody DataTableRequest param) throws Exception {
         return service.getFormTable(param);
     }
 
     @GetMapping("/images")
-    public Iterable<Form> getAllActiveImages() {
+    public Iterable<Mandate> getAllActiveImages() {
         return service.findAllActiveImages();
     }
 
@@ -57,14 +57,14 @@ public class FormController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PostMapping("/deactivate-form")
+    @PostMapping("/deactivate-mandate")
     public ResponseEntity<CommonResponse> deactivateForm(@RequestParam Integer id) throws Exception {
         service.deactivateForm(id);
         CommonResponse response = new CommonResponse("Success!", 200);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PostMapping("/reactivate-form")
+    @PostMapping("/reactivate-mandate")
     public ResponseEntity<CommonResponse> reactivateForm(@RequestParam Integer id) throws Exception {
         service.reactivateForm(id);
         CommonResponse response = new CommonResponse("Success!", 200);
@@ -73,7 +73,7 @@ public class FormController {
 
     @PostMapping("/save")
     @ResponseBody
-    public Form upload(MultipartHttpServletRequest req) throws Exception {
+    public Mandate upload(MultipartHttpServletRequest req) throws Exception {
         String name = req.getParameter("name");
         MultipartFile file = req.getFile("file");
         return service.save(name, file);
@@ -81,7 +81,7 @@ public class FormController {
 
     @PostMapping("/update")
     @ResponseBody
-    public Form update(MultipartHttpServletRequest req) throws Exception {
+    public Mandate update(MultipartHttpServletRequest req) throws Exception {
         Integer id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
         MultipartFile file = req.getFile("file");

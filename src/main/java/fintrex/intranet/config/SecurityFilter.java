@@ -32,7 +32,7 @@ public class SecurityFilter implements Filter {
                 resp.sendRedirect("login");
                 return;
             }
-        } else if (uri.endsWith("/view_dep_policies")) {
+        } else if (uri.endsWith("/view_policy")) {
             if (req.getSession().getAttribute("uid") == null) {
                 resp.sendRedirect("login_policy");
                 return;

@@ -43,6 +43,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kalnia&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
     </head>
     <body>
@@ -66,6 +72,36 @@
                 opacity: 0.6; /* Adjust the opacity value as needed */
                 z-index: -1; /* Ensure the pseudo-element is behind the content */
             }
+
+
+            .card-notice {
+                position: relative;
+                margin: 50px auto 10px;
+                max-width: 60rem;
+                max-height: 30rem;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            }
+
+            .card-notice::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-image: url('assets/img/system/notice.jpg');
+                background-size: cover;
+                opacity: 0.3; /* Adjust the opacity for the background image */
+                z-index: -1; /* Ensure the background overlay is behind other content */
+                border-radius: 10px; /* Add border radius */
+            }
+
+
+
+
 
             .news-item {
                 cursor: pointer;
@@ -686,227 +722,277 @@
                 font-size: 0.9rem;
             }
 
+            #forms {
+                max-height: 200px; /* Adjust the maximum height as needed */
+                overflow-y: auto; /* Enable vertical scrolling */
+            }
+
+            /* Media query for screens below 1400px */
+            @media (max-width: 1400px) {
+                .row-card {
+                    flex-wrap: wrap; /* Allow cards to wrap to next line */
+                }
+
+                .col {
+                    width: 50%; /* Each column takes half of the row */
+                    padding: 0.5rem; /* Add some spacing between columns */
+                }
+
+                .cards {
+                    height: auto; /* Allow cards to adjust height based on content */
+                }
+
+                .txt p {
+                    font-size: 16px !important;
+                    text-align: center !important;
+                }
+
+                .col-3, .col-10 {
+                    flex: 0 0 40%; /* Adjust column width within cards */
+                }
+
+                .modal-dialog {
+                    max-width: 90%; /* Adjust modal width for smaller screens */
+                }
+
+                /* Adjust modal content for smaller screens */
+                .modal-body .row {
+                    flex-direction: column;
+                }
+
+                /* Ensure images and videos are responsive */
+                img, video {
+                    max-width: 100%;
+                    height: auto;
+                }
+
+            }
 
 
         </style>
 
 
+        <div class="containers">
+            <div class="row-card">
+                <div class="row"style="padding-top: 1rem;padding-left: 2rem;padding-right 2rem;padding-right: 2rem;height: 2rem;">
+                    <div class="col">
+                        <a href="#" style="text-decoration: none; color: black;" data-toggle="modal" data-target="#ceoModel">
+                            <div class="cards" style="background-color: #f0f1f5;  height: 5rem">
+                                <div class="row " >
+                                    <!--                                    <div class="col-2 d-flex align-items-center">
+                                                                            <img src="assets/img/system/carousel/ceo.png" width="40px" height="40px" alt="alt" />
+                                                                        </div>-->
 
-        <div class="row"style="padding-top: 1rem;padding-left: 2rem;padding-right 2rem;padding-right: 2rem;height: 2rem;">
-            <div class="col">
-                <a href="#" style="text-decoration: none; color: black;" data-toggle="modal" data-target="#ceoModel">
-                    <div class="cards" style="background-color: #f0f1f5;  height: 5rem">
-                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
-                            <div class="col-2 d-flex align-items-center">
-                                <img src="assets/img/system/carousel/ceo.png" width="40px" height="40px" alt="alt" />
-                            </div>
-                            <div class="col-10">
-                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;">CEO's Message</p>
+                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1rem;">CEO's Message</p>
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
-                </a>
-            </div>
 
-            <!-- Bootstrap Modal -->
-            <div class="modal fade" id="ceoModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">CEO's Message</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col">
-
+                    <!-- Bootstrap Modal -->
+                    <div class="modal fade" id="ceoModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">CEO's Message</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
                                     <div class="row">
-                                        <div class="text-left">
-                                            <div class="col text-left" style="padding-left: 9px; padding-top: 2px">
-                                                <img src="assets/img/system/mgt/Jayathilake_ceo.jpg" width="30%">
+                                        <div class="col">
+
+                                            <div class="row">
+                                                <div class="text-left">
+                                                    <div class="col text-left" style="padding-left: 9px; padding-top: 2px">
+                                                        <img src="assets/img/system/mgt/Jayathilake_ceo.jpg" width="30%">
+                                                    </div>
+                                                    <div class="row col text-left myfont">
+                                                        <a style="font-size: 1rem; font-weight: 600; color: #000">Mr. Jayathilake Bandara</a><br>
+                                                        <a style="font-size: 1rem; font-weight: 600; color: #000">General Manager / CEO</a>
+                                                    </div>
+
+                                                </div>  
                                             </div>
-                                            <div class="row col text-left myfont">
-                                                <a style="font-size: 1rem; font-weight: 600; color: #000">Mr. Jayathilake Bandara</a><br>
-                                                <a style="font-size: 1rem; font-weight: 600; color: #000">General Manager / CEO</a>
-                                            </div>
+                                            <div class="row">
+                                                <div class="ceo_msg_div">
+                                                    <div id="ceo_msg" class="ceo_msg_div col-lg-12 responsive-img text-left custom-scrollbar" style="max-height: 200px; overflow-y: auto; padding-left: 10px; padding-top: 10px">
+                                                        <h5 style="padding-top: 2px">Dear Fintrex Family,</h5>
+                                                        <h6>Hope all of you and your families are safe, take care</h6>
+                                                        <h6>I am writing this message to refresh all of you on the importance of discipline, adhering to our company policies, procedures, ethical self-conduct and good governance.</h6>
 
-                                        </div>  
-                                    </div>
-                                    <div class="row">
-                                        <div class="ceo_msg_div">
-                                            <div id="ceo_msg" class="ceo_msg_div col-lg-12 responsive-img text-left custom-scrollbar" style="max-height: 200px; overflow-y: auto; padding-left: 10px; padding-top: 10px">
-                                                <h5 style="padding-top: 2px">Dear Fintrex Family,</h5>
-                                                <h6>Hope all of you and your families are safe, take care</h6>
-                                                <h6>I am writing this message to refresh all of you on the importance of discipline, adhering to our company policies, procedures, ethical self-conduct and good governance.</h6>
+                                                        <div id="read_more_content" class="responsive-img" style="height: auto; overflow-y: hidden;">
+                                                            <h6> A disciplined workforce is always considered as the backbone of any organization. At Fintrex, we consider these attributes as fundamental requirement of all of us. In order to maintain a disciplined workforce and an environment, we have a well-formulated Code of Conducts, Terms, and Conditions stated in the Letter of Appointment and the Disciplinary Policy uploaded into the Intranet, etc. Please ensure to read them, be familiar and live by the best practices. It will uphold you and the company on our journey to be within Top 5 Finance companies within next 5 years.</h6>
 
-                                                <div id="read_more_content" class="responsive-img" style="height: auto; overflow-y: hidden;">
-                                                    <h6> A disciplined workforce is always considered as the backbone of any organization. At Fintrex, we consider these attributes as fundamental requirement of all of us. In order to maintain a disciplined workforce and an environment, we have a well-formulated Code of Conducts, Terms, and Conditions stated in the Letter of Appointment and the Disciplinary Policy uploaded into the Intranet, etc. Please ensure to read them, be familiar and live by the best practices. It will uphold you and the company on our journey to be within Top 5 Finance companies within next 5 years.</h6>
+                                                            <h6>This note is raised as few of our staff members has been found guilty and severely warned during past few weeks over misconducts, procedure violations, misappropriation of funds etc etc. Please note that Management will not tolerate any misconduct of staff and such wrongful actions will be viewed very seriously, and dealt with a Zero tolerance policy. The disciplinary actions will be taken against such staff, including termination of employment.</h6>
 
-                                                    <h6>This note is raised as few of our staff members has been found guilty and severely warned during past few weeks over misconducts, procedure violations, misappropriation of funds etc etc. Please note that Management will not tolerate any misconduct of staff and such wrongful actions will be viewed very seriously, and dealt with a Zero tolerance policy. The disciplinary actions will be taken against such staff, including termination of employment.</h6>
+                                                            <h6>Hence you all are kindly requested to conduct yourselves professionally with the highest standards within the company and in the society at large, since you are the brand ambassadors of Fintrex Finance.</h6>
 
-                                                    <h6>Hence you all are kindly requested to conduct yourselves professionally with the highest standards within the company and in the society at large, since you are the brand ambassadors of Fintrex Finance.</h6>
+                                                            <h6>I wish all of you good health and success.</h6>
 
-                                                    <h6>I wish all of you good health and success.</h6>
+                                                            <h6>Warm regards,</h6>
 
-                                                    <h6>Warm regards,</h6>
+                                                            <h5>Jayathilake Bandara</h5>
 
-                                                    <h5>Jayathilake Bandara</h5>
-
-                                                    <h5>General Manager / CEO</h5>
+                                                            <h5>General Manager / CEO</h5>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+
+
                                         </div>
+                                        <div class="col">
+                                            <video id="yourVideoElementId" width="100%" height="100%" controls>
+                                                <source src="assets/img/system/carousel/roadBillion.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col">
+                        <a href="view_policies" style="text-decoration: none; color: black;">
+                            <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                                <div class="row " >
+                                    <!--                                    <div class="col">
+                                                                            <img src="assets/img/system/carousel/policy.png" width="40px" height="40px" alt="alt" />
+                                                                        </div>-->
+
+                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1.2rem;">Policy</p>
                                     </div>
 
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="col">
+                        <a href="#" id="view_dele" style="text-decoration: none; color: black;">
+                            <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                                <div class="row">
+                                    <!--                                    <div class="col-2">
+                                                                            <img src="assets/img/system/carousel/delegation.png" width="50px" height="50px" alt="alt" />
+                                                                        </div>-->
+
+                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1rem;">Delegation Authority</p>
+                                    </div>
 
                                 </div>
-                                <div class="col">
-                                    <video id="yourVideoElementId" width="100%" height="100%" controls>
-                                        <source src="assets/img/system/carousel/roadBillion.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <hr>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                        </a>
                     </div>
+
+
+
+                    <div class="col">
+                        <a href="#" id="view_alco" style="text-decoration: none; color: black;">
+                            <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                                <div class="row ">
+                                    <!--                                    <div class="col-3">
+                                                                            <img src="assets/img/system/carousel/alco.png" width="40px" height="40px" alt="alt" />
+                                                                        </div>-->
+
+                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1rem;">Alco Rates</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="col">
+                        <a href="#"id="ideas-link" style="text-decoration: none; color: black;">
+                            <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                                <div class="row " >
+                                    <!--                                    <div class="col-3">
+                                                                            <img src="assets/img/system/carousel/idea.png" width="40px" height="40px" alt="alt" />
+                                                                        </div>-->
+
+                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1.2rem;text-align: center;">Ideas</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="col">
+                        <a href="#" id="whistleblowing-link" style="text-decoration: none; color: black;">
+
+                            <div class="cards"style="background-color: #f0f1f5;height: 5rem">
+                                <div class="row">
+                                    <!--                                    <div class="col-2">
+                                                                            <img src="assets/img/system/carousel/whis.png" width="30px" height="30px" alt="alt" />
+                                                                        </div>-->
+
+                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1rem;">Whistleblowing Policy</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="col">
+                        <a href="#" id="select-link" style="text-decoration: none; color: black;">
+
+                            <div class="cards"style="background-color: #f0f1f5;height: 5rem">
+                                <div class="row " >
+                                    <!--                                    <div class="col">
+                                                                            <img src="assets/img/system/carousel/whis.png" width="40px" height="40px" alt="alt" />
+                                                                        </div>-->
+
+                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1rem;">FD,FS,F&M</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="col">
+                        <a href="#" id="incident-link" style="text-decoration: none; color: black;">
+
+                            <div class="cards"style="background-color: #f0f1f5;height: 5rem">
+                                <div class="row " >
+                                    <!--                                    <div class="col">
+                                                                            <img src="assets/img/system/carousel/inci.png" width="40px" height="40px" alt="alt" />
+                                                                        </div>-->
+
+                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1rem;text-align: center;">Incident</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+
                 </div>
-            </div>
-
-
-            <div class="col">
-                <a href="view_policies" style="text-decoration: none; color: black;">
-                    <div class="cards" style="background-color: #f0f1f5;height: 5rem">
-                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
-                            <div class="col">
-                                <img src="assets/img/system/carousel/policy.png" width="40px" height="40px" alt="alt" />
-                            </div>
-                            <div class="col">
-                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1.2rem;margin-left: 1rem;">Policy</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-            <div class="col">
-                <a href="#" id="view_dele" style="text-decoration: none; color: black;">
-                    <div class="cards" style="background-color: #f0f1f5;height: 5rem">
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="assets/img/system/carousel/delegation.png" width="50px" height="50px" alt="alt" />
-                            </div>
-                            <div class="col-10">
-                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;">Delegation Authority</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-
-
-            <div class="col">
-                <a href="#" id="view_alco" style="text-decoration: none; color: black;">
-                    <div class="cards" style="background-color: #f0f1f5;height: 5rem">
-                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
-                            <div class="col-3">
-                                <img src="assets/img/system/carousel/alco.png" width="40px" height="40px" alt="alt" />
-                            </div>
-                            <div class="col-9">
-                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;">Alco Rates</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-            <div class="col">
-                <a href="#"id="ideas-link" style="text-decoration: none; color: black;">
-                    <div class="cards" style="background-color: #f0f1f5;height: 5rem">
-                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
-                            <div class="col-3">
-                                <img src="assets/img/system/carousel/idea.png" width="40px" height="40px" alt="alt" />
-                            </div>
-                            <div class="col-9">
-                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1.2rem;margin-left: 1.8rem">Ideas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-            <div class="col">
-                <a href="#" id="whistleblowing-link" style="text-decoration: none; color: black;">
-
-                    <div class="cards"style="background-color: #f0f1f5;height: 5rem">
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="assets/img/system/carousel/whis.png" width="30px" height="30px" alt="alt" />
-                            </div>
-                            <div class="col-10">
-                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;">Whistleblowing Policy</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-            <div class="col">
-                <a href="#" id="select-link" style="text-decoration: none; color: black;">
-
-                    <div class="cards"style="background-color: #f0f1f5;height: 5rem">
-                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
-                            <div class="col">
-                                <img src="assets/img/system/carousel/whis.png" width="40px" height="40px" alt="alt" />
-                            </div>
-                            <div class="col">
-                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;">FD,FS,F&M</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-            <div class="col">
-                <a href="#" id="incident-link" style="text-decoration: none; color: black;">
-
-                    <div class="cards"style="background-color: #f0f1f5;height: 5rem">
-                        <div class="row d-flex align-items-center" style="position: absolute; top: 20%; ">
-                            <div class="col">
-                                <img src="assets/img/system/carousel/inci.png" width="40px" height="40px" alt="alt" />
-                            </div>
-                            <div class="col">
-                                <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                    <p style="font-size: 1rem;">Incident</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-
-
+            </div>    
         </div>
+
+
 
 
         <div class="row" style="display: flex; justify-content: space-between;margin-top: 5rem;background-color: #f3f3f3;padding: 40px 40px;" id="details">
@@ -1187,6 +1273,15 @@
 
 
         </div> 
+        <!--        <div class="row">
+                    <div class="card-notice">
+                        <div class="section-headline text-center">
+                            <h2 style="color: #662D87!important; opacity: 1; font-family: 'Goldman', sans-serif;">Forms</h2>
+                            <div class="forms" id="forms"></div>
+                        </div>
+                    </div>
+        
+                </div>-->
         <div class="row">
             <section class="game-section">
                 <h1 class="line-title">Promotions</h1>
@@ -1623,6 +1718,32 @@
 
 
         <script>
+            fetch('form/form-load')
+                    .then(response => response.json())
+                    .then(data => {
+                        const listContainer = document.getElementById('forms');
+                        const ul = document.createElement('ul');
+                        data.forEach(item => {
+                            const li = document.createElement('li');
+                            const a = document.createElement('a');
+                            a.textContent = item.name + ' - ' + item.subtype + ' Department ';
+                            a.href = item.link;
+                            a.target = "_blank";
+                            // Set inline styles for the <li> element
+                            a.style.fontSize = '1.2rem';
+                            a.style.fontFamily = "Roboto Slab, serif";
+                            // Add more inline styles as needed
+                            li.appendChild(a);
+                            ul.appendChild(li);
+                        });
+                        listContainer.appendChild(ul);
+                    })
+                    .catch(error => console.error('Error fetching list:', error));
+
+
+
+
+
 
             function LoadPromo() {
                 fetch('promotion/images')

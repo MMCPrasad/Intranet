@@ -21,6 +21,9 @@ public interface PolDepRepo extends CrudRepository<DepPolicy, Integer> {
     @Query("SELECT `id` AS `value`, `name` AS `text` FROM `dep_policy`")
     Iterable<SlimSelectDTO> getDep(@Param("search") String search);
 
+    @Query("SELECT `id` AS `value`, `name` AS `text` FROM `dep_policy`")
+    Iterable<SlimSelectDTO> getBrnchDep(@Param("search") String search);
+
     @Query("SELECT `id` AS `value`, `name` AS `text` FROM `pages_policy`")
     Iterable<SlimSelectDTO> getDeps(@Param("search") String search);
 

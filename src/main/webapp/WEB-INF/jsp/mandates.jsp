@@ -169,7 +169,7 @@
             "searchHighlight": true,
             "searchDelay": 350,
             "ajax": {
-                "url": "form/forms",
+                "url": "mandate/mandates",
                 "contentType": "application/json",
                 "type": "POST",
                 "data": function (d) {
@@ -228,7 +228,7 @@
                 confirmButtonText: 'Yes, Proceed!',
                 showLoaderOnConfirm: true,
                 preConfirm: () => {
-                    return fetch('form/deactivate-form', {
+                    return fetch('mandate/deactivate-mandate', {
                         method: 'POST',
                         body: new URLSearchParams({
                             id: id
@@ -258,12 +258,7 @@
             });
         });
 
-//        $(document).ready(function () {
-//            $('#icon').click(function () {
-//                $('#formSection').hide();
-//                $('#tableSection').fadeIn();
-//            });
-//        });
+
 
         $(document).ready(function () {
             // Add click event handler to both close buttons
@@ -284,7 +279,7 @@
                 confirmButtonText: 'Yes, Proceed!',
                 showLoaderOnConfirm: true,
                 preConfirm: () => {
-                    return fetch('form/reactivate-form', {
+                    return fetch('mandate/reactivate-mandate', {
                         method: 'POST',
                         body: new URLSearchParams({
                             id: id
@@ -340,7 +335,7 @@
         $(document).on('click', '.editrec', function () {
             loadDiv($('#tableSection'));
             let id = $(this).parents('tr').data('id');
-            fetch('form/details/' + id)
+            fetch('mandate/details/' + id)
                     .then(resp => resp.json())
                     .then((resp) => {
                         let data = resp.data;
@@ -372,7 +367,7 @@
                 for (var i = 0; i < file.length; i++) {
                     fd.append('file', file[i]);
                 }
-                fetch('form/save', {
+                fetch('mandate/save', {
                     method: 'POST',
                     body: fd
                 }).then(response => {
@@ -403,7 +398,7 @@
                 }
 
                 $.ajax({
-                    url: 'form/update', // Replace with the actual update endpoint
+                    url: 'mandate/update', // Replace with the actual update endpoint
                     type: 'POST',
                     data: formData,
                     processData: false,

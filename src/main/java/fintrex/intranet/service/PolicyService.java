@@ -67,6 +67,11 @@ public class PolicyService {
 
     }
 
+    public DataTablesResponse<PolicyDto> getBranchPolicy(DataTableRequest param) throws Exception {
+        return userDt.getData(PolicyDto.class, param, "SELECT `id`, `name`,path FROM `policies` WHERE `type` = '1' AND `subtype` = " + param.getFilter() + "");
+
+    }
+
     public DataTablesResponse<PolicyDto> getDepartment(DataTableRequest param, Integer userId) throws Exception {
         return userDt.getData(PolicyDto.class, param, "SELECT p.id,p.name,p.path FROM `policies` p JOIN hris_new.employee e ON p.subtype=e.department JOIN  hris_new.user u  ON u.employee_id=e.id WHERE u.id=? ", userId);
 
@@ -88,6 +93,10 @@ public class PolicyService {
 
     public Iterable<SlimSelectDTO> getDep(String search) {
         return reporr.getDep("%" + search.trim() + "%");
+    }
+
+    public Iterable<SlimSelectDTO> getBrnchDep(String search) {
+        return reporr.getBrnchDep("%" + search.trim() + "%");
     }
 
     public Iterable<GetPagesPolicyAccDTO> getPageAccess(Integer uid) {

@@ -170,7 +170,7 @@
                 "searchDelay": 350,
                 "info": false,
                 "ajax": {
-                    "url": "form/form-table",
+                    "url": "mandate/mandate-table",
                     "contentType": "application/json",
                     "type": "POST",
                     "data": function (d) {

@@ -4,28 +4,29 @@
  */
 package fintrex.intranet.dto;
 
-import java.util.Date;
-import lombok.AllArgsConstructor;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- *
- * @author cpm.999cc
- */
+import lombok.AllArgsConstructor;
+
+import lombok.NoArgsConstructor;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class FormDto {
+public class MandateDto {
 
     public Integer id;
-    public String subtype;
     public String name;
-    public String link;
-    public String ent_on;
+    public String path;
     public String ent_by;
+    public String ent_on;
+
     public String mod_by;
     public String mod_on;
     public String status;

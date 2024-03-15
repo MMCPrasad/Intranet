@@ -58,6 +58,16 @@ public class PolicyController {
         return service.getMannual(param);
     }
 
+    @PostMapping("/search-brnchDep")
+    public Iterable<SlimSelectDTO> getBrnchDep(@RequestParam String search) throws Exception {
+        return service.getBrnchDep(search);
+    }
+
+    @PostMapping("/branch-policy")
+    public DataTablesResponse<PolicyDto> getBranchPolicy(@RequestBody DataTableRequest param) throws Exception {
+        return service.getBranchPolicy(param);
+    }
+
     @PostMapping("/department")
     public DataTablesResponse<PolicyDto> getDepartment(@RequestBody DataTableRequest param, HttpSession session) throws Exception {
         return service.getDepartment(param, (Integer) session.getAttribute("uid"));

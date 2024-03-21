@@ -55,7 +55,7 @@
                                         <a href="admincontrol">Admin</a> 
                                     </li>
                                     <li class="breadcrumb-item">
-                                        <a >Forms & Mandates</a> 
+                                        <a >Fixed Deposit</a> 
                                     </li>
 
                                 </ol>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="card" >
                             <div class="card-header">
-                                <h4>Forms & Mandates</h4>
+                                <h4>Fixed Deposit Rates</h4>
 
                             </div>
                             <div class="card-block p-b-0">
@@ -73,7 +73,7 @@
                                             <tr>
 
                                                 <th>Id</th>
-                                                <th>Heading</th>
+                                                <th>Name/Date</th>
                                                 <th>Entered On</th>
                                                 <th>Entered By</th>
                                                 <th>Mod On</th>
@@ -90,7 +90,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="text-right">
-                                    <button id="addFormBtn" class="btn btn-sm waves-effect waves-light btn-danger"><i class="icon feather icon-plus"></i>Add Form</button>
+                                    <button id="addFdBtn" class="btn btn-sm waves-effect waves-light btn-danger"><i class="icon feather icon-plus"></i>Add a FD Rate</button>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +162,7 @@
         "searchHighlight": true,
         "searchDelay": 350,
         "ajax": {
-            "url": "mandate/mandates",
+            "url": "fd/fds",
             "contentType": "application/json",
             "type": "POST",
             "data": function (d) {
@@ -213,7 +213,7 @@
         let id = $(this).parents('tr').data('id');
         Swal.fire({
             title: 'Are you sure?',
-            text: "This Form Will be Deleted!",
+            text: "This FD Rate Will be Deleted!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -221,7 +221,7 @@
             confirmButtonText: 'Yes, Proceed!',
             showLoaderOnConfirm: true,
             preConfirm: () => {
-                return fetch('mandate/deactivate-mandate', {
+                return fetch('fd/deactivate-fd', {
                     method: 'POST',
                     body: new URLSearchParams({
                         id: id
@@ -242,7 +242,7 @@
                 if (result.value.status !== 200) {
                     Swal.fire('Error!', result.value.msg, 'error');
                 } else {
-                    Swal.fire('Successfull!', 'Form has been Deactivated !', 'success');
+                    Swal.fire('Successfull!', 'FD Rate has been Deactivated !', 'success');
                     dtable.ajax.reload();
                     $('#formSection').hide();
                     $('#tableSection').fadeIn();
@@ -264,7 +264,7 @@
         let id = $(this).parents('tr').data('id');
         Swal.fire({
             title: 'Are you sure?',
-            text: "Form Will be Activated!",
+            text: "FD Rate Will be Activated!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -272,7 +272,7 @@
             confirmButtonText: 'Yes, Proceed!',
             showLoaderOnConfirm: true,
             preConfirm: () => {
-                return fetch('mandate/reactivate-mandate', {
+                return fetch('fd/reactivate-fd', {
                     method: 'POST',
                     body: new URLSearchParams({
                         id: id
@@ -293,7 +293,7 @@
                 if (result.value.status !== 200) {
                     Swal.fire('Error!', result.value.msg, 'error');
                 } else {
-                    Swal.fire('Successfull!', 'Form has been Activated !', 'success');
+                    Swal.fire('Successfull!', 'FD Rate has been Activated !', 'success');
                     dtable.ajax.reload();
                     $('#formSection').hide();
                     $('#tableSection').fadeIn();
@@ -302,7 +302,7 @@
         });
     });
     // Add an event listener to the "Add Form" button
-    $('#addFormBtn').click(function () {
+    $('#addFdBtn').click(function () {
         clearForm(); // Clear the form fields
         $('#saveBtn').data('mode', 'save');
         $('#saveBtn').html('<i class="icon feather icon-save"></i>Save');
@@ -328,7 +328,7 @@
     $(document).on('click', '.editrec', function () {
         loadDiv($('#tableSection'));
         let id = $(this).parents('tr').data('id');
-        fetch('mandate/details/' + id)
+        fetch('fd/details/' + id)
                 .then(resp => resp.json())
                 .then((resp) => {
                     let data = resp.data;
@@ -360,14 +360,14 @@
             for (var i = 0; i < file.length; i++) {
                 fd.append('file', file[i]);
             }
-            fetch('mandate/save', {
+            fetch('fd/save', {
                 method: 'POST',
                 body: fd
             }).then(response => {
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 } else {
-                    Swal.fire('Successful!', 'Form has been successfully saved', 'success');
+                    Swal.fire('Successful!', 'FD Rate has been successfully saved', 'success');
                     clearForm();
                     $('#formSection').hide();
                     $('#tableSection').fadeIn();
@@ -391,20 +391,20 @@
             }
 
             $.ajax({
-                url: 'mandate/update', // Replace with the actual update endpoint
+                url: 'fd/update', // Replace with the actual update endpoint
                 type: 'POST',
                 data: formData,
                 processData: false,
                 contentType: false,
                 success: function (response) {
                     if (response.status === 200) {
-                        Swal.fire('Successful!', 'Form details updated successfully', 'success');
+                        Swal.fire('Successful!', 'FD Rate details updated successfully', 'success');
                         clearForm();
                         $('#formSection').hide();
                         $('#tableSection').fadeIn();
                         dtable.ajax.reload();
                     } else {
-                        Swal.fire('Successful!', 'Form details updated successfully', 'success');
+                        Swal.fire('Successful!', 'FD Rate details updated successfully', 'success');
                         clearForm();
                         $('#formSection').hide();
                         $('#tableSection').fadeIn();
@@ -415,7 +415,7 @@
                     console.log(xhr);
                     console.log(status);
                     console.log(error);
-                    Swal.fire('Error!', 'Failed to update Form details', 'error');
+                    Swal.fire('Error!', 'Failed to update FD Rate details', 'error');
                 }
             });
         }

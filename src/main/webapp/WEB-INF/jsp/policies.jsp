@@ -49,7 +49,7 @@
                             <nav>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="/Intranet/">Home</a>
+                                        <a href="home">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
                                         <a href="admincontrol">Admin</a> 
@@ -96,7 +96,8 @@
 
                     </div>
                     <div class="" id="formSection" style="display: none">
-                        <div class="card">
+
+                        <div class="card" style="width: 80%;">
                             <div class="card-block p-b-0">
                                 <div class="card-header">
                                     <div class="card-header-right">
@@ -105,68 +106,40 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="card-body" style=" padding-bottom: 0px;" >
-                                    <h5 class="card-title">Policies </h5>
-
-                                    <div class="row g-3 d-flex">
-                                        <div class=" col-md-12" id="part1">
-                                            <div class="">
-                                                <div class="card-body">
-                                                    <div id="showemployeeDetailsNew">
-                                                        <div class="col-md-12" hidden>
-                                                            <label class="col-sm-3 col-form-label allFontByCustomerEdit">Customer id</label>
-                                                            <input type="text" class="form-control" required id="cusidForSearchNewUserPage" value=0 >
-                                                        </div>
-
-                                                        <div class="row mb-1">
-                                                            <label for="inputTime" class="col-sm-4 col-form-label allFontByCustomerEdit">Policy File Name</label>
-                                                            <div class="col-sm-6">
-                                                                <input type="text" class="form-control" id="name">
-                                                            </div>
-                                                        </div>
 
 
-                                                        <div class="row mb-1">
-                                                            <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Policy Type</label>
-                                                            <div class="col-sm-6">
-                                                                <select class="form-control-sm pull-right" id="type">  </select>                                      
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-1" id="divHide" style="display: none;">
-                                                            <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Policies & Procedure Manuals</label>
-                                                            <div class="col-sm-6">
-                                                                <select class="form-control-sm pull-right" id="mannual">  </select>                                      
-                                                            </div>
-                                                        </div>
-
-
-                                                    </div>
-
-
-                                                    <div class="col-lg-6 col-12">
-                                                        <div class="form-group" style="width: 75rem">
-                                                            <label for="file">Upload PDF Here<span class="text-danger">*</span></label>
-                                                            <input id="file" type="file" multiple="">
-                                                            <div class="card-footer d-flex justify-content-end">
-                                                                <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                                            </div>
-                                                        </div>
-
-
-
-                                                        <div class="col-lg-6 col-12 ">
-
-                                                        </div> 
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
+                                <div class="row mb-1">
+                                    <label for="inputTime" class="col-sm-4 col-form-label allFontByCustomerEdit">Policy File Name</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="name">
                                     </div>
+                                </div>
+
+
+                                <div class="row mb-1">
+                                    <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Policy Type</label>
+                                    <div class="col-sm-6">
+                                        <select class="form-control-sm pull-right" id="type">  </select>                                      
+                                    </div>
+                                </div>
+                                <div class="row mb-1" id="divHide" style="display: none;">
+                                    <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Policies & Procedure Manuals</label>
+                                    <div class="col-sm-6">
+                                        <select class="form-control-sm pull-right" id="mannual">  </select>                                      
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group" >
+                                    <label for="file">Upload PDF Here<span class="text-danger">*</span></label>
+                                    <input id="file" type="file" multiple="">
 
                                 </div>
+                                <div class="card-footer d-flex justify-content-end">
+                                    <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                </div>
+
+
                             </div>
                         </div>
                     </div></div>
@@ -317,12 +290,10 @@
                         Swal.fire("Empty Name!", "Please Enter a Valid Name!", "warning");
                         return;
                     }
-                    if ($('#type').val().trim() === '') {
-                        Swal.fire("Empty type!", "Please Enter a Valid Type!", "warning");
+                    if ($('#type').val() === null) {
+                        Swal.fire("Policy Type not Selected!", "Please Select a Policy Type!", "warning");
                         return;
                     }
-
-
                     let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
                     if (mode === 'save') {

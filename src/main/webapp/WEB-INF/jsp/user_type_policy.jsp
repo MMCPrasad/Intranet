@@ -56,7 +56,7 @@
                                                     <nav>
                                                         <ol class="breadcrumb">
                                                             <li class="breadcrumb-item">
-                                                                <a href="/Intranet/">Home</a>
+                                                                <a href="home">Home</a>
                                                             </li>
                                                             <li class="breadcrumb-item">
                                                                 <a href="admincontrol">Admin</a> 

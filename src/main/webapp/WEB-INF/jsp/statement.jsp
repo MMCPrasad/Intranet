@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Fintrex - Intranet</title>
         <%@include file="jspf/header.jspf" %>
     </head>
@@ -38,6 +39,17 @@
                 font-weight: 600;
                 color: #31d422;
             }
+            /* Responsive adjustments */
+            /*            @media screen and (max-width: 768px) {
+                            #formSection .form-group {
+                                width: 100%;  Full width on smaller screens 
+                            }
+            
+                            #formSection .card-footer {
+                                text-align: center;  Center align the button 
+                            }
+                        }*/
+
         </style>
         <div class="tab-pane fade show active profile-overview" id="profile-overview">
 
@@ -49,7 +61,7 @@
                             <nav>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="/Intranet/">Home</a>
+                                        <a href="home">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
                                         <a href="admincontrol">Admin</a> 
@@ -97,7 +109,7 @@
 
                     </div>
                     <div class="" id="formSection" style="display: none">
-                        <div class="card">
+                        <div class="card" style="width: 80%;">
                             <div class="card-block p-b-0">
                                 <div class="card-header">
                                     <div class="card-header-right">
@@ -107,37 +119,28 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group"style="width: 75rem">
-                                        <label for="heading">File Name<span class="text-danger">*</span></label>
-                                        <input id="name" type="text" name="heading" class="form-control"  required autocomplete="off">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="heading">File Name<span class="text-danger">*</span></label>
+                                    <input id="name" type="text" name="heading" class="form-control" required autocomplete="off">
                                 </div>
 
-                                <div class="row mb-1">
-                                    <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Type</label>
-                                    <div class="col-sm-6">
-                                        <select class="form-control-sm pull-right" id="type">  </select>                                      
-                                    </div>
+                                <div class="form-group">
+                                    <label for="type">Choose Type</label>
+                                    <select class="form-control" id="type"></select>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="file">Upload Your File Here<span class="text-danger">*</span></label>
+                                    <input id="file" type="file" multiple="">
+                                </div>
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group" style="width: 75rem">
-                                        <label for="file">Upload Your File Here<span class="text-danger">*</span></label>
-                                        <input id="file" type="file" multiple="">
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                        </div>
-                                    </div>
-
-
-
-
-
+                                <div class="card-footer d-flex justify-content-end">
+                                    <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
                                 </div>
                             </div>
-                        </div></div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -366,6 +369,14 @@
         });
 
         document.getElementById('saveBtn').addEventListener('click', function () {
+            if ($('#name').val().trim() === '') {
+                Swal.fire("Empty Name!", "Please Enter a Valid Name!", "warning");
+                return;
+            }
+            if ($('#type').val() === null) {
+                Swal.fire("Type not Selected!", "Please Select a Type!", "warning");
+                return;
+            }
             let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
             if (mode === 'save') {

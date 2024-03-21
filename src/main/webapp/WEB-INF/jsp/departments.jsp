@@ -98,7 +98,7 @@
 
 
                     <div class="" id="formSection" style="display: none">
-                        <div class="card">
+                        <div class="card" style="width: 80%;">
                             <div class="card-block p-b-0">
                                 <div class="card-header">
                                     <div class="card-header-right">
@@ -108,41 +108,34 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group" style="width: 75rem">
-                                        <label for="name">Name<span class="text-danger">*</span></label>
-                                        <input id="name" type="text" name="name" class="form-control"  required autocomplete="off">
-                                    </div>
+
+                                <div class="form-group" >
+                                    <label for="name">Name<span class="text-danger">*</span></label>
+                                    <input id="name" type="text" name="name" class="form-control"  required autocomplete="off">
                                 </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group" style="width: 75rem">
-                                        <label for="designation">Designation<span class="text-danger">*</span></label>
-                                        <input id="designation" type="text" name="designation" class="form-control"  required autocomplete="off">
-                                    </div>
+
+                                <div class="form-group" >
+                                    <label for="designation">Designation<span class="text-danger">*</span></label>
+                                    <input id="designation" type="text" name="designation" class="form-control"  required autocomplete="off">
                                 </div>
-                                <!--                                <div class="row mb-1">
-                                                                    <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Department </label>
-                                                                    <div class="col-sm-6">
-                                                                        <select class="form-control-sm pull-right" id="subtype">  </select>                                      
-                                                                    </div>
-                                                                </div>-->
 
 
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group" style="width: 75rem">
-                                        <label for="file">Upload Profile Picture Here<span class="text-danger">*</span></label>
-                                        <input id="file" type="file" multiple="">
-                                    </div>
 
 
-
-                                    <div class="col-lg-6 col-12 ">
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                        </div>
-                                    </div> 
+                                <div class="form-group" style="width: 75rem">
+                                    <label for="file">Upload Profile Picture Here<span class="text-danger">*</span></label>
+                                    <input id="file" type="file" multiple="">
                                 </div>
+
+
+
+
+                                <div class="card-footer d-flex justify-content-end">
+                                    <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                </div>
+
+
                             </div></div>
                     </div>
                 </div>
@@ -236,6 +229,14 @@
 
 
             document.getElementById('saveBtn').addEventListener('click', function () {
+                if ($('#name').val().trim() === '') {
+                    Swal.fire("Empty Name!", "Please Enter a Valid name!", "warning");
+                    return;
+                }
+                if ($('#designation').val().trim() === '') {
+                    Swal.fire("Empty Designation!", "Please Enter a Valid Designation!", "warning");
+                    return;
+                }
                 let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
                 if (mode === 'save') {

@@ -255,6 +255,16 @@ public class PageController {
         return "branch_policy";
     }
 
+    @GetMapping("/fixed-deposits")
+    public String fD() {
+        return "fd";
+    }
+
+    @GetMapping("/Alco-rates")
+    public String alco() {
+        return "alco";
+    }
+
     @Autowired
     PageService ser;
 

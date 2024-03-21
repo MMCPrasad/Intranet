@@ -31,7 +31,6 @@
                 width: 90em;
                 justify-content: center;
                 margin: auto;
-                margin-left: -7rem;
 
             }
             .pagetitle h3 {
@@ -41,144 +40,123 @@
                 color: #31d422;
             }
         </style>
-        <div id="pcoded" class="pcoded">
-            <div class="pcoded-overlay-box"></div>
-            <div class="pcoded-container navbar-wrapper">
-                <div class="pcoded-main-container">
-                    <div class="pcoded-wrapper">
-                        <div class="pcoded-content">
-                            <div class="pcoded-inner-content">
-                                <div class="main-body">
-                                    <div class="page-wrapper">
-                                        <div class="page-body">
+        <div class="tab-pane fade show active profile-overview" id="profile-overview">
 
-                                            <div class="row" id="tableSection">
-                                                <div class="pagetitle" style=" padding-left: 5rem; "><h3>Admin Dashboard</h3>
-                                                    <nav>
-                                                        <ol class="breadcrumb">
-                                                            <li class="breadcrumb-item">
-                                                                <a href="/Intranet/">Home</a>
-                                                            </li>
-                                                            <li class="breadcrumb-item">
-                                                                <a href="admincontrol">Admin</a> 
-                                                            </li>
-                                                            <li class="breadcrumb-item">
-                                                                <a >Users</a> 
-                                                            </li>
+            <div class="page-wrapper">
+                <div class="page-body">
 
-                                                        </ol>
-                                                    </nav>
-                                                </div>
-                                                <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 col-12">
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            <h4>Users</h4>
-                                                            <div class="card-header-right">
-                                                                <ul class="list-unstyled card-option">
-                                                                    <li><i class="feather icon-maximize full-card"></i></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-block p-b-0">
-                                                            <div class="table-responsive">
-                                                                <table class="table table-hover table-bordered m-b-0" id="tbll">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Id</th>
-                                                                            <th>Username</th>
-                                                                            <th>User</th>
+                    <div class="row" id="tableSection">
+                        <div class="pagetitle" style=" padding-left: 5rem; "><h3>Admin Dashboard</h3>
+                            <nav>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="home">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="admincontrol">Admin</a> 
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a >Users</a> 
+                                    </li>
+
+                                </ol>
+                            </nav>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Users</h4>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li><i class="feather icon-maximize full-card"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block p-b-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-bordered m-b-0" id="tbll">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Username</th>
+                                                <th>User</th>
 
 
-                                                                            <th>Ent On</th>  
-                                                                            <th>Ent By</th>
-                                                                            <th>User Type</th> 
-                                                                            <th>Department</th>  
-                                                                            <th>Mod On</th>  
-                                                                            <th>Mod By</th>  
-                                                                            <th style="width:1px;">Status</th>
-                                                                            <th style="width:1px;">Action</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
+                                                <th>Ent On</th>  
+                                                <th>Ent By</th>
+                                                <th>User Type</th> 
+                                                <th>Department</th>  
+                                                <th>Mod On</th>  
+                                                <th>Mod By</th>  
+                                                <th style="width:1px;">Status</th>
+                                                <th style="width:1px;">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <div class="text-right">
-                                                                <button id="addUserBtn" class="btn btn-sm waves-effect waves-light btn-danger"><i class="icon feather icon-plus"></i>Add User</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row" id="formSection" style="display: none">
-                                                <div class="col-lg-8 offset-lg-2 col-12">
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            <h6>Add/Update Users</h6>
-                                                            <div class="card-header-right">
-                                                                <ul class="list-unstyled card-option">
-                                                                    <li><i class="feather icon-x cls-card"></i></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-block p-b-0">
-                                                            <div class="row">
-                                                                <div class="col-12 col-lg-12">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-6 col-12">
-                                                                            <div class="form-group">
-                                                                                <label for="name">Name<span class="text-danger">*</span></label>
-                                                                                <input id="name" type="text" name="name" class="form-control"  required autocomplete="off">
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-lg-6 col-12">
-                                                                            <div class="form-group">
-                                                                                <label for="username">Username<span class="text-danger">*</span></label>
-                                                                                <input id="username"  type="text" name="username" class="form-control" required autocomplete="off">
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-lg-6 col-12">
-                                                                            <div class="form-group">
-                                                                                <label for="user_type">User Type<span class="text-danger">*</span></label>
-                                                                                <select id="user_type" name="user_type" class="" required autocomplete="off">
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>  
-                                                                        <div class="col-lg-6 col-12">
-                                                                            <div class="form-group">
-                                                                                <label for="department">Department<span class="text-danger">*</span></label>
-                                                                                <select id="department" name="department" class="" required autocomplete="off">
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>  
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <div class="text-right">
-                                                                <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <button id="addUserBtn" class="btn btn-sm waves-effect waves-light btn-danger"><i class="icon feather icon-plus"></i>Add User</button>
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+
+                    <div class="" id="formSection" style="display: none">
+
+                        <div class="card" style="width: 80%;">
+                            <div class="card-block p-b-0">
+                                <div class="card-header">
+
+                                    <div class="card-header-right">
+                                        <ul class="list-unstyled card-option">
+                                            <li><i class="feather icon-x cls-card"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="name">Name<span class="text-danger">*</span></label>
+                                    <input id="name" type="text" name="name" class="form-control"  required autocomplete="off">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="username">Username<span class="text-danger">*</span></label>
+                                    <input id="username"  type="text" name="username" class="form-control" required autocomplete="off">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="user_type">User Type<span class="text-danger">*</span></label>
+                                    <select id="user_type" name="user_type" class="" required autocomplete="off">
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="department">Department<span class="text-danger">*</span></label>
+                                    <select id="department" name="department" class="" required autocomplete="off">
+                                    </select>
+                                </div>
+
+                                <div class="card-footer d-flex justify-content-end">
+                                    <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
+
+
         <%@include file="jspf/scripts.jspf" %>
         <script type="text/javascript" src="files/js/slimselect.js"></script>
         <script type="text/javascript" src="files/js/datatables.min.js"></script>
@@ -347,10 +325,12 @@
                     Swal.fire("UserType not Selected!", "Please Select a UserType!", "warning");
                     return;
                 }
+
                 if ($('#department').val() === null) {
                     Swal.fire("Department not Selected!", "Please Select a Department!", "warning");
                     return;
                 }
+
 
                 let mode = $('#saveBtn').data('mode');
 

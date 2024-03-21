@@ -40,7 +40,14 @@
                 font-weight: 600;
                 color: #31d422;
             }
-
+            .placeholder {
+                display: inline-block;
+                min-height: 1em;
+                vertical-align: middle;
+                cursor: pointer;
+                background-color: transparent;
+                opacity: 1;
+            }
         </style>
         <div class="tab-pane fade show active profile-overview" id="profile-overview">
 
@@ -52,7 +59,7 @@
                             <nav>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="/Intranet/">Home</a>
+                                        <a href="home">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
                                         <a href="admincontrol">Admin</a> 
@@ -142,7 +149,7 @@
                         </div>
                         <div class="row mb-1" style="margin-top: 3rem;">
                             <div class="col-lg-6 col-12">
-                                <div class="form-group" style="width: 60rem">
+                                <div class="form-group" >
                                     <label for="review">Review<span class="text-danger">*</span></label>
                                     <textarea id="review"  type="text" name="review" class="form-control" required autocomplete="off"></textarea>
                                 </div>
@@ -340,6 +347,18 @@
 
 
             $('#saveBtn').click(function () {
+                if ($('#ideaRe').val() === null) {
+                    Swal.fire("Empty Responsibility!", "Please Choose a Valid Responsibility!", "warning");
+                    return;
+                }
+                if ($('#ideaAc').val() === null) {
+                    Swal.fire("Empty Action!", "Please Choose a Valid Action!", "warning");
+                    return;
+                }
+                if ($('#review').val().trim() === '') {
+                    Swal.fire("Empty review!", "Please Enter a Valid review!", "warning");
+                    return;
+                }
                 const isUpdate = ($('#saveBtn').data('mode') === 'update');
                 return fetch(isUpdate ? 'idea/update-idea' : '', {
                     method: 'POST',

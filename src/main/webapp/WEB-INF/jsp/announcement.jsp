@@ -49,7 +49,7 @@
                             <nav>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="/Intranet/">Home</a>
+                                        <a href="home">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
                                         <a href="admincontrol">Admin</a> 
@@ -97,7 +97,7 @@
 
                     </div>
                     <div class="" id="formSection" style="display: none">
-                        <div class="card">
+                        <div class="card" style="width: 80%;">
                             <div class="card-block p-b-0">
                                 <div class="card-header">
                                     <div class="card-header-right">
@@ -107,36 +107,33 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group"style="width: 75rem">
-                                        <label for="heading">Heading<span class="text-danger">*</span></label>
-                                        <input id="name" type="text" name="heading" class="form-control"  required autocomplete="off">
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group">
-                                        <label for="paragraph">Date<span class="text-danger">*</span></label>
-                                        <input id="date"  type="date" name="date" class="form-control" required autocomplete="off">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="heading">Heading<span class="text-danger">*</span></label>
+                                    <input id="name" type="text" name="heading" class="form-control"  required autocomplete="off">
                                 </div>
 
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group" style="width: 75rem">
-                                        <label for="file">Upload Your File Here<span class="text-danger">*</span></label>
-                                        <input id="file" type="file" multiple="">
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                        </div>
-                                    </div>
 
-
-
-                                    <div class="col-lg-6 col-12 ">
-
-                                    </div> 
+                                <div class="form-group">
+                                    <label for="paragraph">Date<span class="text-danger">*</span></label>
+                                    <input id="date"  type="date" name="date" class="form-control" required autocomplete="off">
                                 </div>
+
+
+
+
+                                <div class="form-group" style="width: 75rem">
+                                    <label for="file">Upload Your File Here<span class="text-danger">*</span></label>
+                                    <input id="file" type="file" multiple="">
+
+                                </div>
+                                <div class="card-footer d-flex justify-content-end">
+                                    <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                </div>
+
+
+
                             </div>
                         </div></div>
                 </div>

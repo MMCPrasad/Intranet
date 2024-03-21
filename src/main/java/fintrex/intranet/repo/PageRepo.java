@@ -23,7 +23,7 @@ public interface PageRepo extends CrudRepository<Page, Integer> {
             + "SELECT JSON_ARRAYAGG(JSON_OBJECT('name',`name`,'url',`url`,'icon',IFNULL(`icon`,''),'odr',IFNULL(`odr`,10000),'pages',(SELECT JSON_ARRAYAGG(JSON_OBJECT('name',`name`,'url',`url`,'icon',`icon`,'odr',IFNULL(`odr`,10000),'pages',(SELECT JSON_ARRAYAGG(JSON_OBJECT('name',`name`,'url',`url`,'icon',`icon`,'odr',IFNULL(`odr`,10000))) FROM `pages` l3 WHERE `level`=3 AND `parent`=l2.id AND l3.`status`='active' AND l3.`id` IN (SELECT id FROM p)))) FROM `pages` l2 WHERE `level`=2 AND `parent`=l1.`id` AND l2.`status`='active' AND l2.`id` IN (SELECT id FROM p)))) AS pages FROM `pages` l1 WHERE `level`=1 AND `status`='active' AND l1.`id` IN (SELECT id FROM p)")
     String getAllPages(@Param("uid") String uid);
 
-    @Query("SELECT (SELECT JSON_ARRAYAGG(JSON_OBJECT( 'odr',`odr`,'id',`id`,'parent',`parent`,'name',`name`,'level',`level`,'url',`url`)) FROM `pages`)as `all_page`")
+    @Query("SELECT (SELECT JSON_ARRAYAGG(JSON_OBJECT( 'odr',`odr`,'id',`id`,'parent',`parent`,'name',`name`,'level',`level`,'url',`url`)) FROM `pages` WHERE `status`='active') AS `all_page`")
     GetPagesDTO getPage();
 
     @Query("select pid as id,p.name,url from `user_type` t cross join JSON_table(t.pages,'$[*]' columns(`pid` int PATH '$[0]'))j join pages p on j.pid=p.id  where t.id=(select `usertype` from `users` where `id`=:uid)")

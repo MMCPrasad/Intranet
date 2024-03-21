@@ -31,7 +31,7 @@
               <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
-
+        <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@700&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
@@ -50,10 +50,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
-    </head>
-    <body>
-        <%@include file="jspf/loader.jspf" %>
-        <%@include file="jspf/navbar.jspf" %>
 
 
         <style>/* === Google Font Import - Poppins === */
@@ -72,6 +68,31 @@
                 opacity: 0.6; /* Adjust the opacity value as needed */
                 z-index: -1; /* Ensure the pseudo-element is behind the content */
             }
+
+            .card {
+                background-color: rgba(255, 255, 255, 0.8); /* Use a semi-transparent background for cards */
+                border: 3px solid #dee2e6;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                transition: box-shadow 0.3s ease-in-out;
+            }
+
+            .card:hover {
+                box-shadow: 0 30px 46px rgba(0, 0, 0, 0.4);
+                border-color: #79c14e;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+
+
 
 
             .card-notice {
@@ -677,6 +698,21 @@
                     -webkit-transform: translateY(calc(100% - 42px));
                 }
             }
+            .inline-list {
+                display: inline-block;
+                padding: 0;
+                margin: 0;
+            }
+
+            .inline-list li {
+                display: inline;
+                margin-right: 10px; /* Adjust this value as needed */
+                cursor: pointer;
+            }
+
+            .inline-list li:last-child {
+                margin-right: 0;
+            }
 
 
 
@@ -726,7 +762,21 @@
                 max-height: 200px; /* Adjust the maximum height as needed */
                 overflow-y: auto; /* Enable vertical scrolling */
             }
-
+            /*            .cards-system {
+                            position: relative;
+                        }
+            
+                        .cards-system::before {
+                            content: "";
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: url('assets/img/system/syst.jpg') center center / cover no-repeat;
+                            opacity: 0.2;  Adjust the opacity value as needed 
+                            z-index: -1;  Ensure the pseudo-element is behind the content 
+                        }*/
             /* Media query for screens below 1400px */
             @media (max-width: 1400px) {
                 .row-card {
@@ -770,14 +820,21 @@
 
 
         </style>
+    </head>
+    <body>
+        <%@include file="jspf/loader.jspf" %>
+        <%@include file="jspf/navbar.jspf" %>
+
+
+
 
 
         <div class="containers">
             <div class="row-card">
-                <div class="row"style="padding-top: 1rem;padding-left: 2rem;padding-right 2rem;padding-right: 2rem;height: 2rem;">
+                <div class="row"style="padding-top: 1rem;padding-left: 2rem;padding-right 2rem;padding-right: 2rem;height: 1.3rem;">
                     <div class="col">
                         <a href="#" style="text-decoration: none; color: black;" data-toggle="modal" data-target="#ceoModel">
-                            <div class="cards" style="background-color: #f0f1f5;  height: 5rem">
+                            <div class="cards" style="background-color: #f0f1f5;  height: 4rem">
                                 <div class="row " >
                                     <!--                                    <div class="col-2 d-flex align-items-center">
                                                                             <img src="assets/img/system/carousel/ceo.png" width="40px" height="40px" alt="alt" />
@@ -864,7 +921,7 @@
 
                     <div class="col">
                         <a href="view_policies" style="text-decoration: none; color: black;">
-                            <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                            <div class="cards" style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row " >
                                     <!--                                    <div class="col">
                                                                             <img src="assets/img/system/carousel/policy.png" width="40px" height="40px" alt="alt" />
@@ -881,13 +938,13 @@
                     </div>
                     <div class="col">
                         <a href="#" id="view_dele" style="text-decoration: none; color: black;">
-                            <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                            <div class="cards" style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row">
                                     <!--                                    <div class="col-2">
                                                                             <img src="assets/img/system/carousel/delegation.png" width="50px" height="50px" alt="alt" />
                                                                         </div>-->
 
-                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                    <div class="txt" style=" font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1rem;">Delegation Authority</p>
                                     </div>
 
@@ -900,7 +957,7 @@
 
                     <div class="col">
                         <a href="#" id="view_alco" style="text-decoration: none; color: black;">
-                            <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                            <div class="cards" style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row ">
                                     <!--                                    <div class="col-3">
                                                                             <img src="assets/img/system/carousel/alco.png" width="40px" height="40px" alt="alt" />
@@ -917,7 +974,7 @@
                     </div>
                     <div class="col">
                         <a href="#"id="ideas-link" style="text-decoration: none; color: black;">
-                            <div class="cards" style="background-color: #f0f1f5;height: 5rem">
+                            <div class="cards" style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row " >
                                     <!--                                    <div class="col-3">
                                                                             <img src="assets/img/system/carousel/idea.png" width="40px" height="40px" alt="alt" />
@@ -935,13 +992,13 @@
                     <div class="col">
                         <a href="#" id="whistleblowing-link" style="text-decoration: none; color: black;">
 
-                            <div class="cards"style="background-color: #f0f1f5;height: 5rem">
+                            <div class="cards"style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row">
                                     <!--                                    <div class="col-2">
                                                                             <img src="assets/img/system/carousel/whis.png" width="30px" height="30px" alt="alt" />
                                                                         </div>-->
 
-                                    <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                    <div class="txt" style=" font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1rem;">Whistleblowing Policy</p>
                                     </div>
 
@@ -953,7 +1010,7 @@
                     <div class="col">
                         <a href="#" id="select-link" style="text-decoration: none; color: black;">
 
-                            <div class="cards"style="background-color: #f0f1f5;height: 5rem">
+                            <div class="cards"style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row " >
                                     <!--                                    <div class="col">
                                                                             <img src="assets/img/system/carousel/whis.png" width="40px" height="40px" alt="alt" />
@@ -971,7 +1028,7 @@
                     <div class="col">
                         <a href="#" id="incident-link" style="text-decoration: none; color: black;">
 
-                            <div class="cards"style="background-color: #f0f1f5;height: 5rem">
+                            <div class="cards"style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row " >
                                     <!--                                    <div class="col">
                                                                             <img src="assets/img/system/carousel/inci.png" width="40px" height="40px" alt="alt" />
@@ -1273,6 +1330,54 @@
 
 
         </div> 
+        <div  class="cards-system" style="padding: 2rem 2rem;background-color: transparent;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);border-radius: 20px;margin: 2rem 2rem;">
+            <section class="core"  id="system">
+
+                <div class="row"   >
+                    <h1 class="line-title" style="margin-left: 1rem">Our Systems</h1>
+                    <div class="head" style="margin-left: 2rem;">
+
+                        <h4>Core Systems</h4>
+                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
+
+
+                    </div>
+
+                    <div class="col" style="margin-left: 2rem; font-family: 'Ysabeau SC'; ">
+                        <div class="row" id="core" style="margin-left: 2.5rem;margin-top: -1rem;">
+                        </div> 
+                    </div>
+                </div>
+
+
+
+                <div class="row"   >
+                    <div class="head" style="margin-left: 2rem;margin-top: 1rem;">
+                        <h4>Internal Systems</h4>
+                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
+                    </div>
+                    <div class="col" style="margin-left: 2rem;font-family: 'Ysabeau SC'; ">
+                        <div class="row" id="internal" style="margin-left: 2.5rem;margin-top: -1rem;">
+                        </div> 
+                    </div>
+                </div>
+
+
+                <div class="row"   >
+                    <div class="head" style="margin-left: 2rem;margin-top: 1rem;">
+                        <h4>Utility Systems</h4>
+                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
+                    </div>
+                    <div class="col" style="margin-left: 2rem; font-family: 'Ysabeau SC'; ">
+                        <div class="row" id="util" style="margin-left: 2.5rem;margin-top: -1rem;">
+                        </div> 
+                    </div>
+                </div>
+
+
+            </section>
+        </div>
+
         <!--        <div class="row">
                     <div class="card-notice">
                         <div class="section-headline text-center">
@@ -1388,7 +1493,7 @@
 
                                                         <div class="footer-icons">
                                                             <div class="row">
-                                                                <ul>
+                                                                <ul class="inline-list">
                                                                     <li>
                                                                         <a title="Google" onclick="window.open('https://www.google.com/search?sxsrf=ALeKk025HUTDREQ_xXp2m2ejt1zgG4UPwg:1591073088834&q=fintrex+finance&spell=1&sa=X&ved=2ahUKEwjK2ZWSqeLpAhXvxzgGHYVLBU4QBSgAegQIChAl&biw=1366&bih=657', '')">
                                                                             <i class="fa fa-google"></i>
@@ -1406,8 +1511,8 @@
                                                                     </li>
                                                                 </ul>
                                                             </div>
-
                                                         </div>
+
 
                                                     </div>
                                                 </div>
@@ -1716,6 +1821,253 @@
         <script>
         </script>
 
+        <script>
+            loadCore();
+
+
+            function loadCore() {
+                fetch('system/images')
+                        .then(response => response.json())
+                        .then(images => {
+                            let core = document.getElementById('core');
+                            core.innerHTML = ''; // Clear existing content
+
+                            for (let i = 0; i < images.length; i++) {
+                                if (images[i].type === '1') { // Check the type property
+                                    // Create a card element
+                                    let card = document.createElement('div');
+                                    card.classList.add('card');
+                                    card.style.width = '12rem';
+                                    card.style.height = '4rem';
+
+                                    // Create a card body
+                                    let cardBody = document.createElement('div');
+                                    cardBody.classList.add('card-body');
+
+                                    // Create a row for the two columns
+                                    let row = document.createElement('div');
+                                    row.classList.add('row');
+
+                                    // Column for the image
+                                    let imageColumn = document.createElement('div');
+                                    imageColumn.classList.add('col-4');
+
+                                    // Create an image element
+                                    let image = document.createElement('img');
+                                    image.src = 'system/path/view/' + images[i].path;
+                                    image.classList.add('card-img-top');
+                                    image.alt = images[i].name;
+                                    image.style.width = '2.5rem';
+
+                                    // Column for the name
+                                    let nameColumn = document.createElement('div');
+                                    nameColumn.classList.add('col-8');
+
+                                    // Create a caption element
+                                    let imageCaption = document.createElement('h5');
+                                    imageCaption.textContent = images[i].name;
+                                    imageCaption.style.textAlign = 'justify';
+                                    imageCaption.style.marginTop = '0.5rem';
+                                    imageCaption.style.marginLeft = '0.5rem';
+                                    imageCaption.style.width = '200%';
+                                    imageCaption.style.fontSize = '1.1rem';
+                                    imageCaption.style.fontFamily = 'Ubuntu';
+
+                                    // Add a click event listener to the card
+                                    card.addEventListener('click', function () {
+                                        // Open the link in a new window/tab when the card is clicked
+                                        window.open(images[i].link, '_blank');
+                                    });
+
+                                    // Append elements to the columns
+                                    imageColumn.appendChild(image);
+                                    nameColumn.appendChild(imageCaption);
+
+                                    // Append columns to the row
+                                    row.appendChild(imageColumn);
+                                    row.appendChild(nameColumn);
+
+                                    // Append the row to the card body
+                                    cardBody.appendChild(row);
+
+                                    // Append the card body to the card
+                                    card.appendChild(cardBody);
+
+                                    // Add margin between the cards
+                                    card.style.margin = '10px';
+
+                                    // Append the card to the internal container
+                                    core.appendChild(card);
+                                }
+                            }
+                        });
+            }
+            loadUtil();
+
+
+            function loadInternal() {
+                fetch('system/images')
+                        .then(response => response.json())
+                        .then(images => {
+                            let internal = document.getElementById('internal');
+                            internal.innerHTML = ''; // Clear existing content
+
+                            for (let i = 0; i < images.length; i++) {
+                                if (images[i].type === '2') { // Check the type property
+                                    // Create a card element
+                                    let card = document.createElement('div');
+                                    card.classList.add('card');
+                                    card.style.width = '12rem';
+                                    card.style.height = '4rem';
+
+                                    // Create a card body
+                                    let cardBody = document.createElement('div');
+                                    cardBody.classList.add('card-body');
+
+                                    // Create a row for the two columns
+                                    let row = document.createElement('div');
+                                    row.classList.add('row');
+
+                                    // Column for the image
+                                    let imageColumn = document.createElement('div');
+                                    imageColumn.classList.add('col-4');
+
+                                    // Create an image element
+                                    let image = document.createElement('img');
+                                    image.src = 'system/path/view/' + images[i].path;
+                                    image.classList.add('card-img-top');
+                                    image.alt = images[i].name;
+                                    image.style.width = '2.5rem';
+
+                                    // Column for the name
+                                    let nameColumn = document.createElement('div');
+                                    nameColumn.classList.add('col-8');
+
+                                    // Create a caption element
+                                    let imageCaption = document.createElement('h5');
+                                    imageCaption.textContent = images[i].name;
+                                    imageCaption.style.textAlign = 'justify';
+                                    imageCaption.style.marginTop = '0.5rem';
+                                    imageCaption.style.marginLeft = '0.1rem';
+                                    imageCaption.style.width = '180%';
+                                    imageCaption.style.fontSize = '1.1rem';
+                                    imageCaption.style.fontFamily = 'Ubuntu';
+
+                                    // Add a click event listener to the card
+                                    card.addEventListener('click', function () {
+                                        // Open the link in a new window/tab when the card is clicked
+                                        window.open(images[i].link, '_blank');
+                                    });
+
+                                    // Append elements to the columns
+                                    imageColumn.appendChild(image);
+                                    nameColumn.appendChild(imageCaption);
+
+                                    // Append columns to the row
+                                    row.appendChild(imageColumn);
+                                    row.appendChild(nameColumn);
+
+                                    // Append the row to the card body
+                                    cardBody.appendChild(row);
+
+                                    // Append the card body to the card
+                                    card.appendChild(cardBody);
+
+                                    // Add margin between the cards
+                                    card.style.margin = '10px';
+
+                                    // Append the card to the internal container
+                                    internal.appendChild(card);
+                                }
+                            }
+                        });
+            }
+
+            loadInternal();
+
+
+
+
+            function loadUtil() {
+                fetch('system/images')
+                        .then(response => response.json())
+                        .then(images => {
+                            let util = document.getElementById('util');
+                            util.innerHTML = ''; // Clear existing content
+
+                            for (let i = 0; i < images.length; i++) {
+                                if (images[i].type === '3') { // Check the type property
+                                    // Create a card element
+                                    let card = document.createElement('div');
+                                    card.classList.add('card');
+                                    card.style.width = '12rem';
+                                    card.style.height = '4rem';
+
+                                    // Create a card body
+                                    let cardBody = document.createElement('div');
+                                    cardBody.classList.add('card-body');
+
+                                    // Create a row for the two columns
+                                    let row = document.createElement('div');
+                                    row.classList.add('row');
+
+                                    // Column for the image
+                                    let imageColumn = document.createElement('div');
+                                    imageColumn.classList.add('col-4');
+
+                                    // Create an image element
+                                    let image = document.createElement('img');
+                                    image.src = 'system/path/view/' + images[i].path;
+                                    image.classList.add('card-img-top');
+                                    image.alt = images[i].name;
+                                    image.style.width = '2.5rem';
+
+                                    // Column for the name
+                                    let nameColumn = document.createElement('div');
+                                    nameColumn.classList.add('col-8');
+
+                                    // Create a caption element
+                                    let imageCaption = document.createElement('h5');
+                                    imageCaption.textContent = images[i].name;
+                                    imageCaption.style.textAlign = 'justify';
+                                    imageCaption.style.marginTop = '0.5rem';
+                                    imageCaption.style.marginLeft = '0.5rem';
+                                    imageCaption.style.width = '200%';
+                                    imageCaption.style.fontSize = '1.1rem';
+                                    imageCaption.style.fontFamily = 'Ubuntu';
+
+                                    // Add a click event listener to the card
+                                    card.addEventListener('click', function () {
+                                        // Open the link in a new window/tab when the card is clicked
+                                        window.open(images[i].link, '_blank');
+                                    });
+
+                                    // Append elements to the columns
+                                    imageColumn.appendChild(image);
+                                    nameColumn.appendChild(imageCaption);
+
+                                    // Append columns to the row
+                                    row.appendChild(imageColumn);
+                                    row.appendChild(nameColumn);
+
+                                    // Append the row to the card body
+                                    cardBody.appendChild(row);
+
+                                    // Append the card body to the card
+                                    card.appendChild(cardBody);
+
+                                    // Add margin between the cards
+                                    card.style.margin = '10px';
+
+                                    // Append the card to the internal container
+                                    util.appendChild(card);
+                                }
+                            }
+                        });
+            }
+
+
+        </script>
 
         <script>
             fetch('form/form-load')

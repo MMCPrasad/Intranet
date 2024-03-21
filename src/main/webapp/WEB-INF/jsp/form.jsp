@@ -49,7 +49,7 @@
                             <nav>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="/Intranet/">Home</a>
+                                        <a href="home">Home</a>
                                     </li>
                                     <li class="breadcrumb-item">
                                         <a href="admincontrol">Admin</a> 
@@ -96,7 +96,7 @@
 
                     </div>
                     <div class="" id="formSection" style="display: none">
-                        <div class="card">
+                        <div class="card" style="width: 80%;">
                             <div class="card-block p-b-0">
                                 <div class="card-header">
                                     <div class="card-header-right">
@@ -108,38 +108,20 @@
                                 <div class="card-body" style=" padding-bottom: 0px;" >
                                     <h5 class="card-title">Forms </h5>
 
-                                    <div class="row g-3 d-flex">
-                                        <div class=" col-md-12" id="part1">
-                                            <div class="">
-                                                <div class="card-body">
-
-                                                    <div class="row mb-1">
-                                                        <label for="inputTime" class="col-sm-4 col-form-label allFontByCustomerEdit">Form Name</label>
-                                                        <div class="col-sm-6">
-                                                            <input link="text" class="form-control" id="name">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-1">
-                                                        <label for="inputTime" class="col-sm-4 col-form-label allFontByCustomerEdit">Form Link (Please Enter Your Form Link Here)</label>
-                                                        <div class="col-sm-6">
-                                                            <input link="text" class="form-control" id="link">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-6 col-12">
-                                                        <div class="form-group" style="width: 75rem">                                                            
-                                                            <div class="card-footer d-flex justify-content-end">
-                                                                <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                                            </div>
-                                                        </div>                                                         
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
+                                    <div class="form-group">
+                                        <label for="inputTime" >Form Name</label>
+                                        <input link="text" class="form-control" id="name">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="inputTime" >Form Link (Please Enter Your Form Link Here)</label>
+                                        <input link="text" class="form-control" id="link">
+                                    </div>
+
+
+                                    <div class="card-footer d-flex justify-content-end">
+                                        <button id="saveBtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
+                                    </div>
+
 
                                 </div>
                             </div>

@@ -71,13 +71,14 @@
                     <a class="dropdown-item" href="directors">Board Of Directors</a>
                     <a class="dropdown-item" href="cptmgt">Corporate Management</a>
                     <a class="dropdown-item" href="seniormngment">Senior Management</a>
-                    <a class="dropdown-item" href="brnchmnger">Branch Managers</a>
+                    <!--<a class="dropdown-item" href="brnchmnger">Branch Managers</a>-->
                     <a class="dropdown-item" href="product">Product Offerings</a>
 
                 </div>
             </li>
             <li class="nav-item">
-                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="system">Systems </a>
+                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link"  href="<%= request.getContextPath() %>/home#system" onclick="scrollToSystem()">Systems</a>
+
             </li>
             <li class="nav-item">
                 <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="#" onclick="window.open('swc.fintrex.lk', 'blank')">SWC </a>
@@ -94,3 +95,11 @@
 
     </div>
 </nav>
+<script>
+    function scrollToSystem() {
+        var element = document.getElementById("system");
+        if (element) {
+            element.scrollIntoView({behavior: "smooth"});
+        }
+    }
+</script>

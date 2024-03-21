@@ -102,7 +102,7 @@
 
 
                     <div class="" id="addform" style="display: none">
-                        <div class="card">
+                        <div class="card" style="width: 80%;">
                             <div class="card-block p-b-0">
                                 <div class="card-header">
                                     <div class="card-header-right">
@@ -113,24 +113,24 @@
                                 </div>
 
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group" style="width: 75rem">
-                                        <label for="paragraph">About Us<span class="text-danger">*</span></label>
-                                        <textarea id="about_us"  type="text" name="paragraph" class="form-control" required autocomplete="off"></textarea>
-                                    </div>
+
+                                <div class="form-group" >
+                                    <label for="paragraph">About Us<span class="text-danger">*</span></label>
+                                    <textarea id="about_us"  type="text" name="paragraph" class="form-control" required autocomplete="off"></textarea>
                                 </div>
 
 
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group" style="width: 75rem">
-                                        <label for="file">Upload Cover Photo Here<span class="text-danger">*</span></label>
-                                        <input id="file" type="file" >
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <button id="saveUsbtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
-                                        </div>
-                                    </div>
 
+
+                                <div class="form-group" >
+                                    <label for="file">Upload Cover Photo Here<span class="text-danger">*</span></label>
+                                    <input id="file" type="file" >
+
+                                </div>
+
+                                <div class="card-footer d-flex justify-content-end">
+                                    <button id="saveUsbtn" class="btn btn-sm waves-effect waves-light btn-primary"><i class="icon feather icon-save"></i>Save</button>
                                 </div>
                             </div>
                         </div>

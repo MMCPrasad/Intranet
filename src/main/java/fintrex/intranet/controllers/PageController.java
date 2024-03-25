@@ -265,6 +265,11 @@ public class PageController {
         return "alco";
     }
 
+    @GetMapping("/Delegation-Authority")
+    public String delegation() {
+        return "delegation_au";
+    }
+
     @Autowired
     PageService ser;
 

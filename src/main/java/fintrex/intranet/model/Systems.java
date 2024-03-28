@@ -34,7 +34,6 @@ public class Systems {
     private Integer id;
     private String name;
     private String path;
-    private String type;
     private String link;
     @CreatedDate
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")

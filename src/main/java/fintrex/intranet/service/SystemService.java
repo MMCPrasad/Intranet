@@ -42,16 +42,6 @@ public class SystemService {
         return repor.getType("%" + search.trim() + "%");
     }
 
-    public Systems updateSystem(Integer id, String name, String path, String type, String link) throws Exception {
-        Systems user = repo.findById(id).get();
-        user.setName(name);
-        user.setPath(path);
-        user.setType(type);
-        user.setLink(link);
-        user = repo.save(user);
-        return user;
-    }
-
     public Systems getSystem(Integer id) throws Exception {
         Systems sys = repo.findById(id).get();
 //        UserType utype = userTypeRepo.findById(user.getUserType().getId()).get();
@@ -73,10 +63,9 @@ public class SystemService {
         return systems;
     }
 
-    public Systems save(String name, String type, String link, MultipartFile file) throws Exception {
+    public Systems save(String name, String link, MultipartFile file) throws Exception {
         Systems system = new Systems();
         system.setName(name);
-        system.setType(type);
         system.setLink(link);
         system.setStatus("active");
         system = repo.save(system);
@@ -101,10 +90,9 @@ public class SystemService {
         return repo.save(system);
     }
 
-    public Systems update(Integer id, String name, String type, String link, MultipartFile file) throws Exception {
+    public Systems update(Integer id, String name, String link, MultipartFile file) throws Exception {
         Systems system = repo.findById(id).get();
         system.setName(name);
-        system.setType(type);
         system.setLink(link);
         if (file != null) {
             String[] split = file.getOriginalFilename().split("\\.");

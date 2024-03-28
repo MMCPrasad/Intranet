@@ -50,9 +50,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@500&display=swap" rel="stylesheet">
 
 
         <style>/* === Google Font Import - Poppins === */
+
             body {
                 position: relative;
             }
@@ -817,6 +824,20 @@
                 }
 
             }
+            /* Media query for screens smaller than 1283px */
+            /* Media query for screens smaller than 1283px */
+            @media (max-width: 1200px) {
+                .cards-system .col {
+                    flex: 0 0 auto; /* Allow columns to shrink */
+                    width: auto; /* Allow columns to shrink */
+                    max-width: 100%; /* Allow columns to expand up to 100% of the row */
+                }
+
+                .cards-system .card {
+                    width: 2rem; /* Set card width to a smaller size */
+                    height: 2rem; /* Set card height to a smaller size */
+                }
+            }
 
 
         </style>
@@ -836,9 +857,6 @@
                         <a href="#" style="text-decoration: none; color: black;" data-toggle="modal" data-target="#ceoModel">
                             <div class="cards" style="background-color: #f0f1f5;  height: 4rem">
                                 <div class="row " >
-                                    <!--                                    <div class="col-2 d-flex align-items-center">
-                                                                            <img src="assets/img/system/carousel/ceo.png" width="40px" height="40px" alt="alt" />
-                                                                        </div>-->
 
                                     <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1rem;">CEO's Message</p>
@@ -923,10 +941,6 @@
                         <a href="view_policies" style="text-decoration: none; color: black;">
                             <div class="cards" style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row " >
-                                    <!--                                    <div class="col">
-                                                                            <img src="assets/img/system/carousel/policy.png" width="40px" height="40px" alt="alt" />
-                                                                        </div>-->
-
                                     <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1.2rem;">Policy</p>
                                     </div>
@@ -937,13 +951,9 @@
 
                     </div>
                     <div class="col">
-                        <a href="#" id="view_dele" style="text-decoration: none; color: black;">
+                        <a href="Delegation-Authority-View" target='_blank' id="view_dele" style="text-decoration: none; color: black;">
                             <div class="cards" style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row">
-                                    <!--                                    <div class="col-2">
-                                                                            <img src="assets/img/system/carousel/delegation.png" width="50px" height="50px" alt="alt" />
-                                                                        </div>-->
-
                                     <div class="txt" style=" font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1rem;">Delegation Authority</p>
                                     </div>
@@ -956,13 +966,9 @@
 
 
                     <div class="col">
-                        <a href="#" id="view_alco" style="text-decoration: none; color: black;">
+                        <a href="Alco-Rate-View" target='_blank' id="view_alco" style="text-decoration: none; color: black;">
                             <div class="cards" style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row ">
-                                    <!--                                    <div class="col-3">
-                                                                            <img src="assets/img/system/carousel/alco.png" width="40px" height="40px" alt="alt" />
-                                                                        </div>-->
-
                                     <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1rem;">Alco Rates</p>
                                     </div>
@@ -976,10 +982,6 @@
                         <a href="#"id="ideas-link" style="text-decoration: none; color: black;">
                             <div class="cards" style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row " >
-                                    <!--                                    <div class="col-3">
-                                                                            <img src="assets/img/system/carousel/idea.png" width="40px" height="40px" alt="alt" />
-                                                                        </div>-->
-
                                     <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1.2rem;text-align: center;">Ideas</p>
                                     </div>
@@ -994,10 +996,6 @@
 
                             <div class="cards"style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row">
-                                    <!--                                    <div class="col-2">
-                                                                            <img src="assets/img/system/carousel/whis.png" width="30px" height="30px" alt="alt" />
-                                                                        </div>-->
-
                                     <div class="txt" style=" font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1rem;">Whistleblowing Policy</p>
                                     </div>
@@ -1012,10 +1010,6 @@
 
                             <div class="cards"style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row " >
-                                    <!--                                    <div class="col">
-                                                                            <img src="assets/img/system/carousel/whis.png" width="40px" height="40px" alt="alt" />
-                                                                        </div>-->
-
                                     <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1rem;">FD,FS,F&M</p>
                                     </div>
@@ -1026,14 +1020,10 @@
 
                     </div>
                     <div class="col">
-                        <a href="#" id="incident-link" style="text-decoration: none; color: black;">
+                        <a href="#"  id="incident-link" style="text-decoration: none; color: black;">
 
                             <div class="cards"style="background-color: #f0f1f5;height: 4rem">
                                 <div class="row " >
-                                    <!--                                    <div class="col">
-                                                                            <img src="assets/img/system/carousel/inci.png" width="40px" height="40px" alt="alt" />
-                                                                        </div>-->
-
                                     <div class="txt" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
                                         <p style="font-size: 1rem;text-align: center;">Incident</p>
                                     </div>
@@ -1050,50 +1040,15 @@
         </div>
 
 
-        <div  class="cards-system" style="padding: 1rem 1rem;background-color: transparent;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);border-radius: 20px;margin: 5rem 2rem;">
+        <div  class="cards-system" style="padding: 1rem 0.5rem;background-color: transparent;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);border-radius: 20px;margin: 5rem 1rem;">
             <section class="core"  id="system">
-
                 <div class="row"   >
-                    <h3 >Our Systems</h3>
-                    <div class="head" style="margin-left: 2rem;">
-
-                        <h5>Core Systems</h5>
-                        <hr style="border: 2px solid #79c14e;">
-
-
-                    </div>
-
-                    <div class="col" style="margin-left: 2rem; font-family: 'Ysabeau SC'; ">
-                        <div class="row" id="core" style="margin-left: 2.5rem;margin-top: -1rem;">
+                    <h3 style="text-align: center; font-family: 'DM Serif Display', serif">Our Systems</h3>
+                    <div class="col" style=" font-family: 'Ysabeau SC'; ">
+                        <div class="row" id="core" style="display: flex; flex-direction: row;">
                         </div> 
                     </div>
                 </div>
-
-
-
-                <div class="row"   >
-                    <div class="head" style="margin-left: 2rem;margin-top: 1rem;">
-                        <h5>Internal Systems</h5>
-                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
-                    </div>
-                    <div class="col" style="margin-left: 2rem;font-family: 'Ysabeau SC'; ">
-                        <div class="row" id="internal" style="margin-left: 2.5rem;margin-top: -1rem;">
-                        </div> 
-                    </div>
-                </div>
-
-
-                <div class="row"   >
-                    <div class="head" style="margin-left: 2rem;margin-top: 1rem;">
-                        <h5>Utility Systems</h5>
-                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
-                    </div>
-                    <div class="col" style="margin-left: 2rem; font-family: 'Ysabeau SC'; ">
-                        <div class="row" id="util" style="margin-left: 2.5rem;margin-top: -1rem;">
-                        </div> 
-                    </div>
-                </div>
-
 
             </section>
         </div>
@@ -1173,7 +1128,7 @@
                     <div class="content"  style="width:105%;padding-top: 10px;height:650px">
                         <div class="contents" >
                             <div class="section-headline text-center">
-                                <h4 style="color: #662D87!important;opacity: 1">Telephone</h4>
+                                <h4 style="color: #662D87!important;opacity: 1">Other Links</h4>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center" style="margin-top: 1rem;">
@@ -1194,7 +1149,7 @@
                                 </div>
                                 <div class="row"  >
                                     <div class="txt text-center" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                        <p style="font-size: 1.2rem;">Departments</p>
+                                        <p style="font-size: 1.2rem;">Department Contact Details</p>
                                     </div>
                                 </div>
 
@@ -1207,7 +1162,7 @@
                                 </div>
                                 <div class="row d-flex justify-content-center"  >
                                     <div class="txt text-center" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
-                                        <p style="font-size: 1.2rem;">Branches</p>
+                                        <p style="font-size: 1.2rem;">Branch Contact Details</p>
                                     </div>
                                 </div>
 
@@ -1837,251 +1792,70 @@
         </script>
 
         <script>
-            loadCore();
-
-
-            function loadCore() {
+            function LoadSystems() {
                 fetch('system/images')
                         .then(response => response.json())
                         .then(images => {
                             let core = document.getElementById('core');
                             core.innerHTML = ''; // Clear existing content
 
-                            for (let i = 0; i < images.length; i++) {
-                                if (images[i].type === '1') { // Check the type property
-                                    // Create a card element
-                                    let card = document.createElement('div');
-                                    card.classList.add('card');
-                                    card.style.width = '10rem';
-                                    card.style.height = '4rem';
-
-                                    // Create a card body
-                                    let cardBody = document.createElement('div');
-                                    cardBody.classList.add('card-body');
-
-                                    // Create a row for the two columns
-                                    let row = document.createElement('div');
-                                    row.classList.add('row');
-                                    row.style.marginLeft = '-1.5rem';
-
-                                    // Column for the image
-                                    let imageColumn = document.createElement('div');
-                                    imageColumn.classList.add('col-4');
-
-                                    // Create an image element
-                                    let image = document.createElement('img');
-                                    image.src = 'system/path/view/' + images[i].path;
-                                    image.classList.add('card-img-top');
-                                    image.alt = images[i].name;
-                                    image.style.width = '2.5rem';
-//                                    image.style.marginLeft = '-1.5rem';
-
-                                    // Column for the name
-                                    let nameColumn = document.createElement('div');
-                                    nameColumn.classList.add('col-8');
-
-                                    // Create a caption element
-                                    let imageCaption = document.createElement('h5');
-                                    imageCaption.textContent = images[i].name;
-                                    imageCaption.style.textAlign = 'justify';
-                                    imageCaption.style.marginTop = '0.5rem';
-                                    imageCaption.style.marginLeft = '0.5rem';
-                                    imageCaption.style.width = '150%';
-                                    imageCaption.style.fontSize = '1.1rem';
-                                    imageCaption.style.fontFamily = 'Ubuntu';
-
-                                    // Add a click event listener to the card
-                                    card.addEventListener('click', function () {
-                                        // Open the link in a new window/tab when the card is clicked
-                                        window.open(images[i].link, '_blank');
-                                    });
-
-                                    // Append elements to the columns
-                                    imageColumn.appendChild(image);
-                                    nameColumn.appendChild(imageCaption);
-
-                                    // Append columns to the row
-                                    row.appendChild(imageColumn);
-                                    row.appendChild(nameColumn);
-
-                                    // Append the row to the card body
-                                    cardBody.appendChild(row);
-
-                                    // Append the card body to the card
-                                    card.appendChild(cardBody);
-
-                                    // Add margin between the cards
-                                    card.style.margin = '10px';
-
-                                    // Append the card to the internal container
-                                    core.appendChild(card);
-                                }
-                            }
-                        });
-            }
-            loadUtil();
-
-
-            function loadInternal() {
-                fetch('system/images')
-                        .then(response => response.json())
-                        .then(images => {
-                            let internal = document.getElementById('internal');
-                            internal.innerHTML = ''; // Clear existing content
+                            // Create a container for all the rows
+                            let rowContainer = document.createElement('div');
+                            rowContainer.classList.add('row');
+                            core.appendChild(rowContainer);
 
                             for (let i = 0; i < images.length; i++) {
-                                if (images[i].type === '2') { // Check the type property
-                                    // Create a card element
-                                    let card = document.createElement('div');
-                                    card.classList.add('card');
-                                    card.style.width = '10rem';
-                                    card.style.height = '4rem';
+                                // Create a column for each image and text
+                                let col = document.createElement('div');
+                                col.classList.add('col');
 
-                                    // Create a card body
-                                    let cardBody = document.createElement('div');
-                                    cardBody.classList.add('card-body');
+                                // Create a card for the image
+                                let card = document.createElement('div');
+                                card.classList.add('card');
+                                card.style.width = '4rem';
+                                card.style.height = '4rem'; // Adjusted height to accommodate image and text
+                                card.style.position = 'relative';
+                                card.style.marginBottom = '10px';
+                                card.style.alignItems = 'center';
+                                card.style.marginLeft = '5px';
 
-                                    // Create a row for the two columns
-                                    let row = document.createElement('div');
-                                    row.classList.add('row');
-                                    row.style.marginLeft = '-1.5rem';
-                                    // Column for the image
-                                    let imageColumn = document.createElement('div');
-                                    imageColumn.classList.add('col-4');
+                                let image = document.createElement('img');
+                                image.src = 'system/path/view/' + images[i].path;
+                                image.classList.add('card-img-top');
+                                image.alt = images[i].name;
+                                image.style.width = '100%'; // Image takes full width of the card
 
-                                    // Create an image element
-                                    let image = document.createElement('img');
-                                    image.src = 'system/path/view/' + images[i].path;
-                                    image.classList.add('card-img-top');
-                                    image.alt = images[i].name;
-                                    image.style.width = '2.5rem';
+                                // Add a click event listener to the card
+                                card.addEventListener('click', function () {
+                                    // Open the link in a new window/tab when the card is clicked
+                                    window.open(images[i].link, '_blank');
+                                });
 
-                                    // Column for the name
-                                    let nameColumn = document.createElement('div');
-                                    nameColumn.classList.add('col-8');
+                                // Append the image to the card
+                                card.appendChild(image);
 
-                                    // Create a caption element
-                                    let imageCaption = document.createElement('h5');
-                                    imageCaption.textContent = images[i].name;
-                                    imageCaption.style.textAlign = 'justify';
-                                    imageCaption.style.marginTop = '0.5rem';
-                                    imageCaption.style.marginLeft = '0.1rem';
-                                    imageCaption.style.width = '150%';
-                                    imageCaption.style.fontSize = '1.1rem';
-                                    imageCaption.style.fontFamily = 'Ubuntu';
+                                // Append the card to the column
+                                col.appendChild(card);
 
-                                    // Add a click event listener to the card
-                                    card.addEventListener('click', function () {
-                                        // Open the link in a new window/tab when the card is clicked
-                                        window.open(images[i].link, '_blank');
-                                    });
+                                // Create a container for the text
+                                let textContainer = document.createElement('div');
+                                textContainer.textContent = images[i].name;
+                                textContainer.classList.add('card-text');
+                                textContainer.style.fontSize = '0.9rem';
+                                textContainer.style.width = 'auto';
+                                textContainer.style.fontFamily = 'Ubuntu';
+                                textContainer.style.textAlign = 'center';
 
-                                    // Append elements to the columns
-                                    imageColumn.appendChild(image);
-                                    nameColumn.appendChild(imageCaption);
+                                // Append the text container to the column
+                                col.appendChild(textContainer);
 
-                                    // Append columns to the row
-                                    row.appendChild(imageColumn);
-                                    row.appendChild(nameColumn);
-
-                                    // Append the row to the card body
-                                    cardBody.appendChild(row);
-
-                                    // Append the card body to the card
-                                    card.appendChild(cardBody);
-
-                                    // Add margin between the cards
-                                    card.style.margin = '10px';
-
-                                    // Append the card to the internal container
-                                    internal.appendChild(card);
-                                }
+                                // Append the column to the row container
+                                rowContainer.appendChild(col);
                             }
                         });
             }
 
-            loadInternal();
-
-
-
-
-            function loadUtil() {
-                fetch('system/images')
-                        .then(response => response.json())
-                        .then(images => {
-                            let util = document.getElementById('util');
-                            util.innerHTML = ''; // Clear existing content
-
-                            for (let i = 0; i < images.length; i++) {
-                                if (images[i].type === '3') { // Check the type property
-                                    // Create a card element
-                                    let card = document.createElement('div');
-                                    card.classList.add('card');
-                                    card.style.width = '10rem';
-                                    card.style.height = '4rem';
-
-                                    // Create a card body
-                                    let cardBody = document.createElement('div');
-                                    cardBody.classList.add('card-body');
-
-                                    // Create a row for the two columns
-                                    let row = document.createElement('div');
-                                    row.classList.add('row');
-                                    row.style.marginLeft = '-1.5rem';
-                                    // Column for the image
-                                    let imageColumn = document.createElement('div');
-                                    imageColumn.classList.add('col-4');
-
-                                    // Create an image element
-                                    let image = document.createElement('img');
-                                    image.src = 'system/path/view/' + images[i].path;
-                                    image.classList.add('card-img-top');
-                                    image.alt = images[i].name;
-                                    image.style.width = '2.5rem';
-
-                                    // Column for the name
-                                    let nameColumn = document.createElement('div');
-                                    nameColumn.classList.add('col-8');
-
-                                    // Create a caption element
-                                    let imageCaption = document.createElement('h5');
-                                    imageCaption.textContent = images[i].name;
-                                    imageCaption.style.textAlign = 'justify';
-                                    imageCaption.style.marginTop = '0.5rem';
-                                    imageCaption.style.marginLeft = '0.5rem';
-                                    imageCaption.style.width = '150%';
-                                    imageCaption.style.fontSize = '1.1rem';
-                                    imageCaption.style.fontFamily = 'Ubuntu';
-
-                                    // Add a click event listener to the card
-                                    card.addEventListener('click', function () {
-                                        // Open the link in a new window/tab when the card is clicked
-                                        window.open(images[i].link, '_blank');
-                                    });
-
-                                    // Append elements to the columns
-                                    imageColumn.appendChild(image);
-                                    nameColumn.appendChild(imageCaption);
-
-                                    // Append columns to the row
-                                    row.appendChild(imageColumn);
-                                    row.appendChild(nameColumn);
-
-                                    // Append the row to the card body
-                                    cardBody.appendChild(row);
-
-                                    // Append the card body to the card
-                                    card.appendChild(cardBody);
-
-                                    // Add margin between the cards
-                                    card.style.margin = '10px';
-
-                                    // Append the card to the internal container
-                                    util.appendChild(card);
-                                }
-                            }
-                        });
-            }
+            LoadSystems();
 
 
         </script>
@@ -2352,7 +2126,6 @@
                     ceoMsg.style.height = "125px";
                 }
             }
-
 
 
 
@@ -2639,20 +2412,7 @@
                     $("#add_pol_modal").modal('show');
                 });
             });
-            document.getElementById("view_dele").addEventListener("click", function (event) {
-                event.preventDefault(); // Prevent the default behavior of following the link
 
-                // Add code here to open the file when the link is clicked.
-                // Replace 'your_file_path' with the actual path to the file you want to open.
-                window.open('files/dele.pdf', '_blank');
-            });
-            document.getElementById("view_alco").addEventListener("click", function (event) {
-                event.preventDefault(); // Prevent the default behavior of following the link
-
-                // Add code here to open the file when the link is clicked.
-                // Replace 'your_file_path' with the actual path to the file you want to open.
-                window.open('files/alco.pdf', '_blank');
-            });
             // Function to load images and populate the carousel
             function loadNews() {
                 fetch('news/images')
@@ -2953,7 +2713,6 @@
                     }
                 });
             }
-
 
 
 

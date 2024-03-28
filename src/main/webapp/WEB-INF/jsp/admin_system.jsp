@@ -121,12 +121,6 @@
                                     <label for="link">Link<span class="text-danger">*</span></label>
                                     <input id="link"  type="text" name="link" class="form-control" required autocomplete="off">
                                 </div>
-
-                                <label for="" class="col-sm-4 col-form-label allFontByCustomerEdit">Choose Type</label>
-                                <div class="col-sm-6">
-                                    <select class="" id="type">  </select>  
-                                </div>
-
                                 <div class="form-group" >
                                     <input id="file" type="file" multiple="">
 
@@ -160,21 +154,6 @@
 
 
         <script>
-
-            var type = new SlimSelect({
-                select: '#type',
-                ajax: function (search, callback) {
-                    fetch('system/search-type', {
-                        method: 'POST',
-                        body: new URLSearchParams({search: search || ''})
-                    }).then(res => res.json()).then((data) => {
-                        callback(data);
-                    });
-                },
-                allowDeselect: true,
-                deselectLabel: '<span class="red">✖</span>'
-            });
-            $('#type').data('select', type);
 
 
 
@@ -355,7 +334,6 @@
                             clearForm();
                             $('#name').val(data.name);
                             $('#link').val(data.link);
-
                             $('#saveBtn').data('mode', 'update'); // Set the mode to 'update'
                             $('#saveBtn').data('id', id);
                             $('#saveBtn').html('<i class="icon feather icon-save"></i>Update'); // Change button text to 'Update'
@@ -376,10 +354,7 @@
                     return;
                 }
 
-                if ($('#type').val() === null) {
-                    Swal.fire("Type not Selected!", "Please Select a type!", "warning");
-                    return;
-                }
+
                 let mode = $('#saveBtn').data('mode'); // Get the mode (save or update) from the button's data
 
                 if (mode === 'save') {
@@ -388,8 +363,7 @@
                     let file = document.getElementById('file').files;
                     let name = document.getElementById('name').value;
                     fd.append('name', name);
-                    let type = document.getElementById('type').value;
-                    fd.append('type', type);
+
                     let link = document.getElementById('link').value;
                     fd.append('link', link);
                     for (var i = 0; i < file.length; i++) {
@@ -414,7 +388,7 @@
                     // Handle the 'update' action
                     let id = $('#saveBtn').data('id');
                     let name = $('#name').val();
-                    let type = $('#type').val();
+
                     let link = $('#link').val();
                     let fileInput = document.getElementById('file');
                     let files = fileInput.files;
@@ -422,7 +396,7 @@
                     let formData = new FormData();
                     formData.append('id', id);
                     formData.append('name', name);
-                    formData.append('type', type);
+
                     formData.append('link', link);
 
                     for (let i = 0; i < files.length; i++) {

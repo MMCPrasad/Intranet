@@ -56,13 +56,6 @@ public class SystemController {
         return service.getType(search);
     }
 
-    @PostMapping("/update-system")
-    public ResponseEntity<CommonResponse> updateSystem(@RequestParam Integer id, @RequestParam String name, @RequestParam String path, @RequestParam String type, @RequestParam String link) throws Exception {
-        service.updateSystem(id, name, path, type, link);
-        CommonResponse response = new CommonResponse("Success!", 200);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-
     @GetMapping("/details/{id}")
     public ResponseEntity<CommonResponse> details(@PathVariable Integer id) throws Exception {
         CommonResponse response = new CommonResponse("Success!", service.getSystem(id), 200);
@@ -87,10 +80,9 @@ public class SystemController {
     @ResponseBody
     public Systems upload(MultipartHttpServletRequest req) throws Exception {
         String name = req.getParameter("name");
-        String type = req.getParameter("type");
         String link = req.getParameter("link");
         MultipartFile file = req.getFile("file");
-        return service.save(name, type, link, file);
+        return service.save(name, link, file);
     }
 
     @PostMapping("/update")
@@ -98,10 +90,9 @@ public class SystemController {
     public Systems update(MultipartHttpServletRequest req) throws Exception {
         Integer id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
-        String type = req.getParameter("type");
         String link = req.getParameter("link");
         MultipartFile file = req.getFile("file");
-        return service.update(id, name, type, link, file);
+        return service.update(id, name, link, file);
     }
 
     @GetMapping("/path/view/{name}")

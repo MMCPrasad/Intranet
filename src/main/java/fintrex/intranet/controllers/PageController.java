@@ -270,6 +270,16 @@ public class PageController {
         return "delegation_au";
     }
 
+    @GetMapping("/Delegation-Authority-View")
+    public String delegationAu() {
+        return "delegation_view";
+    }
+
+    @GetMapping("/Alco-Rate-View")
+    public String alcoR() {
+        return "alco_view";
+    }
+
     @Autowired
     PageService ser;
 

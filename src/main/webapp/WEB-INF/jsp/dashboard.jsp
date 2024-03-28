@@ -1050,9 +1050,55 @@
         </div>
 
 
+        <div  class="cards-system" style="padding: 1rem 1rem;background-color: transparent;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);border-radius: 20px;margin: 5rem 2rem;">
+            <section class="core"  id="system">
+
+                <div class="row"   >
+                    <h3 >Our Systems</h3>
+                    <div class="head" style="margin-left: 2rem;">
+
+                        <h5>Core Systems</h5>
+                        <hr style="border: 2px solid #79c14e;">
 
 
-        <div class="row" style="display: flex; justify-content: space-between;margin-top: 5rem;background-color: #f3f3f3;padding: 40px 40px;" id="details">
+                    </div>
+
+                    <div class="col" style="margin-left: 2rem; font-family: 'Ysabeau SC'; ">
+                        <div class="row" id="core" style="margin-left: 2.5rem;margin-top: -1rem;">
+                        </div> 
+                    </div>
+                </div>
+
+
+
+                <div class="row"   >
+                    <div class="head" style="margin-left: 2rem;margin-top: 1rem;">
+                        <h5>Internal Systems</h5>
+                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
+                    </div>
+                    <div class="col" style="margin-left: 2rem;font-family: 'Ysabeau SC'; ">
+                        <div class="row" id="internal" style="margin-left: 2.5rem;margin-top: -1rem;">
+                        </div> 
+                    </div>
+                </div>
+
+
+                <div class="row"   >
+                    <div class="head" style="margin-left: 2rem;margin-top: 1rem;">
+                        <h5>Utility Systems</h5>
+                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
+                    </div>
+                    <div class="col" style="margin-left: 2rem; font-family: 'Ysabeau SC'; ">
+                        <div class="row" id="util" style="margin-left: 2.5rem;margin-top: -1rem;">
+                        </div> 
+                    </div>
+                </div>
+
+
+            </section>
+        </div>
+
+        <div class="row" style="display: flex;margin-top:-3rem; justify-content: space-between;background-color: #f3f3f3;padding: 20px 40px;" id="details">
 
 
             <section id="news" style="flex: 1;" class="news" >
@@ -1144,7 +1190,7 @@
                         <div class="row d-flex justify-content-center" style="margin-top: 1rem;">
                             <div class="cards" style="width:65%;background-color: #E5D4E7;"data-toggle="modal" data-target="#dptModel">
                                 <div class="row d-flex justify-content-center" style="margin-top: 10px;" >
-                                    <img src="assets/img/system/carousel/office.png" style="width: 70%;" alt="alt" />
+                                    <img src="assets/img/system/carousel/office.png" style="width: 45%;" alt="alt" />
                                 </div>
                                 <div class="row"  >
                                     <div class="txt text-center" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
@@ -1157,7 +1203,7 @@
                         <div class="row d-flex justify-content-center" style="margin-top: 1rem;">
                             <div class="cards" style="width:65%;background-color: #E5D4E7;"data-toggle="modal" data-target="#brnchModel">
                                 <div class="row d-flex justify-content-center" style="margin-top: 10px;" >
-                                    <img src="assets/img/system/carousel/branch.png" style="width: 65%;" alt="alt" />
+                                    <img src="assets/img/system/carousel/branch.png" style="width: 40%;" alt="alt" />
                                 </div>
                                 <div class="row d-flex justify-content-center"  >
                                     <div class="txt text-center" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
@@ -1167,6 +1213,21 @@
 
                             </div>
                         </div>
+
+                        <div class="row d-flex justify-content-center" style="margin-top: 1rem;">
+                            <div class="cards" style="width:65%;background-color: #E5D4E7;" onclick="window.open('https://swc.fintrex.lk', '_blank');">
+                                <div class="row d-flex justify-content-center" style="margin-top: 10px;" >
+                                    <img src="assets/img/system/welfare/logo.png" style="width: 100%;" alt="alt" />
+                                </div>
+                                <div class="row d-flex justify-content-center"  >
+                                    <div class="txt text-center" style="margin-top: 5px; font-family: 'Exo 2', sans-serif; font-weight: 1000">
+                                        <p style="font-size: 1.2rem;">Fintrex Sports & Welfare Club</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                     </div>
 
@@ -1330,53 +1391,7 @@
 
 
         </div> 
-        <div  class="cards-system" style="padding: 2rem 2rem;background-color: transparent;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);border-radius: 20px;margin: 2rem 2rem;">
-            <section class="core"  id="system">
 
-                <div class="row"   >
-                    <h1 class="line-title" style="margin-left: 1rem">Our Systems</h1>
-                    <div class="head" style="margin-left: 2rem;">
-
-                        <h4>Core Systems</h4>
-                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
-
-
-                    </div>
-
-                    <div class="col" style="margin-left: 2rem; font-family: 'Ysabeau SC'; ">
-                        <div class="row" id="core" style="margin-left: 2.5rem;margin-top: -1rem;">
-                        </div> 
-                    </div>
-                </div>
-
-
-
-                <div class="row"   >
-                    <div class="head" style="margin-left: 2rem;margin-top: 1rem;">
-                        <h4>Internal Systems</h4>
-                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
-                    </div>
-                    <div class="col" style="margin-left: 2rem;font-family: 'Ysabeau SC'; ">
-                        <div class="row" id="internal" style="margin-left: 2.5rem;margin-top: -1rem;">
-                        </div> 
-                    </div>
-                </div>
-
-
-                <div class="row"   >
-                    <div class="head" style="margin-left: 2rem;margin-top: 1rem;">
-                        <h4>Utility Systems</h4>
-                        <hr style="margin-top: -0.5rem;border: 2px solid #79c14e;">
-                    </div>
-                    <div class="col" style="margin-left: 2rem; font-family: 'Ysabeau SC'; ">
-                        <div class="row" id="util" style="margin-left: 2.5rem;margin-top: -1rem;">
-                        </div> 
-                    </div>
-                </div>
-
-
-            </section>
-        </div>
 
         <!--        <div class="row">
                     <div class="card-notice">
@@ -1837,7 +1852,7 @@
                                     // Create a card element
                                     let card = document.createElement('div');
                                     card.classList.add('card');
-                                    card.style.width = '12rem';
+                                    card.style.width = '10rem';
                                     card.style.height = '4rem';
 
                                     // Create a card body
@@ -1847,6 +1862,7 @@
                                     // Create a row for the two columns
                                     let row = document.createElement('div');
                                     row.classList.add('row');
+                                    row.style.marginLeft = '-1.5rem';
 
                                     // Column for the image
                                     let imageColumn = document.createElement('div');
@@ -1858,6 +1874,7 @@
                                     image.classList.add('card-img-top');
                                     image.alt = images[i].name;
                                     image.style.width = '2.5rem';
+//                                    image.style.marginLeft = '-1.5rem';
 
                                     // Column for the name
                                     let nameColumn = document.createElement('div');
@@ -1869,7 +1886,7 @@
                                     imageCaption.style.textAlign = 'justify';
                                     imageCaption.style.marginTop = '0.5rem';
                                     imageCaption.style.marginLeft = '0.5rem';
-                                    imageCaption.style.width = '200%';
+                                    imageCaption.style.width = '150%';
                                     imageCaption.style.fontSize = '1.1rem';
                                     imageCaption.style.fontFamily = 'Ubuntu';
 
@@ -1917,7 +1934,7 @@
                                     // Create a card element
                                     let card = document.createElement('div');
                                     card.classList.add('card');
-                                    card.style.width = '12rem';
+                                    card.style.width = '10rem';
                                     card.style.height = '4rem';
 
                                     // Create a card body
@@ -1927,7 +1944,7 @@
                                     // Create a row for the two columns
                                     let row = document.createElement('div');
                                     row.classList.add('row');
-
+                                    row.style.marginLeft = '-1.5rem';
                                     // Column for the image
                                     let imageColumn = document.createElement('div');
                                     imageColumn.classList.add('col-4');
@@ -1949,7 +1966,7 @@
                                     imageCaption.style.textAlign = 'justify';
                                     imageCaption.style.marginTop = '0.5rem';
                                     imageCaption.style.marginLeft = '0.1rem';
-                                    imageCaption.style.width = '180%';
+                                    imageCaption.style.width = '150%';
                                     imageCaption.style.fontSize = '1.1rem';
                                     imageCaption.style.fontFamily = 'Ubuntu';
 
@@ -2000,7 +2017,7 @@
                                     // Create a card element
                                     let card = document.createElement('div');
                                     card.classList.add('card');
-                                    card.style.width = '12rem';
+                                    card.style.width = '10rem';
                                     card.style.height = '4rem';
 
                                     // Create a card body
@@ -2010,7 +2027,7 @@
                                     // Create a row for the two columns
                                     let row = document.createElement('div');
                                     row.classList.add('row');
-
+                                    row.style.marginLeft = '-1.5rem';
                                     // Column for the image
                                     let imageColumn = document.createElement('div');
                                     imageColumn.classList.add('col-4');
@@ -2032,7 +2049,7 @@
                                     imageCaption.style.textAlign = 'justify';
                                     imageCaption.style.marginTop = '0.5rem';
                                     imageCaption.style.marginLeft = '0.5rem';
-                                    imageCaption.style.width = '200%';
+                                    imageCaption.style.width = '150%';
                                     imageCaption.style.fontSize = '1.1rem';
                                     imageCaption.style.fontFamily = 'Ubuntu';
 

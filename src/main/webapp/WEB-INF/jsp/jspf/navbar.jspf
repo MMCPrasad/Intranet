@@ -76,13 +76,13 @@
 
                 </div>
             </li>
-            <li class="nav-item">
-                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link"  href="<%= request.getContextPath() %>/home#system" onclick="scrollToSystem()">Systems</a>
-
-            </li>
-            <li class="nav-item">
-                <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="#" onclick="window.open('swc.fintrex.lk', 'blank')">SWC </a>
-            </li>
+            <!--            <li class="nav-item">
+                            <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link"  href="<%= request.getContextPath() %>/home#system" onclick="scrollToSystem()">Systems</a>
+            
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="#" onclick="window.open('swc.fintrex.lk', 'blank')">SWC </a>
+                        </li>-->
             <li class="nav-item">
                 <a style="color: white;" onmouseover="this.style.color = '#79c14e'" onmouseout="this.style.color = 'white'" class="nav-link" href="login_policy">Departments </a>
             </li>

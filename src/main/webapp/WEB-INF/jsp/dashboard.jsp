@@ -1040,7 +1040,7 @@
         </div>
 
 
-        <div  class="cards-system" style="padding: 1rem 0.5rem;background-color: transparent;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);border-radius: 20px;margin: 5rem 1rem;">
+        <div  class="cards-system" style="padding: 0.2rem 0.5rem;background-color: transparent;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);border-radius: 20px;margin: 4.5rem 1rem;">
             <section class="core"  id="system">
                 <div class="row"   >
                     <h3 style="text-align: center; font-family: 'DM Serif Display', serif">Our Systems</h3>
@@ -1119,7 +1119,29 @@
                 </div>
             </section>
 
-
+            <section id="bday" style="flex: 1; " class="bday">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="content" style="width: 105%; padding-top: 10px; height: 650px; overflow: hidden;">
+                        <div class="contents">
+                            <div class="section-headline text-center">
+                                <h4 style="color: #662D87!important; opacity: 1">Birthdays</h4>
+                            </div>
+                        </div>
+                        <div style="max-height: 35rem; overflow-y: scroll;">
+                            <table class="table table-hover cell-border" id="tbl4" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <!-- Add table headers here -->
+                                    </tr>
+                                </thead>
+                                <tbody style="font-size: 13px;">
+                                    <!-- Add table rows and data here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
 
@@ -1319,29 +1341,7 @@
 
 
 
-            <section id="bday" style="flex: 1; " class="bday">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="content" style="width: 105%; padding-top: 10px; height: 650px; overflow: hidden;">
-                        <div class="contents">
-                            <div class="section-headline text-center">
-                                <h4 style="color: #662D87!important; opacity: 1">Birthdays</h4>
-                            </div>
-                        </div>
-                        <div style="max-height: 35rem; overflow-y: scroll;">
-                            <table class="table table-hover cell-border" id="tbl4" style="width: 100%;">
-                                <thead>
-                                    <tr>
-                                        <!-- Add table headers here -->
-                                    </tr>
-                                </thead>
-                                <tbody style="font-size: 13px;">
-                                    <!-- Add table rows and data here -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
 
 
 

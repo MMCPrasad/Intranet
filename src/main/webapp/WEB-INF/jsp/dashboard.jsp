@@ -71,7 +71,7 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: url('assets/img/system/12345.jpg') center center / cover no-repeat;
+                background: url('assets/img/system/12345.webp') center center / cover no-repeat;
                 opacity: 0.6; /* Adjust the opacity value as needed */
                 z-index: -1; /* Ensure the pseudo-element is behind the content */
             }
@@ -247,7 +247,7 @@
             }
 
             #details{
-                background: url('assets/img/system/12345.jpg') center center / cover no-repeat;
+                background: url('assets/img/system/12345.webp') center center / cover no-repeat;
 
 
             }

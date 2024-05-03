@@ -41,12 +41,12 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: url('assets/img/system/syst.jpg') center center / cover no-repeat;
+                background: url('assets/img/system/syst.webp') center center / cover no-repeat;
                 opacity: 0.2; /* Adjust the opacity value as needed */
                 z-index: -1; /* Ensure the pseudo-element is behind the content */
             }
             .bckVover, .backcover {
-                background-image: url(assets/img/system/carousel/about/cover.png);
+                background-image: url(assets/img/system/carousel/about/cover.webp);
                 height: 25rem;
 
             }
@@ -652,7 +652,7 @@
             <div class="backcover"  >
 
             </div>
-            <div class="block animatable bounceInRight">
+            <div class="block animatable">
                 <div class="desc animate-box text-center " >
                     <p style="font-size: 4rem;margin-right: 5rem;margin-top: -7rem;text-align: right;color: purple"><strong>Fintrex Finance LTD</strong></p>
 
@@ -661,7 +661,7 @@
 
         </div>
         <div class="row">
-            <p class="gradient-text fade-in" >'Fintrex Finance Ltd' which was established in 2007, has emerged as a strong contender 
+            <p class="gradient-text " >'Fintrex Finance Ltd' which was established in 2007, has emerged as a strong contender 
                 in the financial services sector capturing a sizable market share in its journey of 
                 over a decade. Driven by a steadfast commitment to promoting financial inclusion, 
                 economic growth and development in Sri Lanka, Fintrex continues to play a significant 

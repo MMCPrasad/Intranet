@@ -652,7 +652,7 @@
 
 
         <div class="row" style="padding: 2rem 5rem;">
-            <div class="block animatable fadeInUp">
+            <div class="" >
                 <div class="card">
                     <div class="row" style="background-color: #EEF6E8;padding: 2rem 2rem;border-radius: 20px;">
 
@@ -661,11 +661,14 @@
                                 <div class="card"  style="color: white;; align-items: center;background-color: #72BF44;font-size: 1.5rem;">
                                     Leasing
                                 </div>
-                                <img src="assets/img/system/carousel/about/leasing.png" alt="alt"/>
+                                <img  src="assets/img/system/carousel/about/leasing.png" alt="alt"/>
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-9" >
                             <h5 style="margin-left: 2rem;font-family: 'Roboto Slab', serif;">
                                 Fintrex Finance offers a wide range of Leasing products that are customized to meet the specific 
                                 requirements of our diverse customer base who are seeking to realize their dream of a vehicle. Our 
@@ -696,7 +699,10 @@
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-9" >
                             <h5 style="margin-left: 2rem;font-family: 'Roboto Slab', serif;">
                                 Fintrex Revolving Draft (FRD) facility enables the customer to access an additional cash reserve for 
                                 any requirement. By comprehending the customers’ borrowing needs which vary throughout the year, 
@@ -722,7 +728,10 @@
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-9" >
                             <h5 style="margin-left: 2rem;font-family: 'Roboto Slab', serif;">
                                 We strongly believe in serving the SME sector and therefore, facilitate quick access to financing for 
                                 the entrepreneurial SMEs offering them a range of financing options that would suit the cash flows 
@@ -765,7 +774,10 @@
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-9" >
                             <h5 style="margin-left: 2rem;font-family: 'Roboto Slab', serif;">
                                 The Company introduced the “Vishvasa” fixed deposit product to the public in its initiative to expand 
                                 the product portfolio of the Company. This product is accompanied by a competitive interest rate 
@@ -795,7 +807,10 @@
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-9" >
                             <h5 style="margin-left: 2rem;font-family: 'Roboto Slab', serif;">
                                 For inculcating the habit of saving amongst our customers, particularly amongst the entrepreneurs 
                                 of the SME sector that represent the future of the nation, we have introduced two savings products; 
@@ -824,7 +839,10 @@
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-9" >
                             <h5 style="margin-left: 2rem;font-family: 'Roboto Slab', serif;">
                                 Ran Shakthi Gold Loan facility offers our customers the convenience and highest cash advances 
                                 against gold, when they need it the most, with accurate assessment and flexibility in repayment and 
@@ -855,7 +873,10 @@
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-9" >
                             <h5 style="margin-left: 2rem;font-family: 'Roboto Slab', serif;">
                                 Fintrex Flexy Fix Money Market Savings Account, aimed at Corporate and high net worth 
                                 individuals, SMEs who seek a product that offers better fund management capabilities for short 
@@ -881,7 +902,10 @@
 
                             </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-9" >
                             <h5 style="margin-left: 2rem;font-family: 'Roboto Slab', serif;">
                                 Dream Planner is an innovative savings plan, first in the industry - a product designed for a customer 
                                 to set aside a fixed amount of savings every month.<br><br>
@@ -908,31 +932,10 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var gradientText = document.querySelector(".gradient-text");
-
-            window.addEventListener("scroll", function () {
-                // Adjust the threshold value as needed
-                var threshold = window.innerHeight * 0.8;
-                var gradientTextPosition = gradientText.getBoundingClientRect().top;
-
-                if (gradientTextPosition < threshold) {
-                    gradientText.classList.add("active");
-                } else {
-                    gradientText.classList.remove("active");
-                }
-            });
-        });
 
 
 
 
-// Trigger CSS animations on scroll.
-// Detailed explanation can be found at http://www.bram.us/2013/11/20/scroll-animations/
-
-// Looking for a version that also reverses the animation when
-// elements scroll below the fold again?
-// --> Check https://codepen.io/bramus/pen/vKpjNP
 
         jQuery(function ($) {
 

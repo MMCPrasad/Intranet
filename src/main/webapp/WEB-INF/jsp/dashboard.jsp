@@ -537,14 +537,16 @@
             .game-section {
                 padding: 20px 65px;
             }
+
             .game-section .owl-stage {
                 margin: 15px 0;
                 display: flex;
                 display: -webkit-flex;
             }
+
             .game-section .item {
                 margin: 0 15px 60px;
-                width: 320px;
+                width: 490px;
                 height: 280px;
                 display: flex;
                 display: -webkit-flex;
@@ -554,15 +556,15 @@
                 border-radius: 16px;
                 overflow: hidden;
                 position: relative;
-                transition: all 0.4s ease-in-out;
-                -webkit-transition: all 0.4s ease-in-out;
                 cursor: pointer;
             }
+
             .game-section .item.active {
-                width: 500px;
+                width: 490px;
                 box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
                 -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
             }
+
             .game-section .item:after {
                 content: "";
                 display: block;
@@ -573,59 +575,45 @@
                 top: 0;
                 background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
             }
+
             .game-section .item-desc {
                 padding: 0 24px 12px;
                 color: #fff;
                 position: relative;
                 z-index: 1;
                 overflow: hidden;
-                transform: translateY(calc(100% - 54px));
-                -webkit-transform: translateY(calc(100% - 54px));
+                transform: none;
+                -webkit-transform: none;
                 transition: all 0.4s ease-in-out;
                 -webkit-transition: all 0.4s ease-in-out;
             }
+
             .game-section .item.active .item-desc {
                 transform: none;
                 -webkit-transform: none;
             }
+
             .game-section .item-desc p {
-                opacity: 0;
-                -webkit-transform: translateY(32px);
-                transform: translateY(32px);
-                transition: all 0.4s ease-in-out 0.2s;
-                -webkit-transition: all 0.4s ease-in-out 0.2s;
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+                transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
             }
+
             .game-section .item.active .item-desc p {
                 opacity: 1;
-                -webkit-transform: translateY(0);
-                transform: translateY(0);
+                -webkit-transform: none;
+                transform: none;
             }
-            .game-section .owl-theme.custom-carousel .owl-dots {
-                margin-top: -20px;
-                position: relative;
-                z-index: 5;
-            }
-            /******** Middle section CSS End *******/
-
-            /***** responsive css Start ******/
 
             @media (min-width: 992px) and (max-width: 1199px) {
-                h2 {
-                    margin-bottom: 32px;
-                }
-                h3 {
-                    margin: 0 0 8px;
-                    font-size: 24px;
-                    line-height: 32px;
-                }
-
-                /* -------- Landing page ------- */
                 .game-section {
                     padding: 50px 30px;
                 }
                 .game-section .item {
                     margin: 0 12px 60px;
-                    width: 260px;
+                    width: 400px;
                     height: 360px;
                 }
                 .game-section .item.active {
@@ -638,25 +626,12 @@
             }
 
             @media (min-width: 768px) and (max-width: 991px) {
-                h2 {
-                    margin-bottom: 32px;
-                }
-                h3 {
-                    margin: 0 0 8px;
-                    font-size: 24px;
-                    line-height: 32px;
-                }
-                .line-title {
-                    width: 330px;
-                }
-
-                /* -------- Landing page ------- */
                 .game-section {
                     padding: 50px 30px 40px;
                 }
                 .game-section .item {
                     margin: 0 12px 60px;
-                    width: 240px;
+                    width: 360px;
                     height: 330px;
                 }
                 .game-section .item.active {
@@ -669,20 +644,6 @@
             }
 
             @media (max-width: 767px) {
-
-                h2 {
-                    margin-bottom: 20px;
-                }
-                h3 {
-                    margin: 0 0 8px;
-                    font-size: 19px;
-                    line-height: 24px;
-                }
-                .line-title {
-                    width: 250px;
-                }
-
-                /* -------- Landing page ------- */
                 .game-section {
                     padding: 30px 15px 20px;
                 }
@@ -702,6 +663,7 @@
                     -webkit-transform: translateY(calc(100% - 42px));
                 }
             }
+
             .inline-list {
                 display: inline-block;
                 padding: 0;
@@ -835,7 +797,23 @@
                     height: 2rem; /* Set card height to a smaller size */
                 }
             }
-
+            @media screen and (max-width: 1400px) { /* Adjust the max-width as needed */
+                .col-10 {
+                    flex: 0 0 100%; /* Set each column to occupy the full width */
+                    max-width: 100%; /* Ensure the column doesn't exceed the container width */
+                }
+            }
+            /* Add this CSS in your stylesheet or <style> tag */
+            @media screen and (max-width: 1070px) {
+                .cards-container {
+                    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+                    justify-content: center; /* Center cards horizontally */
+                }
+                .cards {
+                    flex: 0 0 45%; /* Adjust width to fit all cards in a single row */
+                    margin-top: 1rem; /* Add space between rows */
+                }
+            }
 
         </style>
     </head>
@@ -1050,7 +1028,7 @@
             </section>
         </div>
 
-        <div class="row" style="display: flex;margin-top:-3rem; justify-content: space-between;background-color: #f3f3f3;padding: 20px 40px;" id="details">
+        <div class="row d-flex justify-content-center" style="display: flex;margin-top:-3rem; justify-content: space-between;background-color: #f3f3f3;padding: 20px 40px;" id="details">
 
 
             <section id="news" style="flex: 1;" class="news" >
@@ -1467,7 +1445,7 @@
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a onclick="window.open('https://www.linkedin.com/company/melsta-regal-finance-ltd', '')" title="Linked In">
+                                                                        <a onclick="window.open('https://www.linkedin.com/company/fintrex-finance/mycompany/', '')" title="Linked In">
                                                                             <i class="fa fa-linkedin-square"></i>
                                                                         </a>
                                                                     </li>
@@ -1855,31 +1833,124 @@
             LoadSystems();
 
 
-        </script>
 
-        <script>
-            fetch('form/form-load')
-                    .then(response => response.json())
-                    .then(data => {
-                        const listContainer = document.getElementById('forms');
-                        const ul = document.createElement('ul');
-                        data.forEach(item => {
-                            const li = document.createElement('li');
-                            const a = document.createElement('a');
-                            a.textContent = item.name + ' - ' + item.subtype + ' Department ';
-                            a.href = item.link;
-                            a.target = "_blank";
-                            // Set inline styles for the <li> element
-                            a.style.fontSize = '1.2rem';
-                            a.style.fontFamily = "Roboto Slab, serif";
-                            // Add more inline styles as needed
-                            li.appendChild(a);
-                            ul.appendChild(li);
+            function loadNews() {
+                fetch('news/images')
+                        .then(response => response.json())
+                        .then(newsData => {
+                            newsData.sort((a, b) => b.id - a.id);
+                            const newsContainer = document.getElementById('newsContainer');
+                            newsContainer.innerHTML = ''; // Clear existing content
+
+                            newsData.forEach(newsItem => {
+                                const col10 = document.createElement('div');
+                                col10.classList.add('col-10');
+                                col10.classList.add('news-item'); // Add a class for easier event handling
+
+                                col10.addEventListener('click', function () {
+                                    fetch('news/' + newsItem.id)
+                                            .then(response => response.json())
+                                            .then(resp => resp.data)
+                                            .then(newsDetail => {
+                                                const modal = $('#newsModal');
+                                                modal.find('.modal-title').text(newsItem.heading); // Set modal title to the heading
+                                                modal.find('.modal-title').css('font-family', "'Libre Baskerville', serif"); // Set font-family for modal title
+
+                                                // Set the modal description
+                                                const description = modal.find('.modal-body .description');
+                                                description.text(newsDetail.para); // Set the description text using newsDetail.para
+                                                description.css('font-family', "'Crimson Text', serif"); // Set font-family for modal body text
+                                                description.css('font-size', '1rem');
+                                                description.css('text-align', 'center');
+
+                                                // Set the modal image source
+                                                const imageContainer = modal.find('.modal-body .image-container');
+                                                imageContainer.empty(); // Clear existing images
+
+                                                for (let i = 0; i < newsDetail.images.length; i++) {
+                                                    const imageData = newsDetail.images[i];
+                                                    const image = document.createElement('img');
+                                                    const imageUrl = 'news/path/newsss/' + imageData.path;
+                                                    image.src = imageUrl;
+                                                    image.style.width = '30%'; // Set the initial width for the thumbnail
+                                                    imageContainer.append(image);
+                                                    // Add lightbox functionality
+                                                    image.addEventListener('click', function () {
+                                                        // Show the modal
+                                                        const imageModal = $('#imageModal');
+                                                        imageModal.modal('show');
+
+                                                        // Get the modal body and image element
+                                                        const modalBody = imageModal.find('.modal-body');
+                                                        const modalImage = modalBody.find('img');
+
+                                                        // Set the source of the lightbox image
+                                                        modalImage.attr('src', imageUrl);
+
+                                                        // Set the width for the modal (adjust the value as needed)
+                                                        imageModal.find('.modal-dialog').css('max-width', '60%'); // Set your desired width, e.g., '80%'
+                                                    });
+
+
+                                                }
+
+
+                                                modal.modal('show');
+                                            });
+                                });
+                                const txtDiv = document.createElement('div');
+                                txtDiv.classList.add('txt');
+                                txtDiv.style.marginTop = '5px';
+                                txtDiv.style.marginLeft = '5px';
+                                txtDiv.style.fontFamily = "'Exo 2', sans-serif";
+                                const h4 = document.createElement('h4');
+                                h4.style.fontSize = '0.9rem';
+                                h4.style.fontWeight = '700';
+                                h4.textContent = newsItem.heading; // Set the heading to the newsItem's heading
+
+                                const p = document.createElement('p');
+                                p.textContent = newsItem.content;
+                                p.style.wordSpacing = '0.2em'; // Adjust the word spacing as needed
+                                p.style.whiteSpace = 'pre-wrap';
+
+                                txtDiv.appendChild(h4);
+                                txtDiv.appendChild(p);
+                                col10.appendChild(txtDiv);
+                                newsContainer.style.maxHeight = '35rem'; // Set a fixed height for the news container
+                                newsContainer.style.overflowY = 'auto'; // Enable vertical scrolling if the content exceeds the container height
+
+                                newsContainer.appendChild(col10);
+                            });
                         });
-                        listContainer.appendChild(ul);
-                    })
-                    .catch(error => console.error('Error fetching list:', error));
+            }
 
+            // Call the loadNews function when the document is ready
+            $(document).ready(function () {
+                loadNews();
+            });
+
+//            fetch('form/form-load')
+//                    .then(response => response.json())
+//                    .then(data => {
+//                        const listContainer = document.getElementById('forms');
+//                        const ul = document.createElement('ul');
+//                        data.forEach(item => {
+//                            const li = document.createElement('li');
+//                            const a = document.createElement('a');
+//                            a.textContent = item.name + ' - ' + item.subtype + ' Department ';
+//                            a.href = item.link;
+//                            a.target = "_blank";
+//                            // Set inline styles for the <li> element
+//                            a.style.fontSize = '1.2rem';
+//                            a.style.fontFamily = "Roboto Slab, serif";
+//                            // Add more inline styles as needed
+//                            li.appendChild(a);
+//                            ul.appendChild(li);
+//                        });
+//                        listContainer.appendChild(ul);
+//                    })
+//                    .catch(error => console.error('Error fetching list:', error));
+//
 
 
 
@@ -1934,6 +2005,10 @@
                                     }
                                 }
                             });
+
+                            // Set default active item
+                            $(".game-section .item").first().addClass("active");
+
                             // Add click event for "See More" links
                             $(".see-more-link").click(function (e) {
                                 e.preventDefault();
@@ -1943,6 +2018,7 @@
                             });
                         });
             }
+
 
             function openModal(imagePath, imageHeading) {
                 // Set the image source in the modal
@@ -1957,6 +2033,9 @@
             $(document).ready(function () {
                 LoadPromo();
             });
+
+
+
             // Additional code for item click handling
             $(document).ready(function () {
                 // Use event delegation to handle dynamically added elements
@@ -2165,6 +2244,7 @@
                 }
             });
             $.fn.dataTable.ext.errMode = 'none';
+
             var brnchtable = $('#brnc').DataTable({
                 "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
                 "pageLength": 5,
@@ -2191,10 +2271,8 @@
                         console.log(xhr);
                         console.log(code);
                     }
-
                 },
                 "columns": [
-                    //                    {"data": "id", className: "text-right", "visible": false},
                     {"data": "callname"},
                     {"data": "desig"},
                     {"data": "officeTelNo"},
@@ -2202,11 +2280,24 @@
                     {"data": "email"},
                     {"data": "officeMobileNo"},
                     {"data": "brnch", "visible": false}
-                ], "language": {
+                ],
+                "language": {
                     'loadingRecords': '&nbsp;',
                     'processing': '<div class="loader2"></div>'
-                }
+                },
+                "columnDefs": [
+                    {
+                        "targets": "_all",
+                        "render": function (data, type, row, meta) {
+                            if (data === null) {
+                                return '-';
+                            }
+                            return data;
+                        }
+                    }
+                ]
             });
+
             var emptable = $('#emp').DataTable({
                 "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
                 "pageLength": 5,
@@ -2229,10 +2320,8 @@
                         console.log(xhr);
                         console.log(code);
                     }
-
                 },
                 "columns": [
-                    //                    {"data": "id", className: "text-right", "visible": false},
                     {"data": "callname"},
                     {"data": "desig"},
                     {"data": "brnch"},
@@ -2241,7 +2330,8 @@
                     {"data": "email"},
                     {"data": "officeMobileNo"},
                     {"data": "brnch", "visible": false}
-                ], "language": {
+                ],
+                "language": {
                     'loadingRecords': '&nbsp;',
                     'processing': '<div class="loader2"></div>'
                 },
@@ -2249,9 +2339,20 @@
                     // Apply alternating row colors
                     $(row).toggleClass('odd', index % 2 === 0);
                     $(row).toggleClass('even', index % 2 !== 0);
-                }
-
+                },
+                "columnDefs": [
+                    {
+                        "targets": "_all",
+                        "render": function (data, type, row, meta) {
+                            if (data === null) {
+                                return '-';
+                            }
+                            return data;
+                        }
+                    }
+                ]
             });
+
             var dptmnt = new SlimSelect({
                 select: '#dptmnt',
                 placeholder: "Department",
@@ -2292,10 +2393,8 @@
                         console.log(xhr);
                         console.log(code);
                     }
-
                 },
                 "columns": [
-                    //                    {"data": "id", className: "text-right", "visible": false},
                     {"data": "callname"},
                     {"data": "desig"},
                     {"data": "officeTelNo"},
@@ -2303,12 +2402,26 @@
                     {"data": "email"},
                     {"data": "officeMobileNo"},
                     {"data": "deprt", "visible": false}
-
-                ], "language": {
+                ],
+                "language": {
                     'loadingRecords': '&nbsp;',
                     'processing': '<div class="loader2"></div>'
-                }
+                },
+                "columnDefs": [
+                    {
+                        "targets": "_all",
+                        "render": function (data, type, row, meta) {
+                            if (data === null) {
+                                return '-';
+                            }
+                            return data;
+                        }
+                    }
+                ]
             });
+
+
+
             $('#dptmnt').data('select', dptmnt);
             var filter = '';
             filter = "1";
@@ -2411,100 +2524,7 @@
             });
 
             // Function to load images and populate the carousel
-            function loadNews() {
-                fetch('news/images')
-                        .then(response => response.json())
-                        .then(newsData => {
-                            newsData.sort((a, b) => b.id - a.id);
-                            const newsContainer = document.getElementById('newsContainer');
-                            newsContainer.innerHTML = ''; // Clear existing content
 
-                            newsData.forEach(newsItem => {
-                                const col10 = document.createElement('div');
-                                col10.classList.add('col-10');
-                                col10.classList.add('news-item'); // Add a class for easier event handling
-
-                                col10.addEventListener('click', function () {
-                                    fetch('news/' + newsItem.id)
-                                            .then(response => response.json())
-                                            .then(resp => resp.data)
-                                            .then(newsDetail => {
-                                                const modal = $('#newsModal');
-                                                modal.find('.modal-title').text(newsItem.heading); // Set modal title to the heading
-                                                modal.find('.modal-title').css('font-family', "'Libre Baskerville', serif"); // Set font-family for modal title
-
-                                                // Set the modal description
-                                                const description = modal.find('.modal-body .description');
-                                                description.text(newsDetail.para); // Set the description text using newsDetail.para
-                                                description.css('font-family', "'Crimson Text', serif"); // Set font-family for modal body text
-                                                description.css('font-size', '1rem');
-                                                description.css('text-align', 'center');
-
-                                                // Set the modal image source
-                                                const imageContainer = modal.find('.modal-body .image-container');
-                                                imageContainer.empty(); // Clear existing images
-
-                                                for (let i = 0; i < newsDetail.images.length; i++) {
-                                                    const imageData = newsDetail.images[i];
-                                                    const image = document.createElement('img');
-                                                    const imageUrl = 'news/path/newsss/' + imageData.path;
-                                                    image.src = imageUrl;
-                                                    image.style.width = '30%'; // Set the initial width for the thumbnail
-                                                    imageContainer.append(image);
-                                                    // Add lightbox functionality
-                                                    image.addEventListener('click', function () {
-                                                        // Show the modal
-                                                        const imageModal = $('#imageModal');
-                                                        imageModal.modal('show');
-
-                                                        // Get the modal body and image element
-                                                        const modalBody = imageModal.find('.modal-body');
-                                                        const modalImage = modalBody.find('img');
-
-                                                        // Set the source of the lightbox image
-                                                        modalImage.attr('src', imageUrl);
-
-                                                        // Set the width for the modal (adjust the value as needed)
-                                                        imageModal.find('.modal-dialog').css('max-width', '60%'); // Set your desired width, e.g., '80%'
-                                                    });
-
-
-                                                }
-
-
-                                                modal.modal('show');
-                                            });
-                                });
-                                const txtDiv = document.createElement('div');
-                                txtDiv.classList.add('txt');
-                                txtDiv.style.marginTop = '5px';
-                                txtDiv.style.marginLeft = '5px';
-                                txtDiv.style.fontFamily = "'Exo 2', sans-serif";
-                                const h4 = document.createElement('h4');
-                                h4.style.fontSize = '0.9rem';
-                                h4.style.fontWeight = '700';
-                                h4.textContent = newsItem.heading; // Set the heading to the newsItem's heading
-
-                                const p = document.createElement('p');
-                                p.textContent = newsItem.content;
-                                p.style.wordSpacing = '0.2em'; // Adjust the word spacing as needed
-                                p.style.whiteSpace = 'pre-wrap';
-
-                                txtDiv.appendChild(h4);
-                                txtDiv.appendChild(p);
-                                col10.appendChild(txtDiv);
-                                newsContainer.style.maxHeight = '35rem'; // Set a fixed height for the news container
-                                newsContainer.style.overflowY = 'auto'; // Enable vertical scrolling if the content exceeds the container height
-
-                                newsContainer.appendChild(col10);
-                            });
-                        });
-            }
-
-            // Call the loadNews function when the document is ready
-            $(document).ready(function () {
-                loadNews();
-            });
             var announcements = $('#tbl3').DataTable({
                 "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
                 "pageLength": 5,

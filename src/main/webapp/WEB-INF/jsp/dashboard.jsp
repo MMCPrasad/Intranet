@@ -2579,120 +2579,128 @@
                     $(row).find('td').first().html('<a target="_blank" href="announcement/path/view/' + data['path'] + '#embedded=true&toolbar=0&navpanes=0">' + data['name'] + '</a>');
                 }
             });
-            var selectedCallName;
-            $.fn.dataTable.ext.errMode = 'none';
-            var dtable1 = $('#tbl4').DataTable({
-                "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
-                "pageLength": 5,
-                "ordering": true,
-                "autoWidth": false,
-                "bFilter": false,
-                "bPaginate": false,
-                "bLengthChange": false,
-                "bAutoWidth": false,
-                "processing": true,
-                "serverSide": true,
-                "order": [[2, "asc"]],
-                "searchHighlight": true,
-                "searchDelay": 350,
-                "ajax": {
-                    "url": "birthday/dob",
-                    "contentType": "application/json",
-                    "type": "POST",
-                    "data": function (d) {
-                        return JSON.stringify(d);
+            $(document).ready(function () {
+                var selectedCallName = ''; // Define selectedCallName variable
+
+                var dtable1 = $('#tbl4').DataTable({
+                    "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+                    "pageLength": 5,
+                    "ordering": true,
+                    "autoWidth": false,
+                    "bFilter": false,
+                    "bPaginate": false,
+                    "bLengthChange": false,
+                    "bAutoWidth": false,
+                    "processing": true,
+                    "serverSide": true,
+                    "order": [[2, "asc"]],
+                    "searchHighlight": true,
+                    "searchDelay": 350,
+                    "ajax": {
+                        "url": "birthday/dob",
+                        "contentType": "application/json",
+                        "type": "POST",
+                        "data": function (d) {
+                            return JSON.stringify(d);
+                        },
+                        error: function (xhr, error, code) {
+                            // Handle error if needed
+                        }
                     },
-                    error: function (xhr, error, code) {
-                        // Handle error if needed
-                    }
-                },
-                "columns": [
-                    {"data": "id", className: "text-right", "visible": false},
-                    {"data": "callName"},
-                    {"data": "dob", "width": "3rem"},
-                    {"data": "branch"}
-                ],
-                "language": {
-                    'loadingRecords': '&nbsp;',
-                    'processing': '<div class="loader2"></div>',
-                    "info": '' // Hide the table information by setting it to an empty string
-                },
-                "rowCallback": function (row, data) {
-                    var today = new Date();
-                    var dobDate = new Date(data.dob);
-                    // Check if the dob month and date are equal to the current system month and date
-                    if (dobDate.getMonth() === today.getMonth() && dobDate.getDate() === today.getDate()) {
-                        // Make the row clickable
-                        $(row).on('click', function () {
-                            // Store the selected callName
-                            selectedCallName = data.callName;
-                            // Open the modal when a row is clicked
-                            $('#bdaymodal').modal('show');
-                            // Populate modal content with row data
-                            $('#modalTitle').html("HAPPY BIRTHDAY " + data.callName);
-                            $('#modalTitle').css('font-family', "'Playfair Display', serif");
+                    "columns": [
+                        {"data": "id", className: "text-right", "visible": false},
+                        {"data": "callName"},
+                        {"data": "dob", "width": "3rem"},
+                        {"data": "branch"}
+                    ],
+                    "language": {
+                        'loadingRecords': '&nbsp;',
+                        'processing': '<div class="loader2"></div>',
+                        "info": '' // Hide the table information by setting it to an empty string
+                    },
+                    "rowCallback": function (row, data) {
+                        var today = new Date();
+                        var dobDate = new Date(data.dob);
+                        // Check if the dob month and date are equal to the current system month and date
+                        if (dobDate.getMonth() === today.getMonth() && dobDate.getDate() === today.getDate()) {
+                            // Make the row clickable
+                            $(row).on('click', function () {
+                                // Store the selected callName
+                                selectedCallName = data.callName;
+                                // Open the modal when a row is clicked
+                                $('#bdaymodal').modal('show');
+                                // Populate modal content with row data
+                                $('#modalTitle').html("HAPPY BIRTHDAY " + data.callName);
+                                $('#modalTitle').css('font-family', "'Playfair Display', serif");
 
-
-                            $('#callNameText').html(data.callName);
-                            // Set the initial value of the name input
-                            $('#callNameText').val(data.callName);
-                            // Load and display relevant wishes for the selected callName
-                            loadAndDisplayWishes(selectedCallName);
-                        });
-                    } else {
-                        // Disable click event for non-matching dob dates
-                        $(row).off('click');
-                        $(row).css('cursor', 'not-allowed');
+                                $('#callNameText').html(data.callName);
+                                // Set the initial value of the name input
+                                $('#callNameText').val(data.callName);
+                                // Load and display relevant wishes for the selected callName
+                                loadAndDisplayWishes(selectedCallName);
+                            });
+                        } else {
+                            // Disable click event for non-matching dob dates
+                            $(row).off('click');
+                            $(row).css('cursor', 'not-allowed');
+                        }
                     }
+                });
+
+                // Event listener for modal close event
+                $('#bdaymodal').on('hidden.bs.modal', function () {
+                    // Clear wishes when modal is closed
+                    $('#sysss').empty();
+                });
+
+                function loadAndDisplayWishes(callName) {
+                    fetch('birthday/wishess', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({data: callName}),
+                    })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log('Received data:', data);
+                                if (data && Array.isArray(data) && data.length > 0) {
+                                    var wishesData = data;
+                                    // Check if wishesData is an array of objects
+                                    if (wishesData.every(obj => typeof obj === 'object' && obj !== null)) {
+                                        // Clear previous wishes
+                                        $('#sysss').empty();
+
+                                        // Create a new row
+                                        var row = $('<div class="row" style="margin-top: -1rem;"></div>');
+
+                                        // Display relevant wishes
+                                        wishesData.forEach(wish => {
+                                            console.log('Individual wish:', wish);
+                                            var card = `<div class="col-4" style="width: 20rem;">` +
+                                                    `<div class="card" >` +
+                                                    `<div class="card-body">` +
+                                                    `<h5 class="card-header">From:` + wish.name + `</h5>` +
+                                                    `<p class="card-text" style="margin-left: 1rem;">` + wish.wish + `</p>` +
+                                                    ` </div></div></div>`;
+                                            row.append(card);
+                                        });
+
+                                        // Append the row to the container
+                                        $('#sysss').append(row);
+                                    } else {
+                                        console.error('Invalid or missing data structure: Expected an array of objects.', wishesData);
+                                    }
+                                } else {
+                                    console.error('Invalid or missing data structure: Expected a non-empty array.', data);
+                                }
+                            })
+                            .catch(error => {
+                                console.error('An error occurred:', error);
+                            });
                 }
             });
-            function loadAndDisplayWishes(callName) {
-                fetch('birthday/wishess', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({data: callName}),
-                }
-                )
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log('Received data:', data);
-                            if (data && Array.isArray(data) && data.length > 0) {
-                                var wishesData = data;
-                                // Check if wishesData is an array of objects
-                                if (wishesData.every(obj => typeof obj === 'object' && obj !== null)) {
-                                    // Clear previous wishes
-                                    $('#sysss').empty();
 
-                                    // Create a new row
-                                    var row = $('<div class="row" style="margin-top: -1rem;"></div>');
-
-                                    // Display relevant wishes
-                                    wishesData.forEach(wish => {
-                                        console.log('Individual wish:', wish);
-                                        var card = `<div class="col-4" style="width: 20rem;">` +
-                                                `<div class="card" >` +
-                                                `<div class="card-body">` +
-                                                `<h5 class="card-header">From:` + wish.name + `</h5>` +
-                                                `<p class="card-text" style="margin-left: 1rem;">` + wish.wish + `</p>` +
-                                                ` </div></div></div>`;
-                                        row.append(card);
-                                    });
-
-                                    // Append the row to the container
-                                    $('#sysss').append(row);
-                                } else {
-                                    console.error('Invalid or missing data structure: Expected an array of objects.', wishesData);
-                                }
-                            } else {
-                                console.error('Invalid or missing data structure: Expected a non-empty array.', data);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('An error occurred:', error);
-                        });
-            }
 
             $('#save_wish_btn').click(function ()
             {
